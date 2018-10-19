@@ -27,9 +27,6 @@ function checkChar($value) {
     return true;
 }
 
-   
-    $('#container').css('height', $(window).height());
-
     function checkEmail($param) {
         $status = false;
         if ($param.val().indexOf('@') >= 0 && $param.val().indexOf('.') >= 0)
