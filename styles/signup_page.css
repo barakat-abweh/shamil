@@ -1,0 +1,41 @@
+
+
+.border{
+    border-bottom: 1px solid black;
+
+}
+.form{
+    margin-top: 30px;
+
+}
+
+.signup {
+    float: left;
+    margin-top: 40px;
+    padding: 30px 20px;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+
+}
+
+#btnprofile{
+    margin-top:7px;  
+    font-size:0.88em;
+    text-align:center;
+}
+
+
+[type=button],button{
+  border: 0;
+  background-color: #53CACE;
+  border-radius: 5px;
+  height: 35px;
+  color: white;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+
+
+
