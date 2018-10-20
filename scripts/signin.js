@@ -9,32 +9,36 @@ $(document).ready(function () {
         return a.charCodeAt(0);
     }
 
-    function checkNum($value) {
-        $arr = $value.split("");
-        for ($i = 0; $i < $arr.length; $i++) {
-            $as = ascii($arr[$i]);
-            if ($as < 48 || $as > 57)
-                return false;
+    function checkEmail($param) {
+        $status = false;
+        if ($param.val().indexOf('@') >= 0 && $param.val().indexOf('.') >= 0)
+            $status = true;
+        if ($status) {
+            $split = $param.val().split('.');
+            if ($split[$split.length - 1] === 'com')
+                return $status;
         }
-        return true;
+        return false;
     }
 
-    $('#signIn').click(function (e) {
-        $ID = false;
+    $('#signin').click(function (e) {
+        $email = false;
         $pass = false;
-        if (!checkNum($('#ID').val()) || $('#ID').val().length < 8 || $('#ID').val().length > 11) {
-            sweetAlert("Oops...", "ID must be 8 characters, no special characters allowed", "error");
+        if (!checkEmail($('#email'))) {
+            sweetAlert("Oops...", "Enter a correct email", "error");
         } else {
-            $ID = true;
+            $email = true;
         }
-        if (($('#password').val().length < 8 || $('#password').val().length > 24) && $ID) {
+        if ($('#password').val().length < 8 && $email) {
+            alert(1);
             sweetAlert("Oops...", "Password must be at least 8 characters.", "error");
         } else {
             $pass = true;
         }
-        if ($ID && $pass) {
-            $('#signin').attr('action', '../includes/signinVal.php');
-            $('#signin').submit();
+        if ($email && $pass) {
+            swal("You signed in successfuly!", "We hope you well be happy with us!", "success");
+            /*$('#signin').attr('action', '../includes/signinVal.php');
+            $('#signin').submit();*/
         } else {
             e.preventDefault();
         }

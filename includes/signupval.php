@@ -89,7 +89,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { #check type request
              if(!file_exists("../users/user$ID/Images/Profile/uploads/small"))mkdir("../users/user$ID/Images/Profile/uploads/small");
              if(!file_exists("../users/user$ID/Images/Profile/uploads/medium"))mkdir("../users/user$ID/Images/Profile/uploads/medium");      
             //header("Location: ../public/more.php");
-           
             }
         }
            
@@ -97,7 +96,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { #check type request
          
     }
 }
-
 function checkName($Name) {
     $min = 2;
     $max = 20;
@@ -144,7 +142,7 @@ function checkEmail($email) {
 }
 
 function checkType($type) {
-    if ($type == "Trader" || $type == "Importer")
+    if ($type == "seller" || $type == "buyer")
         return true;
     return false;
 }

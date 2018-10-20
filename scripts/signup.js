@@ -1,4 +1,4 @@
-$document.ready(function(){
+$(document).ready(function(){
  //function convert charchter to Ascii Number
 function ascii (a) { return a.charCodeAt(0); }
 
@@ -40,31 +40,43 @@ function checkChar($value) {
     }
 
 
-    $("#Submit").click(function () {
+    $("#register").click(function () {
         $fname = false;
         $lname = false;
-        $ID = false;
-        $pass = false;
-        $conpass = false;
+        $uname = false;
+        $phone = false;
         $email = false;
         $type = false;
-        if (!checkChar( $("#fname").val()) || $("#fname").val().length < 4 || $("#fname").val().length > 20) {
+        $city = false;
+        $pass = false;
+        $conpass = false;
+        if (!checkChar( $("#F_Name").val()) || $("#F_Name").val().length < 4 || $("#F_Name").val().length > 20) {
             sweetAlert("Oops...", "First name must be at least 4 characters, no special characters allowed", "error");
         } else {
             $fname = true;
 
         }
-        if ((!checkChar($("#lname").val()) || $("#lname").val().length < 4 || $("#lname").val().length > 20) && $fname) {
+        if ((!checkChar($("#L_Name").val()) || $("#L_Name").val().length < 4 || $("#L_Name").val().length > 20) && $fname) {
             sweetAlert("Oops...", "Last name must be at least 4 characters, no special characters allowed", "error");
         } else {
             $lname = true;
         }
-        if ((!checkEmail($('#email')) || $('#email').val().length > 32) && $fname && $lname) {
+        if ((!checkChar($("#User_Name").val()) || $("#User_Name").val().length < 4 || $("#User_Name").val().length > 20) && $fname&&$lname) {
+            sweetAlert("Oops...", "user name must be at least 4 characters, no special characters allowed", "error");
+        } else {
+            $uname = true;
+        }
+        if((!checkNum($('#Phone').val()) || $('#Phone').val().length!=10)&&$fname&&$lname&&$uname){
+            sweetAlert("Oops...", "Phone number must be 10 digits,only digits allowed", "error");
+        } else{
+            $phone=true;
+        }
+        if ((!checkEmail($('#Email')) || $('#Email').val().length > 32) && $fname && $lname&&$uname&&$phone) {
             sweetAlert("Oops...", "Invalid email address", "error");
         } else {
             $email = true;
         }
-
+/*
         if ((!checkNum($('#ID').val()) || $('#ID').val().length < 8 || $('#ID').val().length > 10) && $fname && $lname && $email) {
             sweetAlert("Oops...", "ID must be 8 characters, no special characters allowed", "error");
         } else {
@@ -87,7 +99,6 @@ function checkChar($value) {
         } else {
             $type = true;
         }
-
         if ($fname && $lname && $ID && $pass && $conpass && $type && $email) {
 
             swal("You signed sp successfuly!", "We hope you well be happy with us!", "success");
@@ -100,7 +111,7 @@ function checkChar($value) {
 
         } else {
             e.preventDefault();
-        }
+        }*/
 
     });
 
