@@ -44,76 +44,82 @@ function checkChar($value) {
         $fname = false;
         $lname = false;
         $uname = false;
-        $phone = false;
         $email = false;
+        $phone1 = false;
+        $phone2 = false;
         $type = false;
+        $country = false;
         $city = false;
         $pass = false;
         $conpass = false;
-        if (!checkChar( $("#F_Name").val()) || $("#F_Name").val().length < 4 || $("#F_Name").val().length > 20) {
+        if (!checkChar( $("#fname").val()) || $("#fname").val().length < 4 || $("#fname").val().length > 20) {
             sweetAlert("Oops...", "First name must be at least 4 characters, no special characters allowed", "error");
         } else {
             $fname = true;
 
         }
-        if ((!checkChar($("#L_Name").val()) || $("#L_Name").val().length < 4 || $("#L_Name").val().length > 20) && $fname) {
+        if ((!checkChar($("#lname").val()) || $("#lname").val().length < 4 || $("#lname").val().length > 20) && $fname) {
             sweetAlert("Oops...", "Last name must be at least 4 characters, no special characters allowed", "error");
         } else {
             $lname = true;
         }
-        if ((!checkChar($("#User_Name").val()) || $("#User_Name").val().length < 4 || $("#User_Name").val().length > 20) && $fname&&$lname) {
-            sweetAlert("Oops...", "user name must be at least 4 characters, no special characters allowed", "error");
+        if ((!checkChar($("#uname").val()) || $("#uname").val().length < 4 || $("#uname").val().length > 20) && $fname&&$lname) {
+            sweetAlert("Oops...", "User name must be at least 4 characters, no special characters allowed", "error");
         } else {
             $uname = true;
         }
-        if((!checkNum($('#Phone').val()) || $('#Phone').val().length!=10)&&$fname&&$lname&&$uname){
-            sweetAlert("Oops...", "Phone number must be 10 digits,only digits allowed", "error");
-        } else{
-            $phone=true;
-        }
-        if ((!checkEmail($('#Email')) || $('#Email').val().length > 32) && $fname && $lname&&$uname&&$phone) {
+        if ((!checkEmail($('#email')) || $('#email').val().length > 32) && $fname && $lname && $uname) {
             sweetAlert("Oops...", "Invalid email address", "error");
         } else {
             $email = true;
         }
-/*
-        if ((!checkNum($('#ID').val()) || $('#ID').val().length < 8 || $('#ID').val().length > 10) && $fname && $lname && $email) {
-            sweetAlert("Oops...", "ID must be 8 characters, no special characters allowed", "error");
-        } else {
-            $ID = true;
+        if((!checkNum($('#phone1').val()) || $('#phone1').val().length!=10) && $fname && $lname && $uname && $email){
+            sweetAlert("Oops...", "Phone number1 must be 10 digits,only digits allowed", "error");
+        } else{
+            $phone1=true;
         }
-        if (($('#password').val().length < 8 || $('#password').val().length > 40) && $fname && $lname && $email && $ID) {
-            sweetAlert("Oops...", "Password must be 8 characters.", "error");
+        if((!checkNum($('#phone2').val()) || $('#phone2').val().length!=10) && $fname && $lname && $uname && $email && $phone1){
+            sweetAlert("Oops...", "Phone number2 must be 10 digits,only digits allowed", "error");
+        } else{
+            $phone2=true;
+        }
+        if (($('#password').val().length < 8 || $('#password').val().length > 40) &&$fname&&$lname&&$uname&&$email&&$phone1&&$phone2) {
+            sweetAlert("Oops...", "Password must be at least 8 characters.", "error");
         } else {
             $pass = true;
         }
-        if ($('#confpassword').val() !== $('#password').val() && $pass && $fname && $lname && $email && $ID) {
+        if ($('#confpassword').val() != $('#password').val() &&$fname&&$lname&&$uname&&$email&&$phone1&&$phone2&&$pass) {
             sweetAlert("Oops...", "Password confirmation doesn't match the password.", "error");
         } else {
             $conpass = true;
         }
-
-
-        if ($("#type").val() == "choose type" && $fname && $lname && $ID && $pass && $email && $conpass) {
-            swal("Define your type!", "importer or trader");
+        if ($("#type").val() == "choose type" &&$fname&&$lname&&$uname&&$email&&$phone1&&$phone2&&$pass&&$conpass) {
+            swal("Define your type!", "seller or buyer");
         } else {
             $type = true;
         }
-        if ($fname && $lname && $ID && $pass && $conpass && $type && $email) {
+        if ($("#country").val() == "choose country" &&$fname&&$lname&&$uname&&$email&&$phone1&&$phone2&&$pass&&$conpass&&$type) {
+            swal("Choose your country!", "");
+        } else {
+            $country = true;
+        }
+        if ($("#city").val() == "choose city" &&$fname&&$lname&&$uname&&$email&&$phone1&&$phone2&&$pass&&$conpass&&$type&&$country) {
+            swal("Choose your city!", "");
+        } else {
+            $city = true;
+        }
+        if ($fname && $lname && $uname && $email && $phone1 && $phone2 && $type && $country && $city && $pass && $conpass) {
 
             swal("You signed sp successfuly!", "We hope you well be happy with us!", "success");
 
             setTimeout(function () {
-                $("#formMore").attr("action", "../includes/signupval.php");
-                $("#formMore").submit();
+                $("#signup").attr("action", "../includes/signupval.php");
+                $("#signup").submit();
             }, 1000);
 
 
         } else {
             e.preventDefault();
-        }*/
-
+        }
     });
-
-
 });

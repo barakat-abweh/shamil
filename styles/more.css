@@ -1,0 +1,106 @@
+
+
+body{
+
+    background-image: url(../images/bg.jpg);
+}
+.all{
+    height: 600px;
+   background-color:darkgrey;
+    margin-top:20px;
+    box-shadow: 10px 10px 5px #888888;
+
+
+}
+.border{
+    border-bottom: 1px solid black;
+
+}
+.form{
+    margin-top: 30px;
+
+}
+
+#profile{
+    height:300px;
+
+}
+
+.glyphicon{
+    /*font-size:200px;*/ 
+}
+#imgprofile{
+    width:100px;
+    height:100px;
+    background-image:url("../images/profile.png");
+    background-size: 100% 100%;
+
+}
+
+
+.signup {
+    float: left;
+    margin-top: 40px;
+    padding: 30px 20px;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+
+}
+C_T{
+    overflow:scroll;
+
+}
+
+
+[type='text']:focus {
+    outline: none;
+    border-color: #53CACE;
+}
+
+h1 {
+    color: rgba(0,0,0,.7);
+    font-weight: 900;
+    font-size: 2.5em;
+}
+
+p {
+    color: rgba(0,0,0,.6);
+    font-size: 1.2em;
+    margin: 50px 0 50px 0;
+}
+
+
+p:nth-of-type(2) {
+    font-size: 1em;
+}
+
+#btnprofile{
+    margin-top:7px;  
+    font-size:0.88em;
+    text-align:center;
+}
+
+
+[type=button],button{
+  border: 0;
+  background-color: #53CACE;
+  border-radius: 5px;
+  height: 35px;
+  color: white;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+
+
+
+@media screen and (max-width: 991px){
+
+#profile{
+   height:auto;
+}
+
+
+
+}

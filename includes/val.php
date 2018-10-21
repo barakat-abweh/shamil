@@ -142,8 +142,8 @@ function checkCompanytype($companyType) {
 }
 
 function checkPhone($phone) {
-    $min = 3;
-    $max = 15;
+    $min = 10;
+    $max = 10;
     $length = strlen($phone);
     if ($length < $min || $length > $max)
         return false;

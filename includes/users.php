@@ -3,19 +3,17 @@
 class user {
 
     private $dataBase;
-    private $ID;
-    private $type;
     private $fname;
     private $lname;
+    private $uname;
+    private $phone1;
+    private $phone2;
     private $email;
     private $password;
-    private $userName = NULL;
-    private $companyName = NULL;
-    private $companyType = NULL;
-    private $address = NULL;
-    private $phone = NULL;
-    private $details = NULL;
-   
+    private $type;
+    private $country;
+    private $city;
+            
     function __construct() {    
         
     }
@@ -24,7 +22,6 @@ class user {
         require_once ('database.php');
         if (isset($database)) {
             $this->dataBase = $database;
-          
         } 
         
     }
@@ -42,6 +39,13 @@ class user {
         $this->lname = $this->dataBase->escape($lname);
     }
 
+    public function setUname($uname) {
+        $this->uname = $this->dataBase->escape($uname);
+    }
+   public function setPhone($phone1,$phone2) {
+        $this->phone1 = $this->dataBase->escape($phone1);
+        $this->phone2 = $this->dataBase->escape($phone2);
+    }
     public function setEmail($email) {
         $this->email = $this->dataBase->escape($email);
     }
@@ -52,44 +56,21 @@ class user {
         $this->password = sha1($this->password);
     }
 
-    public function setID($ID) {
-        $this->ID = $this->dataBase->escape($ID);
-       
-    }
-
-    public function setAddress($address) {
-        $this->address = $this->dataBase->escape($address);
-    }
-
-    public function setDetails($details) {
-        $this->details = $this->dataBase->escape($details);
-    }
-
-    public function setUserName($username) {
-        $this->userName = $this->dataBase->escape($username);
-    }
-
-    public function setPhone($phone) {
-        $this->phone = $this->dataBase->escape($phone);
-    }
-
-    public function setCompanyName($companyName) {
-        $this->companyName = $this->dataBase->escape($companyName);
-    }
-
-    public function setCompanyType($companyType) {
-        $this->companyType = $this->dataBase->escape($companyType);
-    }
-
     public function setType($type) {
         $this->type = $this->dataBase->escape($type);
     }
-    
-    public function getImgProfile(){
-       $imgProfile="../users/user".$this->checkID()."/Images/Profile/uploads/medium/profile.jpg";
-       if(file_exists($imgProfile));else $imgProfile="../images/profile.png";
-          return $imgProfile;
-    }   
+    public function setCountry($country) {
+        $country=$this->dataBase->escape($country);
+        $query="SELECT `country_id` FROM `country` WHERE country_name='$country'";
+        $res= $this->dataBase->query($query);
+        $this->country= $this->dataBase->fetchArray($res)['country_id'];
+    }
+    public function setCity($city) {
+        $city = $this->dataBase->escape($city);
+        $query="SELECT `city_id` FROM `city` WHERE `country_id`='$this->country' and `city_name`='$city'";
+        $res= $this->dataBase->query($query);
+       $this->city= $this->dataBase->fetchArray($res)['city_id'];
+    } 
 
     public function getFname(){  
         $query = "select fname from users where userid=$this->ID";
@@ -154,19 +135,6 @@ class user {
         return $result['phone'];
     }
 
-    public function getCompanyName() {
-        $query = "select companyname from users where userid=$this->ID";
-       $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
-        return $result['companyname'];
-    }
-
-    public function getCompanyType() {
-        $query = "select companytype from users where userid=$this->ID";
-        $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
-        return $result['companytype'];
-    }
 
     public function getDataBase() {
         return $this->dataBase;
@@ -178,36 +146,13 @@ class user {
         $result=mysqli_fetch_assoc($result);
         return $result['userid'];
     }
-    
-   
- 
-     public function checkID() {
-        $query = "select userid from users where userid='$this->ID'";
-        $result=$this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);
-        return $result['userid'];
-    }
-    
-    
-    
-
     public function signUp() {
-        $query = "INSERT INTO users (userid, fname, lname, email, password,usertype) VALUES ('$this->ID','$this->fname','$this->lname', '$this->email','$this->password','$this->type');";
+        $query = "INSERT INTO users (`fname`, `lname`,`uname`, `email`, `password`,`type`,`country_id`,`city_id`) VALUES ('$this->fname','$this->lname','$this->uname', '$this->email','$this->password','$this->type','$this->country','$this->city');";
         $s=$this->getDataBase()->query($query);
          $this->getDataBase()->closeConnection();
         if(!$s)return false;
         return true;
     }
-
-    public function storeMoreDetails(){
-        $query = "UPDATE users SET `username` = '$this->userName', `companyname` = '$this->companyName', phone = '$this->phone' , address = '$this->address', `biography` = '$this->details', `companytype` = '$this->companyType' WHERE `users`.`userid` = '$this->ID';";
-        $this->getDataBase()->query($query);
-        $this->getDataBase()->closeConnection();
-   
-    }
-    
-
-
 }
 $user = new user();
 

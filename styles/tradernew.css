@@ -1,0 +1,83 @@
+body{
+    background-color: #E5EBF2;
+}
+
+.card {
+    padding-top: 20px;
+    margin: 18px 0 20px 0;
+    background-color: rgba(214, 224, 226, 0.2);
+
+}
+.card.hovercard {
+    border-radius: 5px;
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: rgba(214, 224, 226, 0.2);
+}
+
+.card.hovercard .cardheader {
+    background-color:#D9EDF7;
+    background-size: cover;
+    height: 150px;
+}
+
+.card.hovercard .avatar {
+    position: relative;
+    top: -60px;
+    margin-bottom: -50px;
+}
+
+.card.hovercard .avatar img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.5);
+}
+
+.card.hovercard .info {
+    padding: 4px 8px 10px;
+    height: 140px;
+}
+
+.card.hovercard .info .title {
+    margin-bottom:10px;
+    font-size: 30px;
+
+    color: #262626;
+}
+
+#shiva
+{
+    width: 100px;
+    height: 100px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin:auto;
+}
+.count
+{
+    line-height: 100px;
+    color:white;
+    text-align: center;
+    font-size:25px;
+}
+.section{
+
+    height:270px;
+    margin-top: -35px;
+}
+img{
+    width:120px;
+    height: 150px;
+}
+.toppad{
+margin-top:19px;
+}

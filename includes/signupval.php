@@ -1,18 +1,27 @@
 <?php
-
 $fname;
 $lname;
-$ID;
-$password;
-$type;
+$uname;
 $email;
+$phone1;
+$phone2;
+$type;
+$country;
+$city;
+$pass;
+$conpass;
 $flag = false;
 $flag1 = false;
 $flag2 = false;
 $flag3 = false;
 $flag4 = false;
 $flag5 = false;
-if ($_SERVER["REQUEST_METHOD"] == "POST") { #check type request 
+$flag6 = false;
+$flag7 = false;
+require_once ('users.php');
+$user->connectDatabase();
+$db=$user->getDataBase();
+if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type request 
     $field = htmlspecialchars($_POST['fname']);
     if (!isEmpty($field)) {
         $field=trim($field);
@@ -31,19 +40,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { #check type request
         } else
             redirect();
     }
-    $field = htmlspecialchars($_POST['ID']);
+    $field = htmlspecialchars($_POST['uname']);
     if (!isEmpty($field)) {
         $field=trim($field);
-        if (checkId($field)) {
-            $ID = $field;
+        if (checkName($field)) {
+            $uname = $field;
             $flag2 = true;
         } else
             redirect();
     }
-
     $pass = htmlspecialchars($_POST['password']);
     $confpass = htmlspecialchars($_POST['confpassword']);
-    if (!isEmpty($pass)) {
+    if (!isEmpty($pass)&&!isEmpty($confpass)) {
         if (checkPass($pass, $confpass)) {
             $password = $pass;
             $flag3 = true;
@@ -61,25 +69,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { #check type request
             redirect();
     }
     $field = htmlspecialchars($_POST['type']);
+    if(!isEmpty($field)){
+        $field=trim($field);
     if (checkType($field)) {
         $type = $field;
         $flag5 = true;
     } else
         redirect();
-
-    if ($flag && $flag1 && $flag2 && $flag3 && $flag4 && $flag5) {
-        require_once ('users.php');
-        $user->connectDatabase();
-        if (isset($user)) { 
-            $user->setFname($fname);
+    }
+    $field = htmlspecialchars($_POST['country']);
+    $field1= htmlspecialchars($_POST['city']);
+     if(!isEmpty($field)&&!isEmpty($field1)){
+    $field=trim($field);
+    $field1= trim($field1);
+    if (checkCountry($field,$field1,$user)) {
+        $country = $field;
+        $city=$field1;
+        $flag6 = true;
+    } else
+        redirect();
+     }
+     $field = htmlspecialchars($_POST['phone1']);
+    $field1= htmlspecialchars($_POST['phone2']);
+     if(!isEmpty($field)&&!isEmpty($field1)){
+    $field=trim($field);
+    $field1= trim($field1);
+    if (checkPhone($field)&& checkPhone($field1)) {
+        $phone1 = $field;
+        $phone2=$field1;
+        $flag7 = true;
+    } else
+        redirect();
+     }
+     
+if ($flag && $flag1 && $flag2&& $flag3 && $flag4 && $flag5 && $flag6 && $flag7) {
+    $user->setFname($fname);
             $user->setLname($lname);
-            $user->setID($ID);
+            $user->setUname($uname);
+            $user->setPhone($phone1,$phone2);
             $user->setEmail($email);
             $user->setPassword($password);
             $user->setType($type);
-             if(!$user->signUp())redirectValues();
+            $user->setCountry($country);
+            $user->setCity($city);
+            
+           if(!$user->signUp())redirectValues();
            else{
-               require_once 'session.php';
+               redirect();
+           }
+           /*else{
+               echo "done";
+             /*  require_once 'session.php';
                $session->signup($user);
              if(!file_exists("../users/user$ID"))mkdir("../users/user$ID");
              if(!file_exists("../users/user$ID/Images"))mkdir("../users/user$ID/Images");
@@ -88,12 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { #check type request
              if(!file_exists("../users/user$ID/Images/Profile/uploads"))mkdir("../users/user$ID/Images/Profile/uploads");
              if(!file_exists("../users/user$ID/Images/Profile/uploads/small"))mkdir("../users/user$ID/Images/Profile/uploads/small");
              if(!file_exists("../users/user$ID/Images/Profile/uploads/medium"))mkdir("../users/user$ID/Images/Profile/uploads/medium");      
-            //header("Location: ../public/more.php");
-            }
-        }
-           
-                
-         
+            }*/
     }
 }
 function checkName($Name) {
@@ -103,17 +138,6 @@ function checkName($Name) {
     if ($length < $min || $length > $max)
         return false;
     if (checkChar($Name))
-        return true;
-    return false;
-}
-
-function checkId($id) {
-    $min = 3;
-    $max = 11;
-    $length = strlen($id);
-    if ($length < $min || $length > $max)
-        return false;
-    if (checkNum($id))
         return true;
     return false;
 }
@@ -142,9 +166,28 @@ function checkEmail($email) {
 }
 
 function checkType($type) {
-    if ($type == "seller" || $type == "buyer")
+    if ($type == "Seller" || $type == "Buyer") {
         return true;
+    }
     return false;
+}
+function checkCountry($country,$city,$user) {
+    $country=$user->getDatabase()->escape($country);
+    $city=$user->getDatabase()->escape($city);
+    $query="SELECT `country_id` FROM `country` WHERE country_name='$country'";
+    $res=$user->getDataBase()->query($query);
+    $country_id=$user->getDataBase()->fetchArray($res)['country_id'];
+       
+       if($country_id>=1) {
+       $query="SELECT `city_id` FROM `city` WHERE `country_id`='$country_id' and `city_name`='$city'";
+       $res=$user->getDataBase()->query($query);
+       $city_id=$user->getDataBase()->fetchArray($res)['city_id'];
+       if($city_id>=1){
+           return true;
+       }
+       }
+        return false;
+    //return false;
 }
 
 #************************************************************************************************************************************************
@@ -157,10 +200,6 @@ function redirectValues() { #redirect page
 function redirect() { #redirect page
     header("Location: ../public/signup.php");
 }
-
-
-
-
 function checkChar($value) {
     $arr = str_split($value);
     for ($i = 0; $i < count($arr); $i++) {
@@ -188,8 +227,6 @@ function isEmpty($value) {
     }
     return true;
 }
-
-
 function checkNum($value) {
     $arr = str_split($value);
     for ($i = 0; $i < count($arr); $i++) {
@@ -199,5 +236,14 @@ function checkNum($value) {
     }
     return true;
 }
-
+function checkPhone($phone) {
+    $min = 3;
+    $max = 15;
+    $length = strlen($phone);
+    if ($length < $min || $length > $max)
+        return false;
+    if (checkNum($phone))
+        return true;
+    return false;
+}
 ?>

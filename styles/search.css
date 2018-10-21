@@ -1,0 +1,29 @@
+
+            .pic{
+                float:left;
+                width: 100px;
+                height: 120px;
+
+            }
+
+            .pic img{
+                width: 100px;
+                height: 120px;
+            }
+
+            .profile{
+                width: 100px;
+                height: 120px;
+                margin-left: -15px;
+                border-radius: 7px;
+
+            }
+            body{
+                background-color: #E5EBF2;
+            }
+            .bor{
+                margin-bottom: 5px;
+                border: blue 2px solid;
+                border-radius: 7px;
+
+            }

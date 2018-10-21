@@ -1,0 +1,41 @@
+.back{
+            
+            height: 65px;
+          }
+ 
+         
+          body{
+               background-color:#E5EBF2;
+              color:blue;
+          }
+          .b{
+              border: 1px white solid;
+          }
+          #p1{
+              margin-top: 30px;
+            font-weight: bold;
+              font-size: 17px;
+              color:darkslategrey;
+          }
+          .p2{
+              color: black;
+              margin-top: 5px;
+          }
+          .m-c{
+             margin-top: 30px; 
+              background-color: darkgray;
+              border: 1px black solid;
+              border-radius: 7px; 
+            
+              
+          }
+          .call{
+               margin-top: 30px; 
+              background-color: darkgray;
+              border: 1px black solid;
+              border-radius: 7px;
+              color: black;
+              padding-left: 40px;
+          }
+         #no-padding{padding-left: 0px;
+         padding-right: 0px;}         

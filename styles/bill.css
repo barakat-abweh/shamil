@@ -1,0 +1,13 @@
+body{
+    
+    background-image: url(../images/bg.jpg);
+}
+#invoice{
+    margin-top: 150px;
+    color: firebrick;
+    font-size: 18px;
+}
+#date{
+    
+    font-size: 18px;
+}

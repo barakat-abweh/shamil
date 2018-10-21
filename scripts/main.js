@@ -1,203 +1,224 @@
-/* =================================
-------------------------------------
-	LERAMIZ - Landing Page Template
-	Version: 1.0
- ------------------------------------ 
- ====================================*/
-
-
-'use strict';
-
-
-var window_w = $(window).innerWidth();
-
-
-$(window).on('load', function() {
-	/*------------------
-		Preloder
-	--------------------*/
-	$(".loader").fadeOut(); 
-	$("#preloder").delay(400).fadeOut("slow");
-
-});
+/*
+	Helios by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
 
 (function($) {
 
-	/*------------------
-		Navigation
-	--------------------*/
-	$('.nav-switch').on('click', function(event) {
-		$('.main-menu').slideToggle(400);
-		event.preventDefault();
-	});
+	var settings = {
 
-
-	/*------------------
-		Background set
-	--------------------*/
-	$('.set-bg').each(function() {
-		var bg = $(this).data('setbg');
-		$(this).css('background-image', 'url(' + bg + ')');
-	});
-
-
-
-	$('.gallery').find('.gallery-item').each(function() {
-		var pi_height1 = $(this).outerWidth(true),
-		pi_height2 = pi_height1/2;
-		
-		if($(this).hasClass('grid-long') && window_w > 991){
-			$(this).css('height', pi_height2);
-		}else{
-			$(this).css('height', Math.abs(pi_height1));
-		}
-	});
-
-
-
-	$('.gallery').masonry({
-		itemSelector: '.gallery-item',
-	  	columnWidth: '.grid-sizer',
-		gutter: 20
-	});
-
-
-	/*------------------
-		Review Slider
-	--------------------*/
-	$('.review-slider').owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: false,
-        items: 1,
-        dots: true,
-        autoplay: true,
-    });
-
-
-
-    $('.clients-slider').owlCarousel({
-		loop:true,
-		autoplay:true,
-		margin:30,
-		nav:false,
-		dots: true,
-		responsive:{
-			0:{
-				items:2,
-				margin:10
+		// Carousels
+			carousels: {
+				speed: 4,
+				fadeIn: true,
+				fadeDelay: 250
 			},
-			600:{
-				items:3
-			},
-			800:{
-				items:3
-			},
-			1000:{
-				items:5
-			}
-		}
+
+	};
+
+	skel.breakpoints({
+		wide: '(max-width: 1680px)',
+		normal: '(max-width: 1280px)',
+		narrow: '(max-width: 960px)',
+		narrower: '(max-width: 840px)',
+		mobile: '(max-width: 736px)'
 	});
 
+	$(function() {
 
-	/*------------------
-		Review Slider
-	--------------------*/
-	var sync1 = $("#sl-slider");
-	var sync2 = $("#sl-slider-thumb");
-	var slidesPerPage = 4; //globaly define number of elements per page
-	var syncedSecondary = true;
+		var	$window = $(window),
+			$body = $('body');
 
-	sync1.owlCarousel({
-		items : 1,
-		slideSpeed : 2000,
-		nav: false,
-		autoplay: true,
-		dots: true,
-		loop: true,
-		responsiveRefreshRate : 200,
-	}).on('changed.owl.carousel', syncPosition);
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
 
-	sync2.on('initialized.owl.carousel', function () {
-		sync2.find(".owl-item").eq(0).addClass("current");
-	}).owlCarousel({
-		items : slidesPerPage,
-		dots: true,
-		nav: true,
-		margin: 10,
-		smartSpeed: 200,
-		slideSpeed : 500,
-		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-		slideBy: slidesPerPage, //alternatively you can slide by 1, this way the active slide will stick to the first item in the second carousel
-		responsiveRefreshRate : 100
-	}).on('changed.owl.carousel', syncPosition2);
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
 
-	function syncPosition(el) {
-		//if you set loop to false, you have to restore this next line
-		//var current = el.item.index;
-		//if you disable loop you have to comment this block
-		var count = el.item.count-1;
-		var current = Math.round(el.item.index - (el.item.count/2) - .5);
+		// CSS polyfills (IE<9).
+			if (skel.vars.IEVersion < 9)
+				$(':last-child').addClass('last-child');
 
-		if(current < 0) {
-			current = count;
-		}
-		if(current > count) {
-			current = 0;
-		}
+		// Fix: Placeholder polyfill.
+			$('form').placeholder();
 
-		//end block
-		sync2.find(".owl-item").removeClass("current").eq(current).addClass("current");
-		var onscreen = sync2.find('.owl-item.active').length - 1;
-		var start = sync2.find('.owl-item.active').first().index();
-		var end = sync2.find('.owl-item.active').last().index();
+		// Prioritize "important" elements on mobile.
+			skel.on('+mobile -mobile', function() {
+				$.prioritize(
+					'.important\\28 mobile\\29',
+					skel.breakpoint('mobile').active
+				);
+			});
 
-		if (current > end) {
-			sync2.data('owl.carousel').to(current, 100, true);
-		}
-		if (current < start) {
-			sync2.data('owl.carousel').to(current - onscreen, 100, true);
-		}
-	}
+	
 
-	function syncPosition2(el) {
-		if(syncedSecondary) {
-			var number = el.item.index;
-			sync1.data('owl.carousel').to(number, 100, true);
-		}
-	}
+			
 
-	sync2.on("click", ".owl-item", function(e){
-		e.preventDefault();
-		var number = $(this).index();
-		sync1.data('owl.carousel').to(number, 300, true);
+
+		// Carousels.
+			$('.carousel').each(function() {
+
+				var	$t = $(this),
+					$forward = $('<span class="forward"></span>'),
+					$backward = $('<span class="backward"></span>'),
+					$reel = $t.children('.reel'),
+					$items = $reel.children('article');
+
+				var	pos = -20,
+					leftLimit,
+					rightLimit,
+					itemWidth,
+					reelWidth,
+					timerId;
+				
+					
+
+				// Items.
+					if (settings.carousels.fadeIn) {
+
+						$items.addClass('loading');
+
+						$t.onVisible(function() {
+							var	timerId,
+								limit = $items.length - Math.ceil($window.width() / itemWidth);
+
+							timerId = window.setInterval(function() {
+								var x = $items.filter('.loading'), xf = x.first();
+
+								if (x.length <= limit) {
+
+									window.clearInterval(timerId);
+									$items.removeClass('loading');
+									return;
+
+								}
+
+								if (skel.vars.IEVersion < 10) {
+
+									xf.fadeTo(750, 1.0);
+									window.setTimeout(function() {
+										xf.removeClass('loading');
+									}, 50);
+
+								}
+								else
+									xf.removeClass('loading');
+
+							}, settings.carousels.fadeDelay);
+						}, 50);
+					}
+
+				// Main.
+					$t._update = function() {
+						var $allWidth=$('.carousel').css('width');
+						var $imgWidth=$('article').css('width'); 
+						var $mrgWidth=$('article').css('margin-right');
+						var $allWidth=parseFloat($allWidth.substring(0, $allWidth.length - 2));
+						var $imgWidth=parseFloat($imgWidth.substring(0, $imgWidth.length - 2));
+							var $mrgWidth=parseFloat($mrgWidth.substring(0, $mrgWidth.length - 2));
+						var $numimg=document.getElementsByTagName('article').length;
+						 var lend=-1*((($imgWidth+$mrgWidth)*$numimg)-$allWidth);
+						
+						
+					
+						
+						pos = -20;
+						//rightLimit = (-1 * reelWidth) + ($window.width()-220);
+						rightLimit=lend;
+						leftLimit = -20;
+						$t._updatePos();
+					};
+
+					if (skel.vars.IEVersion < 9)
+						$t._updatePos = function() { $reel.css('left', pos); };
+					else
+						$t._updatePos = function() { $reel.css('transform', 'translate(' + pos + 'px, 0)'); };
+
+				// Forward.
+					$forward
+						.appendTo($t)
+						.hide()
+						.mouseenter(function(e) {
+							timerId = window.setInterval(function() {
+								pos -= settings.carousels.speed;
+
+								if (pos <= rightLimit)
+								{
+									window.clearInterval(timerId);
+									pos = rightLimit;
+								}
+
+								$t._updatePos();
+							}, 8);
+						})
+						.mouseleave(function(e) {
+							window.clearInterval(timerId);
+						});
+
+				// Backward.
+					$backward
+						.appendTo($t)
+						.hide()
+						.mouseenter(function(e) {
+							timerId = window.setInterval(function() {
+								pos += settings.carousels.speed;
+
+								if (pos >= leftLimit) {
+
+									window.clearInterval(timerId);
+									pos = leftLimit;
+
+								}
+
+								$t._updatePos();
+							}, 8);
+						})
+						.mouseleave(function(e) {
+							window.clearInterval(timerId);
+						});
+
+				// Init.
+					$window.load(function() {
+
+						reelWidth = $reel[0].scrollWidth;
+
+						skel.on('change', function() {
+
+							if (skel.vars.touch) {
+
+								$reel
+									.css('overflow-y', 'hidden')
+									.css('overflow-x', 'scroll')
+									.scrollLeft(0);
+								$forward.hide();
+								$backward.hide();
+
+							}
+							else {
+
+								$reel
+									.css('overflow', 'visible')
+									.scrollLeft(0);
+								$forward.show();
+								$backward.show();
+
+							}
+
+							$t._update();
+
+						});
+
+						$window.resize(function() {
+							reelWidth = $reel[0].scrollWidth;
+							$t._update();
+						}).trigger('resize');
+
+					});
+
+			});
+
 	});
-
-
-
-
-	/*------------------
-		Accordions
-	--------------------*/
-	$('.panel-link').on('click', function (e) {
-		$('.panel-link').removeClass('active');
-		var $this = $(this);
-		if (!$this.hasClass('active')) {
-			$this.addClass('active');
-		}
-		e.preventDefault();
-	});
-
-
-
-	$('.video-link').magnificPopup({
-        disableOn: 700,
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-    });
-
 
 })(jQuery);
-
