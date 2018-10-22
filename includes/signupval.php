@@ -18,9 +18,17 @@ $flag4 = false;
 $flag5 = false;
 $flag6 = false;
 $flag7 = false;
-require_once ('users.php');
-$user->connectDatabase();
-$db=$user->getDataBase();
+$DB;
+$USER;
+require_once ('./database.php');
+if(isset($database)){
+    $DB=$database;
+require_once ('./users.php');
+if(isset($user)){
+    $USER=$user;
+$USER->setDataBase($DB);
+}
+}
 if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type request 
     $field = htmlspecialchars($_POST['fname']);
     if (!isEmpty($field)) {
@@ -29,7 +37,7 @@ if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type reques
             $fname = $field;
             $flag = true;
         } else
-            redirect();
+            redirectValues();
     }
     $field = htmlspecialchars($_POST['lname']);
     if (!isEmpty($field)) {
@@ -38,7 +46,7 @@ if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type reques
             $lname = $field;
             $flag1 = true;
         } else
-            redirect();
+           redirectValues();
     }
     $field = htmlspecialchars($_POST['uname']);
     if (!isEmpty($field)) {
@@ -47,7 +55,7 @@ if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type reques
             $uname = $field;
             $flag2 = true;
         } else
-            redirect();
+            redirectValues();
     }
     $pass = htmlspecialchars($_POST['password']);
     $confpass = htmlspecialchars($_POST['confpassword']);
@@ -56,7 +64,7 @@ if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type reques
             $password = $pass;
             $flag3 = true;
         } else
-            redirect();
+            redirectValues();
     }
 
     $field = htmlspecialchars($_POST['email']);
@@ -66,7 +74,7 @@ if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type reques
             $email = strtolower($field);
             $flag4 = true;
         } else
-            redirect();
+            redirectValues();
     }
     $field = htmlspecialchars($_POST['type']);
     if(!isEmpty($field)){
@@ -75,19 +83,19 @@ if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type reques
         $type = $field;
         $flag5 = true;
     } else
-        redirect();
+        redirectValues();
     }
     $field = htmlspecialchars($_POST['country']);
     $field1= htmlspecialchars($_POST['city']);
      if(!isEmpty($field)&&!isEmpty($field1)){
     $field=trim($field);
     $field1= trim($field1);
-    if (checkCountry($field,$field1,$user)) {
+    if (checkCountry($field,$field1,$DB)) {
         $country = $field;
         $city=$field1;
         $flag6 = true;
     } else
-        redirect();
+        redirectValues();
      }
      $field = htmlspecialchars($_POST['phone1']);
     $field1= htmlspecialchars($_POST['phone2']);
@@ -103,20 +111,17 @@ if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type reques
      }
      
 if ($flag && $flag1 && $flag2&& $flag3 && $flag4 && $flag5 && $flag6 && $flag7) {
-    $user->setFname($fname);
-            $user->setLname($lname);
-            $user->setUname($uname);
-            $user->setPhone($phone1,$phone2);
-            $user->setEmail($email);
-            $user->setPassword($password);
-            $user->setType($type);
-            $user->setCountry($country);
-            $user->setCity($city);
+            $USER->setFname($fname);
+            $USER->setLname($lname);
+            $USER->setUname($uname);
+            $USER->setPhone($phone1,$phone2);
+            $USER->setEmail($email);
+            $USER->setPassword($password);
+            $USER->setType($type);
+            $USER->setCountry($country);
+            $USER->setCity($city);
             
-           if(!$user->signUp())redirectValues();
-           else{
-               redirect();
-           }
+           if(!$USER->signUp())redirectValues();
            /*else{
                echo "done";
              /*  require_once 'session.php';
@@ -130,6 +135,9 @@ if ($flag && $flag1 && $flag2&& $flag3 && $flag4 && $flag5 && $flag6 && $flag7) 
              if(!file_exists("../users/user$ID/Images/Profile/uploads/medium"))mkdir("../users/user$ID/Images/Profile/uploads/medium");      
             }*/
     }
+    else{
+               redirect();
+           }
 }
 function checkName($Name) {
     $min = 2;
@@ -171,17 +179,16 @@ function checkType($type) {
     }
     return false;
 }
-function checkCountry($country,$city,$user) {
-    $country=$user->getDatabase()->escape($country);
-    $city=$user->getDatabase()->escape($city);
+function checkCountry($country,$city,$DB) {
+    $country=$DB->escape($country);
+    $city=$DB->escape($city);
     $query="SELECT `country_id` FROM `country` WHERE country_name='$country'";
-    $res=$user->getDataBase()->query($query);
-    $country_id=$user->getDataBase()->fetchArray($res)['country_id'];
-       
+    $res=$DB->query($query);
+    $country_id=$DB->fetchArray($res)['country_id'];
        if($country_id>=1) {
        $query="SELECT `city_id` FROM `city` WHERE `country_id`='$country_id' and `city_name`='$city'";
-       $res=$user->getDataBase()->query($query);
-       $city_id=$user->getDataBase()->fetchArray($res)['city_id'];
+       $res=$DB->query($query);
+       $city_id=$DB->fetchArray($res)['city_id'];
        if($city_id>=1){
            return true;
        }
@@ -198,7 +205,7 @@ function redirectValues() { #redirect page
 }
 
 function redirect() { #redirect page
-    header("Location: ../public/signup.php");
+    header("Location: ../public/index.php");
 }
 function checkChar($value) {
     $arr = str_split($value);

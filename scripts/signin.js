@@ -37,8 +37,8 @@ $(document).ready(function () {
         }
         if ($email && $pass) {
             swal("You signed in successfuly!", "We hope you well be happy with us!", "success");
-            /*$('#signin').attr('action', '../includes/signinVal.php');
-            $('#signin').submit();*/
+            $('#signin').attr('action', '../includes/signinVal.php');
+            $('#signin').submit();
         } else {
             e.preventDefault();
         }
