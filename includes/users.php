@@ -149,7 +149,7 @@ public function setId($id){
         return $result['user_id'];
     }
     public function signUp() {
-        $query = "INSERT INTO users (`fname`, `lname`,`uname`, `email`, `password`,`type`,`country_id`,`city_id`) VALUES ('$this->fname','$this->lname','$this->uname', '$this->email','$this->password','$this->type','$this->country','$this->city');";
+        $query = "INSERT INTO users (`fname`, `lname`,`uname`, `email`, `password`,`type`,`country_id`,`city_id`,`phone1`, `phone2`) VALUES ('$this->fname','$this->lname','$this->uname', '$this->email','$this->password','$this->type','$this->country','$this->city','$this->phone1','$this->phone2');";
         $s=$this->getDataBase()->query($query);
          $this->getDataBase()->closeConnection();
         if(!$s)return false;

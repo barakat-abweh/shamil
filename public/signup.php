@@ -12,7 +12,21 @@
         <title>Sign Up now and make your acount</title>
     </head>
     <body>
-       
+       <?php
+        require_once '../includes/session.php';
+        if ($session->isLoggedIn()) {
+            require_once '../includes/users.php';
+            $user->connectDatabase();
+            $user->setId($session->getUserId());
+            if ($user->getType() == "0")
+                redirectTo("../public/profilesallerpge.html");
+            else
+                redirectTo("../public/profilesallerpge.html");
+        }
+        function redirectTo($page) {#redirect  page
+            header("Location: $page");
+        }
+        ?>
         <div class="signup col-md-8 col-md-offset-2">   
 
             <h2 class="border">Sign Up</h2>

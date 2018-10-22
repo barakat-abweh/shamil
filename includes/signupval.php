@@ -80,7 +80,12 @@ if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type reques
     if(!isEmpty($field)){
         $field=trim($field);
     if (checkType($field)) {
-        $type = $field;
+        if($field === "Seller"){
+        $type = 0;
+        }
+        else{
+           $type = 1;
+        }
         $flag5 = true;
     } else
         redirectValues();
