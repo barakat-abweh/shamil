@@ -4,7 +4,7 @@
      
         require_once '../includes/session.php';
         if ($session->isLoggedIn()) {
-            redirectTo("home.php");
+            redirectTo("homepage.php");
         }
 
         function redirectTo($page) {#redirect  page
