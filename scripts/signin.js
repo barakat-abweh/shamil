@@ -22,7 +22,6 @@ $(document).ready(function () {
     }
 
     $('#signin').click(function (e) {
-alert(1);
         $email = false;
         $pass = false;
         if (!checkEmail($('#email'))) {
@@ -31,17 +30,19 @@ alert(1);
             $email = true;
         }
         if ($('#password').val().length < 8 && $email) {
-            alert(1);
             sweetAlert("Oops...", "Password must be at least 8 characters.", "error");
         } else {
             $pass = true;
         }
         if ($email && $pass) {
             swal("You signed in successfuly!", "We hope you well be happy with us!", "success");
-            $('#signin').attr('action', '../includes/signinVal.php');
-            $('#signin').submit();
+            setTimeout(function () {
+            $('#signinform').attr('action', '../includes/signinVal.php');
+            $('#signinform').submit();
+            }, 1000);
         } else {
             e.preventDefault();
+            //location.reload(true);
         }
     });
 });

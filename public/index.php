@@ -79,6 +79,7 @@ require_once './loginnavbar.php';
     <script src="../scripts/jquery-ui.min.js"></script>
     <!-- Active js -->
     <script src="../scripts/active.js"></script>
+    <script src="../scripts/sweetalert.min.js"></script>
     <script src="../scripts/signin.js"></script>
 </body>
 

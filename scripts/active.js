@@ -66,21 +66,21 @@
             smartSpeed: 1000
         });
 
-        welcomeSlide.on('translate.owl.carousel', function () {
+       /* welcomeSlide.on('translate.owl.carousel', function () {
             var slideLayer = $("[data-animation]");
             slideLayer.each(function () {
                 var anim_name = $(this).data('animation');
                 $(this).removeClass('animated ' + anim_name).css('opacity', '0');
             });
-        });
+        });*/
 
-        welcomeSlide.on('translated.owl.carousel', function () {
+        /*welcomeSlide.on('translated.owl.carousel', function () {
             var slideLayer = welcomeSlide.find('.owl-item.active').find("[data-animation]");
             slideLayer.each(function () {
                 var anim_name = $(this).data('animation');
                 $(this).addClass('animated ' + anim_name).css('opacity', '1');
             });
-        });
+        });*/
 
         $("[data-delay]").each(function () {
             var anim_del = $(this).data('delay');
