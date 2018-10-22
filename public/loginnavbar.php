@@ -31,7 +31,7 @@
                             <ul>                               
                               
                                 <li> <div class="form-group">
-                                    <input type="email" class="form-control color_text" id="Email1" aria-describedby="emailHelp" placeholder=" User Name">
+                                        <input type="text" class="form-control color_text" id="Email1" aria-describedby="emailHelp" placeholder=" User Name">
                                     </div>
                                 </li>
                                 <li>
@@ -40,8 +40,8 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <button type="button" id="signin" class=" btn btn-primary searchbtn"> Login</button>
-                                    <button type="button" id="signup" class=" btn btn-primary searchbtn"> Signup</button>
+                                    <button type="button" id="signin" class=" btn btn-primary"> Login</button>
+                                    <button type="button" id="signup" class=" btn btn-primary"> Signup</button>
                                 </li>                               
                             </ul>
                         </div>

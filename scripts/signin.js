@@ -22,6 +22,7 @@ $(document).ready(function () {
     }
 
     $('#signin').click(function (e) {
+alert(1);
         $email = false;
         $pass = false;
         if (!checkEmail($('#email'))) {

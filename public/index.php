@@ -1,11 +1,4 @@
-<?php
-require_once './loginnavbar.php';
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,11 +9,18 @@ require_once './loginnavbar.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../styles/style_login.css">
-
+    <link rel="stylesheet" type="text/css" href="../styles/sweetalert.css"/>
 </head>
 
 <body>
-   
+   <?php
+require_once './loginnavbar.php';
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>
     <!-- ##### Header Area Start ##### -->
     
 <!-- ********************************************** FOOTER ******************************************************** -->                  
@@ -79,7 +79,7 @@ require_once './loginnavbar.php';
     <script src="../scripts/jquery-ui.min.js"></script>
     <!-- Active js -->
     <script src="../scripts/active.js"></script>
-
+    <script src="../scripts/signin.js"></script>
 </body>
 
 </html>
