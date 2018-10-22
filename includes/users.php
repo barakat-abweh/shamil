@@ -75,49 +75,49 @@ public function setId($id){
     } 
 
     public function getFname(){  
-        $query = "select fname from users where userid=$this->ID";
+        $query = "select fname from users where user_id=$this->id";
          $result= $this->dataBase->query($query);
          $result=mysqli_fetch_assoc($result); 
         return $result['fname'];
     }
 
     public function getLname() {
-        $query = "select lname from users where userid=$this->ID";
+        $query = "select lname from users where user_id=$this->id";
         $result= $this->dataBase->query($query);
          $result=mysqli_fetch_assoc($result);    
         return $result['lname'];
     }
 
     public function getEmail() {
-        $query = "select email from users where userid=$this->ID";
+        $query = "select email from users where user_id=$this->id";
        $result= $this->dataBase->query($query);
          $result=mysqli_fetch_assoc($result);    
         return $result['email'];
     }
 
     public function getPassword() {
-        $query = "select password from users where userid=$this->ID";
+        $query = "select password from users where user_id=$this->id";
        $result= $this->dataBase->query($query);
          $result=mysqli_fetch_assoc($result);    
         return $result['password'];
     }
 
     public function getType() {
-        $query = "select usertype from users where userid=$this->ID";
+        $query = "select usertype from users where user_id=$this->id";
        $result= $this->dataBase->query($query);
          $result=mysqli_fetch_assoc($result);    
         return $result['usertype'];
     }
 
     public function getAddress() {
-        $query = "select address from users where userid=$this->ID";
+        $query = "select address from users where user_id=$this->id";
        $result= $this->dataBase->query($query);
          $result=mysqli_fetch_assoc($result);    
         return $result['address'];
     }
 
     public function getDetails() {
-        $query = "select biography from users where userid=$this->ID";
+        $query = "select biography from users where user_id=$this->ID";
       $result= $this->dataBase->query($query);
          $result=mysqli_fetch_assoc($result);    
         return $result['biography'];

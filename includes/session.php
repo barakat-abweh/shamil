@@ -51,10 +51,9 @@ class session {
                 $userpass = $user->getPassword();
                 if ($userpass === $password) {
                     $this->cookie->setCookie("userid",md5($user->getID()),time() + (86400 * 30),"/",null,false,true);
-                    
                     self::$loggedin = true;
                     $this->userid = $_SESSION['userid'] = $user->getID();
-                   header("LOCATION:../public/home.php");
+                   header("LOCATION:../public/homepage.php");
                 } else
                     redirect();
             } else
@@ -68,7 +67,7 @@ class session {
           $this->userid = $_SESSION['userid'] = $ID;
           $this->cookie->setCookie("userid",md5($ID),time() + (86400 * 30),"/",null,false,true);
           self::$loggedin = true;
-           header("Location: ../public/more.php");
+           header("Location: ../public/index.php");
      }   
      else {
                header("Location: ../public/home.php");

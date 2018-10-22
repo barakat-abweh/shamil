@@ -30,7 +30,7 @@ if ($flag1 && $flag2) {
     checkIDS($email, $password);
 }
 
-function checkIDS($email) {
+function checkIDS($email,$password) {
     require_once 'users.php';
     $user->connectDatabase();
      global $userid;
