@@ -122,6 +122,9 @@ if ($flag && $flag1 && $flag2&& $flag3 && $flag4 && $flag5 && $flag6 && $flag7) 
             $USER->setCity($city);
             
            if(!$USER->signUp())redirectValues();
+           else{
+               redirect();
+           }
            /*else{
                echo "done";
              /*  require_once 'session.php';
@@ -135,9 +138,7 @@ if ($flag && $flag1 && $flag2&& $flag3 && $flag4 && $flag5 && $flag6 && $flag7) 
              if(!file_exists("../users/user$ID/Images/Profile/uploads/medium"))mkdir("../users/user$ID/Images/Profile/uploads/medium");      
             }*/
     }
-    else{
-               redirect();
-           }
+    
 }
 function checkName($Name) {
     $min = 2;

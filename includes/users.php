@@ -1,7 +1,7 @@
 <?php
 
 class user {
-
+    private $id;
     private $dataBase;
     private $fname;
     private $lname;
@@ -30,7 +30,9 @@ class user {
             $this->dataBase=$dataBase;
                 
         }
-
+public function setId($id){
+    $this->id=$id;
+}
     public function setFname($fname) {
         $this->fname = $this->dataBase->escape($fname);
     }
@@ -140,11 +142,11 @@ class user {
         return $this->dataBase;
     }
 
-    public function getID(){     
-        $query = "select userid from users where email='$this->email'";
+    public function getID(){
+        $query = "select user_id from users where email='$this->email'";
         $result= $this->dataBase->query($query);
         $result=mysqli_fetch_assoc($result);
-        return $result['userid'];
+        return $result['user_id'];
     }
     public function signUp() {
         $query = "INSERT INTO users (`fname`, `lname`,`uname`, `email`, `password`,`type`,`country_id`,`city_id`) VALUES ('$this->fname','$this->lname','$this->uname', '$this->email','$this->password','$this->type','$this->country','$this->city');";

@@ -31,12 +31,12 @@
                             <ul>                               
                               
                                 <li> <div class="form-group">
-                                        <input type="text" class="form-control color_text" id="email" aria-describedby="emailHelp" placeholder=" User Name">
+                                        <input type="text" name="email" class="form-control color_text" id="email" aria-describedby="emailHelp" placeholder=" User Name">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-group">
-                                    <input type="password" class="form-control color_text" id="password" placeholder="Password" >
+                                    <input type="password" name="password" class="form-control color_text" id="password" placeholder="Password" >
                                     </div>
                                 </li>
                                 <li>

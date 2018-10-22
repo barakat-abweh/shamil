@@ -5,7 +5,7 @@ $userid=NULL;
 $flag1 = false;
 $flag2 = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $field = htmlspecialchars($_POST['ID']);
+    $field = htmlspecialchars($_POST['email']);
     if (!isEmtpy($field)) {
        $field=trim($field);
         if (checkEmail($field)) {    
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             redirect();
     }
 
-    $field = htmlspecialchars($_POST['PASSWORD']);
+    $field = htmlspecialchars($_POST['password']);
     if (!isEmtpy($field)) {
         if (checkPass($field)) {
             $password = sha1(md5($field));
@@ -40,7 +40,7 @@ function checkIDS($email) {
      $user->setId($userid);
      require_once 'session.php';
      //if user logged in again redirect to his page (home or MyProgile) 
-     if($session->isLoggedIn()){if($user->getType()=="Importer")redirectTo("../public/MyProfile.php");else redirectTo("../public/MyProfile.php");}
+     if($session->isLoggedIn()){if($user->getType()=="Seller")redirectTo("../public/MyProfile.php");else redirectTo("../public/MyProfile.php");}
      $session->login($user);
 }
 
