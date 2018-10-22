@@ -1,5 +1,17 @@
 
+<?php
+        define('title', "Easy Trade");
+     
+        require_once '../includes/session.php';
+        if ($session->isLoggedIn()) {
+            redirectTo("home.php");
+        }
 
+        function redirectTo($page) {#redirect  page
+        error_reporting(E_ALL);
+            header("Location: $page");
+        }
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 
