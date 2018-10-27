@@ -35,10 +35,6 @@ class property {
             $this->dataBase=$dataBase;
                 
         }
-    
-  
-   
-    
     public function getId() {
          $query = "select goodid  from goods where goodid=$this->id";
          $result= $this->dataBase->query($query);
@@ -217,11 +213,22 @@ $query = "select offers from goods where goodid=$this->id";
                 $text.='<p>add products to show it in slider</p>';
                 $text.='</article>';
             echo $text;
-            
             $r--;
-            
         }
     }
+    public function getRandomProperties(){
+        $query = "SELECT `property_id`, `property_name`,`city_id`, `description`, `price` FROM `property` where deleted != '1' ORDER BY RAND() LIMIT 9 "; # 
+        $result=$this->dataBase->query($query);
+        return $result;
+    }
+    public function getCityName($city_id){
+        $city_id= $this->dataBase->escape($city_id);
+        $query="SELECT `city_name` FROM `city` WHERE `city_id`=$city_id";
+        $result= $this->dataBase->query($query);
+        $result= $this->dataBase->fetchArray($result);
+        return $result['city_name'];
+    }
+
     public function getMoreDelts(){
 $query = "select  moredetails from goods where goodid=$this->id";
          $result= $this->dataBase->query($query);
@@ -278,6 +285,6 @@ $query = "select additiondate from goods where goodid=$this->id";
        
         }
         
- $good = new good();
+ $property = new property();
         
       
