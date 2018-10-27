@@ -13,7 +13,6 @@ class session {
         $this->startSession();
         if ($this->startedSession) {
             $this->checkLogIn();
-            
         }
     }
 

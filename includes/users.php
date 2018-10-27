@@ -141,8 +141,8 @@ public function setId($id){
     public function getDataBase() {
         return $this->dataBase;
     }
-    public function getId(){
-        $query = "select user_id from users where email='$this->id'";
+    public function getUserId(){
+        $query = "select user_id from users where user_id='$this->id'";
         $result= $this->dataBase->query($query);
         $result= $this->dataBase->fetchArray($result);
         return $result['user_id'];
