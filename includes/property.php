@@ -1,13 +1,16 @@
 <?php
-class good {
+class property {
     private $dataBase;
     private $id;
     private $name;
-    private $userid;
-    private $type;
+    private $ownerid;
+    private $area;
+    private $cityid;
+    private $description;
     private $price;
-    private $quantity;
     private $offers;
+    private $type;
+    private $quantity;
     private $moreDetls;
     private $c_date; #created date
     private $img1;
@@ -46,8 +49,7 @@ class good {
     
     public function setId($id) {
        $this->id = $this->dataBase->escape($id);
-      
-        
+       
     }
     
     public function getLatestId(){
@@ -219,18 +221,7 @@ $query = "select offers from goods where goodid=$this->id";
             $r--;
             
         }
-        
-
-
-
     }
-
-
-
-
-    
-
-    
     public function getMoreDelts(){
 $query = "select  moredetails from goods where goodid=$this->id";
          $result= $this->dataBase->query($query);
