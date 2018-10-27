@@ -40,7 +40,7 @@ function checkIDS($email,$password) {
      $user->setId($userid);
      require_once 'session.php';
      //if user logged in again redirect to his page (home or MyProgile) 
-     if($session->isLoggedIn()){if($user->getType()=="Seller")redirectTo("../public/MyProfile.php");else redirectTo("../public/MyProfile.php");}
+     if($session->isLoggedIn()){redirectTo("../public/home.php");}
      $session->login($user);
 }
 

@@ -53,7 +53,7 @@ class session {
                     $this->cookie->setCookie("userid",md5($user->getID()),time() + (86400 * 30),"/",null,false,true);
                     self::$loggedin = true;
                     $this->userid = $_SESSION['userid'] = $user->getID();
-                   header("LOCATION:../public/homepage.php");
+                   header("LOCATION:../public/home.php");
                 } else
                     redirect();
             } else
@@ -67,7 +67,7 @@ class session {
           $this->userid = $_SESSION['userid'] = $ID;
           $this->cookie->setCookie("userid",md5($ID),time() + (86400 * 30),"/",null,false,true);
           self::$loggedin = true;
-           header("Location: ../public/index.php");
+           header("Location: ../public/home.php");
      }   
      else {
                header("Location: ../public/home.php");

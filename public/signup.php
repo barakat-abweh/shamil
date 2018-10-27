@@ -13,16 +13,18 @@
     </head>
     <body>
        <?php
+       $db;
+       require_once '../includes/database.php';
+       if(isset($database)){
+           $db=$database;
         require_once '../includes/session.php';
         if ($session->isLoggedIn()) {
             require_once '../includes/users.php';
-            $user->connectDatabase();
+            $user->setDataBase($db);
             $user->setId($session->getUserId());
-            if ($user->getType() == "0")
-                redirectTo("../public/profilesallerpge.html");
-            else
-                redirectTo("../public/profilesallerpge.html");
+            redirectTo("home.php");
         }
+       }
         function redirectTo($page) {#redirect  page
             header("Location: $page");
         }
@@ -78,10 +80,17 @@
                 
 
                    <fieldset class="form-group col-md-5">
-                    <select name="country" id="country" class="button btn btn-primary form-control">
+                       <select name="country" id="country" class="button btn btn-primary form-control" onchange="getCity()">
                         <option>choose country</option>
-                        <option>Palestine</option>
-                        <option>jordan</option>
+                        <?php
+                        if(isset($db)){
+                            $query="SELECT `country_id`, `country_name` FROM `country`";
+                            $res=$db->query($query);
+                            while($result=$db->fetchArray($res)){
+                                echo "<option id=\"".$result['country_id']."\">".$result['country_name']."</option>";
+                            }
+                        }
+                        ?>
                     </select>
                 </fieldset>
                 

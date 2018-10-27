@@ -1,4 +1,8 @@
-$(document).ready(function(){
+function getCity(){
+      $city_id=$('#country').find('option:selected').attr('id');
+    }
+
+$(document).ready(function(){ 
  //function convert charchter to Ascii Number
 function ascii (a) { return a.charCodeAt(0); }
 

@@ -1,10 +1,10 @@
 
 <?php
-        define('title', "Easy Trade");
+        define('title', "SHAMIL");
      
         require_once '../includes/session.php';
         if ($session->isLoggedIn()) {
-            redirectTo("signup.php");
+            redirectTo("profile.php");
         }
 
         function redirectTo($page) {#redirect  page

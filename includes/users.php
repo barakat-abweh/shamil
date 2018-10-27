@@ -103,10 +103,10 @@ public function setId($id){
     }
 
     public function getType() {
-        $query = "select usertype from users where user_id=$this->id";
+        $query = "select type from users where user_id=$this->id";
        $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
-        return $result['usertype'];
+         $result=mysqli_fetch_assoc($result);
+        return $result['type'];
     }
 
     public function getAddress() {
