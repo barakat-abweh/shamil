@@ -20,6 +20,7 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css"/>
     <link rel="stylesheet" href="../styles/style_login.css">
     <link rel="stylesheet" type="text/css" href="../styles/sweetalert.css"/>
 </head>
