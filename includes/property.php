@@ -242,7 +242,7 @@ public function getDescription(){
         $result= $this->dataBase->query($query);
         $result= $this->dataBase->fetchArray($result);
         $this->ownerid=$result['owner_id'];
-        $query="SELECT `fname`, `lname` FROM `users` WHERE `user_id`=$this->ownerid";
+        $query="SELECT `user_id`,`fname`, `lname` FROM `users` WHERE `user_id`=$this->ownerid";
         $result= $this->dataBase->query($query);
         $result= $this->dataBase->fetchArray($result);
         return "<a href='profile.php?user_id=".$result['user_id']."'>".$result['fname']." ".$result['lname']."</a>";

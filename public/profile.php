@@ -32,14 +32,36 @@
         $user->setDataBase($database);
         require_once '../includes/session.php';
         if ($session->isLoggedIn()) {
-            /*here to put view profile code*/
             require_once './homenavbar.php';
+if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="GET"){
+    if(isset($_GET['user_id'])){
+        $user_id=htmlspecialchars($_GET['user_id']);
+        if(is_numeric($user_id)&&strlen($user_id)>=1&&strlen($user_id)<=11){
+            require_once '../includes/database.php';
+            require_once '../includes/users.php';
+            $user->setDataBase($database);
+            $user->setId($user_id);
+            if(gettype($user->getId())=="NULL"){
+                redirect();
+            }
+        }
+        else{
+        redirect();
+    }
+    }
+    else{
+        redirect();
+    }
+}
+            else{
             $id = $session->getUserId();
             $user->setId($id);
             if ($user->getType() == "0") {
                 require_once 'sellerprofile.php';
             } else {
                 require_once 'buyerhome.php';
+        }
+        
             }
         } else
         {
