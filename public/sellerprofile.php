@@ -1,24 +1,3 @@
-<html>
-<head>
-    
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.css">
-    <link rel="stylesheet" href="../styles/bootstrap-grid.css.map">
-    <link rel="stylesheet" href="../styles/bootstrap.css">
-    <link rel="stylesheet" href="../styles/bootstrap.min.css.map">
-    <link rel="stylesheet" href="../styles/bootstrap-grid.css">
-    <link rel="stylesheet" href="../styles/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="../styles/profilepayerpage.css">
-    <link rel="stylesheet" href="css/linearicons.css">
-    <link rel="stylesheet" href="../styles/profilesellerpage.css">
-    <link rel="stylesheet" href="../styles/profilesallerpage.css">
-<!------ Include the above in your HEAD tag ---------->
-</head>
-<body>
     <div class="container bootstrap snippet">
         <div class="row">
   		    <div class="col-sm-3"><!--left col-->
@@ -116,21 +95,4 @@
             </div>
         </div>
     </div>
-    
-        
-    <script src="../scripts/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="../scripts/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="../scripts/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="../scripts/plugins.js"></script>
-    <script src="../scripts/classy-nav.min.js"></script>
-    <script src="../scripts/jquery-ui.min.js"></script>
-    <!-- Active js -->
-    <script src="../scripts/active.js"></script>
-    
-    </body>
-    
-    
-</html>                                                      
+                                               

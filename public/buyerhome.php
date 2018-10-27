@@ -64,9 +64,7 @@
                             <p class="location"><img src="../images/icons/location.png" alt=""><?php echo $property->getCityName($result['city_id']); ?></p>
                             <p><?php echo $result['description'];?></p>
                             <div class="property-meta-data d-flex align-items-end justify-content-between">    
-                                <button type="button" class="btn btn-primary search_btn"><a href="property.php?property_id=<?php echo $result[property_id];?>">More ...</a></button>
-
-                              
+                                <a class="btn btn-primary search_btn" href="property.php?property_id=<?php echo $result['property_id'];?>">More ...</a>
                             </div>
                         </div>
                     </div>

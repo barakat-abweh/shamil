@@ -36,10 +36,10 @@ class property {
                 
         }
     public function getId() {
-         $query = "select goodid  from goods where goodid=$this->id";
+         $query = "select property_id  from property where property_id=$this->id";
          $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
-        return $result['goodid'];
+         $result= $this->dataBase->fetchArray($result);    
+        return $result['property_id'];
 
     }
     
@@ -71,10 +71,10 @@ class property {
     }
     
     public function getName() {
-     $query = "select goodname from goods where goodid=$this->id";
+     $query = "select property_name from property where property_id=$this->id";
          $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);   
-        return $result['goodname'];
+         $result= $this->dataBase->fetchArray($result);   
+        return $result['property_name'];
     }
     
     
@@ -83,10 +83,14 @@ class property {
     }
     
     public function getType() {
-        $query = "select goodtype from goods where goodid=$this->id";
+        $query = "select type from property where property_id=$this->id";
          $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);   
-        return $result['goodtype'];      
+         $result= $this->dataBase->fetchArray($result);
+        $type_id=$result['type'];
+        $query="SELECT `type_name` FROM `property_type` WHERE `type_id`='$type_id'";
+        $result= $this->dataBase->query($query);
+         $result=$this->dataBase->fetchArray($result);
+         return $result['type_name'];
     }
     
     
@@ -95,13 +99,11 @@ class property {
     }
     
     public function getPrice() {
-   $query = "select goodprice from goods where goodid=$this->id";
+   $query = "select price from property where property_id=$this->id";
          $result= $this->dataBase->query($query);
          $result=mysqli_fetch_assoc($result);    
-        return $result['goodprice'];
+        return $result['price'];
     }
-    
-    
     public function setPrice($price) {
         $this->price = $this->dataBase->escape($price);
     }
@@ -228,17 +230,41 @@ $query = "select offers from goods where goodid=$this->id";
         $result= $this->dataBase->fetchArray($result);
         return $result['city_name'];
     }
-
-    public function getMoreDelts(){
-$query = "select  moredetails from goods where goodid=$this->id";
-         $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
-        return $result['moredetails'];
+public function getDescription(){
+        $query="SELECT `description` FROM `property` WHERE `property_id`=$this->id";
+        $result= $this->dataBase->query($query);
+        $result= $this->dataBase->fetchArray($result);
+        return $result['description'];
+    }
     
+    public function getOwner(){
+        $query="SELECT `owner_id` FROM `property` WHERE `property_id`=$this->id";
+        $result= $this->dataBase->query($query);
+        $result= $this->dataBase->fetchArray($result);
+        $this->ownerid=$result['owner_id'];
+        $query="SELECT `fname`, `lname` FROM `users` WHERE `user_id`=$this->ownerid";
+        $result= $this->dataBase->query($query);
+        $result= $this->dataBase->fetchArray($result);
+        return "<a href='profile.php?user_id=".$result['user_id']."'>".$result['fname']." ".$result['lname']."</a>";
+    }
+    public function getAddress(){
+        $query="SELECT `city_id` FROM `property` WHERE `property_id`=$this->id";
+        $result= $this->dataBase->query($query);
+        $result= $this->dataBase->fetchArray($result);
+        $city_id=$result['city_id'];
+        $query="SELECT `country_id`, `city_name` FROM `city` WHERE `city_id`=$city_id";
+        $result= $this->dataBase->query($query);
+        $result= $this->dataBase->fetchArray($result);
+        $country_id=$result['country_id'];
+        $city_name=$result['city_name'];
+        $query="SELECT `country_name` FROM `country` WHERE `country_id`=$country_id";
+        $result= $this->dataBase->query($query);
+        $result= $this->dataBase->fetchArray($result);
+        $country_name=$result['country_name'];
+        return $country_name." - ".$city_name;
     }
 
-     
-     public function getC_date(){
+    public function getC_date(){
 $query = "select additiondate from goods where goodid=$this->id";
          $result= $this->dataBase->query($query);
          $result=mysqli_fetch_assoc($result); 

@@ -15,10 +15,10 @@
 						
 						<nav class="main_nav">
 							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
-								<li><a href="about.html">Profile</a></li>
-								<li><a href="news.html">About us</a></li>
-								<li><a href="contact.html">Contact</a></li>
+                                                            <li class="active"><a href="home.php">Home</a></li>
+								<li><a href="profile.php">Profile</a></li>
+								<li><a href="about.php">About us</a></li>
+								<li><a href="contact.php">Contact</a></li>
 							</ul>
 						</nav>
 						

@@ -49,7 +49,6 @@
         } else
         {
         require_once './loginnavbar.php';
-        echo "<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>";
         require_once 'buyerhome.php';}
             ?>
     
