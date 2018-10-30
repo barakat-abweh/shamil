@@ -1,4 +1,5 @@
 <!-- ##### Header Area Start ##### -->
+<div class="cover">   
     <header class="header-area">
         <!-- Main Header Area -->
         <div class="main-header-area" id="stickyHeader">
@@ -44,4 +45,5 @@
             </div>
         </div>
     </header>
+    </div>
 

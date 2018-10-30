@@ -89,6 +89,9 @@ img {
 
 .checked, .price span {
   color: firebrick; }
+.price{
+    color: black;
+}
 
 .product-title, .rating, .product-description, .price, .vote, .sizes {
   margin-bottom: 15px; }

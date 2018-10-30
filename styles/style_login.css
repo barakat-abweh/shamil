@@ -121,7 +121,9 @@ img {
 
 .font-light {
   font-weight: 300; }
-
+.main_nav ul li a {
+    color: white; !importenet;
+}
 .height-500 {
   height: 500px !important; }
 
@@ -380,10 +382,8 @@ img {
   background-color: #000000; }
 
 .header-area {
-  position: absolute;
   z-index: 10000;
   width: 100%;
-  height: auto;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
 
@@ -446,9 +446,7 @@ img {
   .main-header-area .classy-navbar {
     height: 80px;
       color:  #ffffff;
-      margin-top: 20px;
     padding: .5em 90px;
-      margin-top: 20px;
 }
 
 #logo{
@@ -580,7 +578,6 @@ img {
 
 /* :: 9.0 Welcome Area CSS */
 .single-hero-slide {
-  position: relative;
   z-index: 1;
   width: 100%;
   height: 660px; }
@@ -619,7 +616,6 @@ img {
 .hero-area .owl-next {
   width: 38px;
   height: 38px;
-  position: absolute;
   top: 50%;
   line-height: 36px;
   text-align: center;

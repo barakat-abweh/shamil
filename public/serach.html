@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -21,40 +20,23 @@
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
     <link rel="stylesheet" href="../styles/owl.carousel.css">
     <link rel="stylesheet" href="../styles/magnific-popup.css">
-
-</head>
-
+    
+    </head>
 <body>
-    
-<?php
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
- require_once '../includes/users.php';
-        require_once '../includes/database.php';
-        global $database;
-        $user->setDataBase($database);
-        require_once '../includes/session.php';
-        if ($session->isLoggedIn()) {
-            require_once './homenavbar.php';
-            $id = $session->getUserId();
-            $user->setId($id);
-            if ($user->getType() == "0") {
-                require_once 'sellerhome.php';
-            } else {
-                require_once 'buyerhome.php';
-            }
-        } else
-        {
-        require_once './loginnavbar.php';
-        require_once 'buyerhome.php';}
-            ?>
-    
- <!-- jQuery (Necessary for All JavaScript Plugins) -->
- <script src="../scripts/jquery-2.2.4.min.js"></script>
+          <div class="container">
+     <form  class="filter-form" id="buyer_search2">
+    	    <div id="custom-search-input">
+                <div class="input-group searches">
+                    <input type="text" class="search-query form-control" placeholder="Search" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-light search_btn">Search</button>
+                    </span>
+                </div>
+                </div>
+			</form> 
+              
+    </div>
+     <script src="../scripts/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
     <script src="../scripts/popper.min.js"></script>
     <!-- Bootstrap js -->
@@ -68,6 +50,6 @@
     <script src="../scripts/sweetalert.min.js"></script>
      <script src="js/profilesallerpage.js"></script>
     <script src="../scripts/signin.js"></script>
-</body>
-
+                    
+    </body>
 </html>

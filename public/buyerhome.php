@@ -1,42 +1,20 @@
-
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="south-load"></div>
-    </div>
-
- 
-	<div class="filter-search">
-		<div class="container">
-                            <!--************************************** start form ***************************************** -->
-
-                            <form class="filter-form" id="buyer_search">
-				<div class="container">
+    <!-- ##### Featured Properties Area Start ##### -->
+<div class="container">
+<form  class="filter-form" id="buyer_searches_w_l">
     	    <div id="custom-search-input">
-                <div class="input-group">
+                <div class="input-group searches">
                     <input type="text" class="search-query form-control" placeholder="Search" />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-light search_btn">Search</button>
                     </span>
                 </div>
-            </div>
                 </div>
-			</form>
-                            <!--************************************** end form ***************************************** -->
-
-		</div>
-	</div>
-    
-    <!-- ##### Featured Properties Area Start ##### -->
-    <section class="featured-properties-area section-padding-100-50">
-        <div class="container">
+			</form> 
+</div>
+<section class="featured-properties-area section-padding-100-50 section_in_profile_payer">
+        <div class="container">              
+            <br><br>
             <div class="row">
-                <div class="col-12">
-                    
-                </div>
-            </div>
-
-            <div class="row">
-
                 <!--************************************** First ***************************************** -->
                 <?php
                 require_once '../includes/property.php';
@@ -51,9 +29,9 @@
                         <div class="property-thumb">
                             <img src="../images/bg-img/feature1.jpg" alt="">
                             <div class="list-price">
-                                <p><?php
+                                <h3><p><?php
                                echo $result['price'];
-                                ?></p>
+                                ?></p></h3>
                             </div>
                         </div>
                         <!-- Property Content -->
@@ -76,6 +54,5 @@
 
                 </div>
             </div>
-        </div>
     </section>
     <!-- ##### Featured Properties Area End ##### -->

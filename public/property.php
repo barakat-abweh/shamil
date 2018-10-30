@@ -87,16 +87,7 @@ function redirect(){
 					</div>
 					<div class="details col-md-6">
 						<h3 class="product-title d-inline p-2 bg-success text-white"><?php echo $property->getName();?></h3>
-						<div class="rating">
-							<div class="stars">
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-							</div>
-							<h3><span class="review-no d-inline p-2 bg-info text-white">Description: </span></h3>
-						</div>
+					
 						<p class="product-description"><?php echo $property->getDescription();?></p>
 						<h4 class="price  d-inline p-2 bg-light ">Owner: <span><?php echo $property->getOwner();?></span></h4>
 						<h4 class="price  d-inline p-2 bg-light ">Address: <span><?php echo $property->getAddress();?></span></h4>

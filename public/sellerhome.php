@@ -63,12 +63,12 @@
                                             <option>City</option>
                                             <option>Riga</option>
                                             <option>Melbourne</option> 
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="Discripton" placeholder="Discripton" rows="3"></textarea>
-                                    <input class="form-control" type="text" placeholder="Type">
-                                    </div>
+                                        </select>        
+                            </div>
+                              
+                                <input class="form-control" type="text" placeholder="Type">                    
+                                <textarea class="form-control" id="Discripton" placeholder="Discripton" rows="3"></textarea>
+                                  
                                 </div>
                                 
 <!-- ************************************************************************************************ List cat and pice and button -->
@@ -135,156 +135,14 @@
             
             <div class="row">
 
-                <!--************************************** First ***************************************** -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
-                        <!-- Property Thumbnail -->
-                        <div class="property-thumb">
-                            <img src="../images/bg-img/feature1.jpg" alt="">
-
-                            <div class="tag">
-                                <span>For Sale</span>
-                            </div>
-                            <div class="list-price">
-                                <p>$945 679</p>
-                            </div>
-                        </div>
-                        <!-- Property Content -->
-                        <div class="property-content">
-                            <h5>Villa in Los Angeles</h5>
-                            <p class="location"><img src="../images/icons/location.png" alt="">Upper Road 3411, no.34 CA</p>
-                            <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.</p>
-                            <div class="property-meta-data d-flex align-items-end justify-content-between">    
-                             <button type="button" class="btn btn-primary search_btn">More ...</button>
-
-                              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--************************************** second ***************************************** -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="200ms">
-                        <!-- Property Thumbnail -->
-                        <div class="property-thumb">
-                            <img src="../images/bg-img/feature2.jpg" alt="">
-
-                            <div class="tag">
-                                <span>For Sale</span>
-                            </div>
-                            <div class="list-price">
-                                <p>$945 679</p>
-                            </div>
-                        </div>
-                        <!-- Property Content -->
-                         <div class="property-content">
-                            <h5>Villa in Los Angeles</h5>
-                            <p class="location"><img src="../images/icons/location.png" alt="">Upper Road 3411, no.34 CA</p>
-                            <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.</p>
-                            <div class="property-meta-data d-flex align-items-end justify-content-between">    
-                             <button type="button" class="btn btn-primary search_btn">More ...</button>
-
-                              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Featured Property -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Property Thumbnail -->
-                        <div class="property-thumb">
-                            <img src="../images/bg-img/feature3.jpg" alt="">
-
-                            <div class="tag">
-                                <span>For Sale</span>
-                            </div>
-                            <div class="list-price">
-                                <p>$945 679</p>
-                            </div>
-                        </div>
-                        <!-- Property Content -->
-                         <div class="property-content">
-                            <h5>Villa in Los Angeles</h5>
-                            <p class="location"><img src="../images/icons/location.png" alt="">Upper Road 3411, no.34 CA</p>
-                            <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.</p>
-                            <div class="property-meta-data d-flex align-items-end justify-content-between">    
-                             <button type="button" class="btn btn-primary search_btn">More ...</button>
-
-                              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--************************************** thered ***************************************** -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="400ms">
-                        <!-- Property Thumbnail -->
-                        <div class="property-thumb">
-                            <img src="../images/bg-img/feature4.jpg" alt="">
-
-                            <div class="tag">
-                                <span>For Sale</span>
-                            </div>
-                            <div class="list-price">
-                                <p>$945 679</p>
-                            </div>
-                        </div>
-                        <!-- Property Content -->
-                         <div class="property-content">
-                            <h5>Villa in Los Angeles</h5>
-                            <p class="location"><img src="../images/icons/location.png" alt="">Upper Road 3411, no.34 CA</p>
-                            <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.</p>
-                            <div class="property-meta-data d-flex align-items-end justify-content-between">    
-                             <button type="button" class="btn btn-primary search_btn">More ...</button>
-
-                              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--************************************** four ***************************************** -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="500ms">
-                        <!-- Property Thumbnail -->
-                        <div class="property-thumb">
-                            <img src="../images/bg-img/feature5.jpg" alt="">
-
-                            <div class="tag">
-                                <span>For Sale</span>
-                            </div>
-                            <div class="list-price">
-                                <p>$945 679</p>
-                            </div>
-                        </div>
-                        <!-- Property Content -->
-                         <div class="property-content">
-                            <h5>Villa in Los Angeles</h5>
-                            <p class="location"><img src="../images/icons/location.png" alt="">Upper Road 3411, no.34 CA</p>
-                            <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.</p>
-                            <div class="property-meta-data d-flex align-items-end justify-content-between">    
-                             <button type="button" class="btn btn-primary search_btn">More ...</button>
-
-                              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--************************************** five ***************************************** -->
+                <!--************************************** first ***************************************** -->
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="600ms">
                         <!-- Property Thumbnail -->
                         <div class="property-thumb">
                             <img src="../images/bg-img/feature6.jpg" alt="">
 
-                            <div class="tag">
-                                <span>For Sale</span>
-                            </div>
+                            
                             <div class="list-price">
                                 <p>$945 679</p>
                             </div>

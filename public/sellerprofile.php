@@ -26,7 +26,7 @@
                               <label for="password" id="user_name"  class="label_info"><h4> Last Name</h4></label>
                               <h4><span class="badge badge-warning information1" ><span  class="information">Baraa</span></span></h4>
                           </div>
-                      </div>
+                      </div>    
   <!-- ******************************************************** user Name **********************************************-->           
                       <div class="form-group">
                           <div class="col-xs-6">
@@ -56,12 +56,14 @@
                           </div>
                       </div>
                       <div class="form-group col-md-6">
-                           <div class="col-xs-12  ">
+                        <br>
+                          <div class="col-xs-12  ">
                              <button type="button" class="btn btn-primary col-xs-6 col-md-12 btn_edit_save">Edit</button>
                           </div>
                       </div>
                       <div class="form-group col-md-6 ">
-                           <div class="col-xs-12 ">
+                        <br>
+                          <div class="col-xs-12 ">
                              <button type="button" class="btn btn-success col-xs-6 col-md-12 btn_edit_save">Save</button>
                           </div>
                       </div>

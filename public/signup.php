@@ -87,7 +87,7 @@
                             $query="SELECT `country_id`, `country_name` FROM `country`";
                             $res=$db->query($query);
                             while($result=$db->fetchArray($res)){
-                                echo "<option id=\"".$result['country_id']."\">".$result['country_name']."</option>";
+                                echo "<option i d=\"".$result['country_id']."\">".$result['country_name']."</option>";
                             }
                         }
                         ?>
