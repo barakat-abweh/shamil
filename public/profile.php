@@ -33,10 +33,16 @@
         require_once '../includes/session.php';
         if ($session->isLoggedIn()) {
             require_once './homenavbar.php';
-
+ $id = $session->getUserId();
+            $user->setId($id);
     if(isset($_GET['user_id'])){
         $user_id=htmlspecialchars($_GET['user_id']);
         if(is_numeric($user_id)&&strlen($user_id)>=1&&strlen($user_id)<=11){
+            if($user_id==$session->getUserId())
+            {
+                redirect();
+                
+            }
             require_once '../includes/database.php';
             require_once '../includes/users.php';
             $user->setDataBase($database);
@@ -49,20 +55,17 @@
         else{
         redirect();
     }
-}
-            else{
-            $id = $session->getUserId();
-            $user->setId($id);
-            if ($user->getType() == "0") {
-                require_once 'sellerprofile.php';
-            } else {
-                require_once './sellerprofile.php';
-        }
-        
+} else{
+            require_once 'sellerprofile.php';
+//            if ($user->getType() == "0") {
+                
+//            } else {
+//                require_once './sellerprofile.php';
+//        }
             }
-        } else
-        {
-            redirect();
+//        } else
+//        {
+//            redirect();
         }
         function redirect(){
             header("Location: index.php");

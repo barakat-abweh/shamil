@@ -1,5 +1,17 @@
 function getCity(){
-      $city_id=$('#country').find('option:selected').attr('id');
+      $country_id=$('#country').find('option:selected').attr('id');
+      $.post("../includes/getcities.php",
+    {
+        country_id:$country_id
+    },
+    function(data, status){
+        if(data=='0'){
+             sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
+        }
+        else{
+            $('#city').html(data);
+        }
+    });
     }
 
 $(document).ready(function(){ 

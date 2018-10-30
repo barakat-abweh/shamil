@@ -53,12 +53,12 @@
                 </fieldset>
                 <fieldset class="form-group col-md-5">
                     <label for="phone1" class="control-label">Phone number</label>
-                    <input class="form-control "  name="phone1" id="phone1"  maxlength="10" type="text" placeholder="Phone number" />
+                    <input class="form-control "  name="phone1" id="phone1"  minlength="10" maxlength="10" type="text" placeholder="Phone number" />
                 </fieldset>
                 
                   <fieldset class="form-group col-md-5">
                     <label for="phone2" class="control-label">Phone number</label>
-                    <input class="form-control "  name="phone2" id="phone2"  maxlength="10" type="text" placeholder="Phone number" />
+                    <input class="form-control "  name="phone2" id="phone2"  minlength="10" maxlength="10" type="text" placeholder="Phone number" />
                 </fieldset>
     
                 <fieldset class="form-group col-md-5">
@@ -81,13 +81,13 @@
 
                    <fieldset class="form-group col-md-5">
                        <select name="country" id="country" class="button btn btn-primary form-control" onchange="getCity()">
-                        <option>choose country</option>
+                       <option>choose country</option>
                         <?php
                         if(isset($db)){
                             $query="SELECT `country_id`, `country_name` FROM `country`";
                             $res=$db->query($query);
                             while($result=$db->fetchArray($res)){
-                                echo "<option i d=\"".$result['country_id']."\">".$result['country_name']."</option>";
+                                echo "<option id=".$result['country_id'].">".$result['country_name']."</option>";
                             }
                         }
                         ?>
@@ -98,8 +98,6 @@
                 <fieldset class="form-group col-md-5">
                     <select name="city" id="city" class="button btn btn-primary form-control">
                         <option>choose city</option>
-                        <option>Nablus</option>
-                        <option>Ranallah</option>
                     </select>
                 </fieldset>
                         
