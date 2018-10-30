@@ -77,64 +77,80 @@ public function setId($id){
     public function getFname(){  
         $query = "select fname from users where user_id=$this->id";
          $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result); 
+         $result=$this->dataBase->fetchArray($result); 
         return $result['fname'];
     }
 
     public function getLname() {
         $query = "select lname from users where user_id=$this->id";
         $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
+         $result=$this->dataBase->fetchArray($result);    
         return $result['lname'];
     }
-
+    public function getUname() {
+        $query = "select uname from users where user_id=$this->id";
+        $result= $this->dataBase->query($query);
+         $result=$this->dataBase->fetchArray($result);    
+        return $result['uname'];
+    }
     public function getEmail() {
         $query = "select email from users where user_id=$this->id";
        $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
+         $result=$this->dataBase->fetchArray($result);    
         return $result['email'];
     }
 
     public function getPassword() {
         $query = "select password from users where user_id=$this->id";
        $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
+         $result=$this->dataBase->fetchArray($result);    
         return $result['password'];
     }
 
     public function getType() {
         $query = "select type from users where user_id=$this->id";
        $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);
+         $result=$this->dataBase->fetchArray($result);
         return $result['type'];
     }
 
     public function getAddress() {
-        $query = "select address from users where user_id=$this->id";
+        $query = "select country_id,city_id from users where user_id=$this->id";
        $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
-        return $result['address'];
+         $result=$this->dataBase->fetchArray($result);   
+         $country_id=$result['country_id'];
+         $city_id=$result['city_id'];
+         $query="SELECT  `country_name` FROM `country` WHERE country_id=$country_id";
+         $result= $this->dataBase->query($query);
+         $result=$this->dataBase->fetchArray($result);
+         $country_name=$result['country_name'];
+         $query="SELECT  `city_name` FROM `city` WHERE city_id=$city_id";
+         $result= $this->dataBase->query($query);
+         $result=$this->dataBase->fetchArray($result);
+         $city_name=$result['city_name'];
+         return $country_name."-".$city_name;
+         
     }
 
     public function getDetails() {
-        $query = "select biography from users where user_id=$this->ID";
+        $query = "select biography from users where user_id=$this->id";
       $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
+         $result=$this->dataBase->fetchArray($result);    
         return $result['biography'];
     }
 
     public function getUserName() {
-        $query = "select username from users where userid=$this->ID";
+        $query = "select username from users where userid=$this->id";
         $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
+         $result=$this->dataBase->fetchArray($result);    
         return $result['username'];
     }
 
     public function getPhone() {
-        $query = "select phone from users where userid=$this->ID";
+        $query = "select phone1,phone2 from users where user_id=$this->id";
       $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
-        return $result['phone'];
+         $result= $this->dataBase->fetchArray($result);    
+        return $result['phone1']."/".$result['phone2'];
     }
 
 

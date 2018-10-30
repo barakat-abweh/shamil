@@ -56,7 +56,7 @@
             if ($user->getType() == "0") {
                 require_once 'sellerprofile.php';
             } else {
-                require_once 'buyerhome.php';
+                require_once './sellerprofile.php';
         }
         
             }
