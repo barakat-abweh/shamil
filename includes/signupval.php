@@ -125,23 +125,19 @@ if ($flag && $flag1 && $flag2&& $flag3 && $flag4 && $flag5 && $flag6 && $flag7) 
             $USER->setType($type);
             $USER->setCountry($country);
             $USER->setCity($city);
-            
            if(!$USER->signUp())redirectValues();
            else{
-               redirect();
-           }
-           /*else{
-               echo "done";
-             /*  require_once 'session.php';
-               $session->signup($user);
-             if(!file_exists("../users/user$ID"))mkdir("../users/user$ID");
-             if(!file_exists("../users/user$ID/Images"))mkdir("../users/user$ID/Images");
-             if(!file_exists("../users/user$ID/Images/Products"))mkdir("../users/user$ID/Images/Products");
-             if(!file_exists("../users/user$ID/Images/Profile"))mkdir("../users/user$ID/Images/Profile");
-             if(!file_exists("../users/user$ID/Images/Profile/uploads"))mkdir("../users/user$ID/Images/Profile/uploads");
-             if(!file_exists("../users/user$ID/Images/Profile/uploads/small"))mkdir("../users/user$ID/Images/Profile/uploads/small");
-             if(!file_exists("../users/user$ID/Images/Profile/uploads/medium"))mkdir("../users/user$ID/Images/Profile/uploads/medium");      
-            }*/
+             $uid=$USER->getID();
+            if(!file_exists("../users/$uid"))mkdir("../users/$uid");
+             if(!file_exists("../users/$uid/images"))mkdir("../users/$uid/images");
+             if(!file_exists("../users/$uid/images/properties"))mkdir("../users/$uid/images/properties");
+             if(!file_exists("../users/$uid/images/profile"))mkdir("../users/$uid/images/profile");
+             if(!file_exists("../users/$uid/images/profile/uploads"))mkdir("../users/$uid/images/profile/uploads");
+             if(!file_exists("../users/$uid/images/profile/uploads/small"))mkdir("../users/$uid/images/profile/uploads/small");
+             if(!file_exists("../users/$uid/images/profile/uploads/medium"))mkdir("../users/$uid/images/profile/uploads/medium");    
+            require_once 'session.php';
+            $session->signup($USER);
+            }
     }
     
 }

@@ -4,9 +4,8 @@
      
         require_once '../includes/session.php';
         if ($session->isLoggedIn()) {
-            redirectTo("profile.php");
+            redirectTo("home.php");
         }
-
         function redirectTo($page) {#redirect  page
         error_reporting(E_ALL);
             header("Location: $page");

@@ -165,15 +165,14 @@ public function setId($id){
     }
 
     public function getID(){
-        $query = "select user_id from users where email='$this->email'";
-        $result= $this->dataBase->query($query);
-        $result=mysqli_fetch_assoc($result);
+        $query = "select `user_id` from users where `email`='$this->email'";
+        $result=$this->dataBase->query($query);
+        $result=$this->dataBase->fetchArray($result);
         return $result['user_id'];
     }
     public function signUp() {
         $query = "INSERT INTO users (`fname`, `lname`,`uname`, `email`, `password`,`type`,`country_id`,`city_id`,`phone1`, `phone2`) VALUES ('$this->fname','$this->lname','$this->uname', '$this->email','$this->password','$this->type','$this->country','$this->city','$this->phone1','$this->phone2');";
         $s=$this->getDataBase()->query($query);
-         $this->getDataBase()->closeConnection();
         if(!$s)return false;
         return true;
     }
