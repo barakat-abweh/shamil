@@ -60,26 +60,14 @@
                         <div class="col-12 col-md-4 col-lg-3">
                                     <div class="form-group">
                                         <select class="form-control" id="cities">
-                                            <option>City</option>
-                                            <option>Riga</option>
-                                            <option>Melbourne</option> 
+                                           <?php echo $user->getUserCities();?> 
                                         </select>        
                             </div>
                               
-                                <input class="form-control" type="text" placeholder="Type">                    
-                                <textarea class="form-control" id="Discripton" placeholder="Discripton" rows="3"></textarea>
-                                  
-                                </div>
                                 
-<!-- ************************************************************************************************ List cat and pice and button -->
-
-                        <div class="col-12 col-md-4 col-lg-3">    
-                                <div class="form-group">
+                                   <div class="form-group">
                                         <select class="form-control" id="catagories">
-                                            <option>Catagories</option>
-                                            <option>Farm</option>
-                                            <option>House</option>
-                                            <option>Store</option>
+                                           <?php echo $property->getTypes();?>
                                         </select>
                                     </div>
                                  
@@ -93,10 +81,12 @@
                                         <span class="input-group-text">.00</span>
                                     </div>
                                 </div>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
+                                </div>
+                                
+<!-- ************************************************************************************************ List cat and pice and button -->
+
+                        <div class="col-12 col-md-4 col-lg-3">                
+                                <textarea class="form-control" id="Discripton" placeholder="Discripton" rows="3"></textarea>
                             <button type="button" class="btn btn-primary insert_new_real">Insert New </button>
                         </div>      
 

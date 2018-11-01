@@ -17,8 +17,6 @@
             <div class="row">
                 <!--************************************** First ***************************************** -->
                 <?php
-                require_once '../includes/property.php';
-                $property->setDataBase($database);
                 $res=$property->getRandomProperties();
                 while($result=$database->fetchArray($res))
                         {

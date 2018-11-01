@@ -93,7 +93,15 @@ class property {
          return $result['type_name'];
     }
     
-    
+     public function getTypes() {
+         $query="SELECT `type_id`, `type_name` FROM `property_type`";
+         $result= $this->dataBase->query($query);
+         $finalResult="";
+            while($res= $this->dataBase->fetchArray($result)){
+                $finalResult.="<option id='".$res['type_id']."'>".$res['type_name']."</option>";
+            }
+            return $finalResult;  
+     }
     public function setType($type) {
         $this->type = $this->dataBase->escape($type);
     }

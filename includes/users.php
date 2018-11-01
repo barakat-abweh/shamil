@@ -176,6 +176,21 @@ public function setId($id){
         if(!$s)return false;
         return true;
     }
+    public function getUserCities(){
+            $query="SELECT `city_id`,`city_name` FROM `city` WHERE country_id=".$this->getCountryId();
+            $result= $this->dataBase->query($query);
+            $finalResult="";
+            while($res= $this->dataBase->fetchArray($result)){
+                $finalResult.="<option id='".$res['city_id']."'>".$res['city_name']."</option>";
+            }
+            return $finalResult;  
+    }
+    public function getCountryId(){
+        $query="SELECT `country_id` FROM `users` WHERE `user_id`=$this->id";
+        $result= $this->dataBase->query($query);
+        $result= $this->dataBase->fetchArray($result);
+        return $result['country_id'];
+    }
 }
 $user = new user();
 

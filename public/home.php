@@ -35,6 +35,8 @@
 
  require_once '../includes/users.php';
         require_once '../includes/database.php';
+        require_once '../includes/property.php';
+        $property->setDataBase($database);
         global $database;
         $user->setDataBase($database);
         require_once '../includes/session.php';
