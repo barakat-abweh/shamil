@@ -68,7 +68,7 @@
     <!-- Active js -->
     <script src="../scripts/active.js"></script>
     <script src="../scripts/sweetalert.min.js"></script>
-     <script src="../js/profilesallerpage.js"></script>
+    <script src="../js/profilesallerpage.js"></script>
     <script src="../scripts/signin.js"></script>
 </body>
 

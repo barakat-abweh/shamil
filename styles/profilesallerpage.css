@@ -1802,9 +1802,10 @@ img {
     cursor: pointer;
 }
 .uploud_pic{
-    margin-top: 25  px;
+    margin-top: 25px;
 }
-#Discripton{
+#Descripton{
+ overflow-x: scroll;
  resize: none;    
 }
 /*.insert_new_real{
