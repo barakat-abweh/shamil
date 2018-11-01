@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="row">
                 <div class="logo">
-                    <a href="#"><img src="../images/office_R_blue.png" alt=""></a>
+                    <a href="index.php"><img src="../images/office_R_blue.png" alt=""></a>
                 </div>
 				<div class="col">
                     <div class="header_content d-flex flex-row align-items-center justify-content-start">

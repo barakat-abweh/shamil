@@ -81,13 +81,13 @@
                                         <span class="input-group-text">.00</span>
                                     </div>
                                 </div>
+                            <button type="button" class="btn btn-primary col-md-12">Insert New </button>
                                 </div>
                                 
 <!-- ************************************************************************************************ List cat and pice and button -->
 
                         <div class="col-12 col-md-4 col-lg-3">                
-                                <textarea class="form-control" id="Discripton" placeholder="Discripton" rows="3"></textarea>
-                            <button type="button" class="btn btn-primary insert_new_real">Insert New </button>
+                                <textarea class="" id="Discripton" placeholder="Discripton"></textarea>
                         </div>      
 
                             </div>
