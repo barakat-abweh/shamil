@@ -87,7 +87,7 @@
 <!-- ************************************************************************************************ List cat and pice and button -->
 
                         <div class="col-12 col-md-4 col-lg-3">                
-                                <textarea class="md-" id="Discripton" placeholder="Discripton"></textarea>
+                            <textarea class="" id="Descripton" placeholder="Descripton" rows="9"></textarea>
                         </div>      
 
                             </div>
