@@ -17,7 +17,6 @@ class session {
     }
 
     private function checkLogIn() {
-    
         if (isset($_SESSION['userid']) && $this->cookie->checkLogIn("userid",md5($_SESSION['userid']))){
             $this->userid = $_SESSION['userid'];
            self::$loggedin = true;
