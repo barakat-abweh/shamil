@@ -33,7 +33,7 @@
  * and open the template in the editor.
  */
 
- require_once '../includes/users.php';
+        require_once '../includes/users.php';
         require_once '../includes/database.php';
         require_once '../includes/property.php';
         $property->setDataBase($database);
