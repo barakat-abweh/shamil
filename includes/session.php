@@ -61,11 +61,6 @@ class session {
     }
     
     public function signup($user){
-        echo "123";
-        echo $user;
-        global $ID;
-        global $id;
-        echo $ID."   ".$id;
   /*   if (isset($ID) && !self::$loggedin) {
           $this->userid = $_SESSION['userid'] = $ID;
           $this->cookie->setCookie("userid",md5($ID),time() + (86400 * 30),"/",null,false,true);
