@@ -61,16 +61,15 @@ class session {
     }
     
     public function signup($user){
-  /*   if (isset($ID) && !self::$loggedin) {
-          $this->userid = $_SESSION['userid'] = $ID;
-          $this->cookie->setCookie("userid",md5($ID),time() + (86400 * 30),"/",null,false,true);
+     if (isset($user) && !self::$loggedin) {
+          $this->userid = $_SESSION['userid'] = $user->getID();
+          $this->cookie->setCookie("userid",md5($this->userid),time() + (86400 * 30),"/",null,false,true);
           self::$loggedin = true;
            header("Location: ../public/index.php");
      }   
      else {
                header("Location: ../public/index.php");
-          }*/
-        
+          }  
     }
 
     public function getUserId() {
