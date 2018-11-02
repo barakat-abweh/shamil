@@ -146,7 +146,7 @@
                     <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Property Thumbnail -->
                         <div class="property-thumb">
-                            <img src="../images/bg-img/feature1.jpg" alt="">
+                            <img src="<?php echo "../users/".$session->getUserId()."/images/properties/".$result['property_id']."/1.png"; ?>" alt="">
                             <div class="list-price">
                                 <h3><p><?php
                                echo $result['price'];
