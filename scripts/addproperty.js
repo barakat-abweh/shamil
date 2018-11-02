@@ -123,6 +123,7 @@ $(document).ready(function () {
         $type = false;
         $quantity = false;
         $description = false;
+        $area=false;
         if ($("#img1").val() == "") {
             //alert("c");
             sweetAlert("Oops...", "Upload image1", "error");
@@ -175,7 +176,14 @@ $(document).ready(function () {
             $price = true;
 
         }
-        if (($("#Descripton").val().length < 1 || $("#Descripton").val().length > 300) && $name && $type && $price && $img1 && $img2 && $img3 && $img4) {
+        if ((!checkNum($("#area").val()) || $("#area").val().length < 1 || $("#area").val().length > 10) && $price && $name && $type && $img1 && $img2 && $img3 && $img4) {
+
+            sweetAlert("Oops...", "area must be Numbers, no characters allowed", "error");
+        } else {
+            $area = true;
+
+        }
+        if (($("#Descripton").val().length < 1 || $("#Descripton").val().length > 300) && $name && $area && $type && $price && $img1 && $img2 && $img3 && $img4) {
 
             sweetAlert("Oops...", "Descrtion should me under 300 characters", "error");
 
@@ -183,7 +191,7 @@ $(document).ready(function () {
             $description = true;
         }
         if ($name && $type && $price && $description && $img1 && $img2 && $img3 && $img4) {
-            $('#add-property').attr('action', '../includes/add-property.php');
+            $('#add-property').attr('action', '../includes/addproperty.php');
             $('#add-property').submit();
         } else {
             e.preventDefault();

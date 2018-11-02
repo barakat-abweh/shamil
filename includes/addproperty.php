@@ -2,24 +2,24 @@
 $name;
 $type;
 $price;
-$offers;
-$quantitiy;
-$info;
+$city;
+$description;
+$area;
 $flag1= FALSE;
 $flag2 = FALSE;
 $flag3 = FALSE;
 $flag4 = FALSE;
 $flag5 = FALSE;
 $flag6= FALSE;
-$flag7=FALSE;
+$flag7 = FALSE;
 require_once 'session.php';
 $userid;
 if($session->isLoggedIn()){$userid=$session->getUserId();
 
 }
-        else die("<h1>No Profile</h1>");   
+        else    redirect ();
 if ($_SERVER["REQUEST_METHOD"] == "POST") { #check type request 
- $field=htmlspecialchars($_POST['name']);
+ $field=htmlspecialchars($_POST['property_name']);
     if(!isEmtpy($field)){
         $field=trim($field);
      if(checkName($field)){$name=$field;$flag1=true;}
@@ -34,76 +34,64 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { #check type request
     }
     $field=htmlspecialchars($_POST['price']);
      if(!isEmtpy($field)){
-     if(checkPrice($field)){$price=$field;$flag3=true; } 
+     if(checkPrice($field)){$price=$field;$flag3=true;} 
      else redirect();
     }
-    $field=htmlspecialchars($_POST['offer']);
+    $field=htmlspecialchars($_POST['city']);
      if(!isEmtpy($field)){
-     if(checkOffer($field)){$offers=$field;$flag4=true; } 
+     if(checkChar($field)){
+         $city=$field;$flag4=true;} 
      else redirect();
     }
-     $field=htmlspecialchars($_POST['quantity']);
+     $field=htmlspecialchars($_POST['description']);
      if(!isEmtpy($field)){
-    if(checkQuant($field)){ $quantitiy=$field;$flag5=true;}
+    if(checkNum_Char($field)){ $description=$field;$flag5=true;}
     }
-    $field=htmlspecialchars($_POST['info']);
-     if(!isEmtpy($field)){
-         $field=trim($field);
-    if(checkMoreinfo($field)){ $info=$field;$flag6=true;}
-    }
-    
     for($i=1;$i<=4;$i++){   
         $flag7=false;
-    $target_file=basename($_FILES["fileToUpload".$i]["name"]); 
-    $size= getsize($_FILES["fileToUpload".$i]["tmp_name"]);
-    $imgsize=$_FILES["fileToUpload".$i]["size"];
+    $target_file=basename($_FILES["img".$i]["name"]); 
+    $size= getsize($_FILES["img".$i]["tmp_name"]);
+    $imgsize=$_FILES["img".$i]["size"];
     $imageFileType=pathinfo($target_file,PATHINFO_EXTENSION);
-    if($size && fileexist($target_file) && checkuploadsize($imgsize) && checktype($imageFileType) ){$flag7=true;}
+    if($size && fileexist($target_file) && checkuploadsize($imgsize) && checktype($imageFileType) ){$flag6=true;}
     else  redirect();
-}
-
-
-    
+}   
+$field=htmlspecialchars($_POST['area']);
+     if(!isEmtpy($field)){
+    if(checkNum($field)){ 
+        $area=$field;$flag7=true;
+    }
+    }
     if ($flag1 && $flag2 && $flag3 && $flag4 && $flag5 && $flag6 && $flag7) {
-       require_once ('good.php');
-       $good->connectDatabase();
-        if (isset($good)) {
-          $good->setName($name);
-          $good->setType($type);
-          $good->setPrice($price);
-          $good->setOffers($offers);
-          $good->setQuantity($quantitiy);
-          $good->setMoreDelts($info);  
-          $good->setUserId($userid);
-         $goid= $good->getLatestId()+1;
-         $good->setId($goid);
-          $good->storeGood();
-         mkdir("../users/user$userid/Images/Products/$goid");
-        $target_dir="../users/user$userid/Images/Products/$goid";
-        $PNG_WEB_DIR = "../users/user$userid/Images/Products/".$goid."/"; 
-        $text="http://easytrade.comli.com/public/Product.php?goodid=$goid";  
-        $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR."$PNG_WEB_DIR".DIRECTORY_SEPARATOR;
-             $filename = $PNG_TEMP_DIR.'test.png';
-        include "phpqrcode/qrlib.php";   
-        $errorCorrectionLevel = 'Q';
-            $matrixPointSize = 3;   
-         $filename = $PNG_TEMP_DIR.'test'.md5($errorCorrectionLevel.'|'.$matrixPointSize).'.png';
-            $filename=$PNG_TEMP_DIR."Qrcode.png";
-        QRcode::png($text, $filename, $errorCorrectionLevel, $matrixPointSize, 2);  
-        
-       header("Location: ../public/MyProfile.php");
+       require_once ('./property.php');
+       require_once './database.php';
+       $property->setDataBase($database);
+       if (isset($property)) {
+          $property->setName($name);
+          $property->setType($type);
+          $property->setPrice($price);
+          $property->setCity($city);
+          $property->setDescription($description);
+          $property->setOwnerId($userid);
+          $propertyid=$property->getLatestId()+1;
+         $property->setId($propertyid);
+         $property->setArea($area);
+         $property->storeproperty();
+         $target_dir="../users/$userid/images/properties/$propertyid";
+         mkdir($target_dir);
+         $PNG_WEB_DIR = $target_dir."/";
        #save images for good in targer_path
           for($i=1;$i<=4;$i++){
-             // if(move_uploaded_file($_FILES["fileToUpload"."$i"]["tmp_name"], "$target_dir\\$i.$imageFileType"));
-              if(move_uploaded_file(imagepng(imagecreatefromstring(file_get_contents($_FILES["fileToUpload"."$i"]["tmp_name"])), "$target_dir/$i.png"))){
-            $target_file=basename($_FILES["fileToUpload".$i]["name"]);
+             // if(move_uploaded_file($_FILES["img"."$i"]["tmp_name"], "$target_dir\\$i.$imageFileType"));
+              if(move_uploaded_file(imagepng(imagecreatefromstring(file_get_contents($_FILES["img"."$i"]["tmp_name"])), "$target_dir/$i.png"))){
+            $target_file=basename($_FILES["img".$i]["name"]);
           //  $imageFileType=pathinfo($target_file,PATHINFO_EXTENSION);
               }
            
           }
               
         }
-     
+        redirect();
     }
     
     
@@ -189,7 +177,7 @@ function checkMoreinfo($checkMoreinfo){
 # functions to Check the status of letters;
 
 function redirect(){ #redirect page
-    header("Location: ../public/addProduct.php");
+    header("Location: ../public/home.php");
 }
 
 function checkChar($value) {

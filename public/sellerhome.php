@@ -63,14 +63,14 @@
                                 </div>
                             
                                     <div class="form-group">
-                                        <select class="form-control" id="cities">
+                                        <select class="form-control" name="city" id="cities">
                                            <?php echo $user->getUserCities();?> 
                                         </select>        
                             </div>
                               
                                 
                                    <div class="form-group">
-                                        <select class="form-control" id="catagories">
+                                       <select class="form-control" name="type" id="catagories">
                                            <?php echo $property->getTypes();?>
                                         </select>
                                     </div>
@@ -90,9 +90,15 @@
 <!-- ************************************************************************************************ List cat and pice and button -->
 
                         <div class="col-12 col-md-4 col-lg-3">                
-                            <textarea class="" id="Descripton" name="description" placeholder="Descripton" rows="7"></textarea>
+                            <div class="form-group">
+                                    <input placeholder="Area" type="text" class="form-control" name="area" id="area"/>
+                                </div>
+                            <div class="form-group">
+                            <textarea class="" id="Descripton" name="description" placeholder="Descripton" rows="4"></textarea>
+                            </div>
+                            <div class="form-group">
                         <button type="button" class="btn btn-primary col-md-11" id="add_new_property">Add New Property</button>
-
+                        </div>
                         </div>      
 
                             </div>

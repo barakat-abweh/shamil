@@ -8,10 +8,7 @@ class property {
     private $cityid;
     private $description;
     private $price;
-    private $offers;
     private $type;
-    private $quantity;
-    private $moreDetls;
     private $c_date; #created date
     private $img1;
     private $img2;
@@ -47,18 +44,25 @@ class property {
        $this->id = $this->dataBase->escape($id);
        
     }
-    
+    public function setDescription($description)
+    {
+        $this->description=$this->dataBase->escape($description);
+    }
+    public function setArea($area){
+        $this->area=$this->dataBase->escape($area);
+    }
+
     public function getLatestId(){
-        $r="SELECT MAX(`goodid`) from `goods`";
-        $r=$this->getDataBase()->query($r);  
-         $r = mysqli_fetch_row($r);
-        $highest_id = $r[0];
+        $r="SELECT MAX(`property_id`) from `property`";
+        $r=$this->dataBase->query($r);
+         $r = $this->getDataBase()->fetchArray($r);
+        $highest_id = $r['MAX(`property_id`)'];
        return  $highest_id;
     }
     
     
     
-     public function getUserId() {
+     public function getOwnerId() {
          $query = "select userid from goods where goodid=$this->id";
          $result= $this->dataBase->query($query);
          $result=mysqli_fetch_assoc($result);    
@@ -66,8 +70,8 @@ class property {
 
     }
     
-    public function setUserId($userid) {
-        $this->userid = $this->dataBase->escape($userid);
+    public function setOwnerId($ownerid) {
+        $this->ownerid = $this->dataBase->escape($ownerid);
     }
     
     public function getName() {
@@ -104,8 +108,14 @@ class property {
      }
     public function setType($type) {
         $this->type = $this->dataBase->escape($type);
+        $query="SELECT `type_id` FROM `property_type` WHERE `type_name`='$this->type'";
+        $result= $this->dataBase->query($query);
+        $result=$this->dataBase->fetchArray($result);
+        $this->setTypeId($result['type_id']);
     }
-    
+    public function setTypeId($typeid) {
+        $this->type=$this->dataBase->escape($typeid);
+    }
     public function getPrice() {
    $query = "select price from property where property_id=$this->id";
          $result= $this->dataBase->query($query);
@@ -115,20 +125,21 @@ class property {
     public function setPrice($price) {
         $this->price = $this->dataBase->escape($price);
     }
-    
-   
-     public function setQuantity($quantity){
-        $this->quantity = $this->dataBase->escape($quantity);
+    public function setCity($cityname) {
+        $cityname= $this->dataBase->escape($cityname);
+      $query="SELECT `city_id` FROM `city` WHERE `city_name`='$cityname'";
+      $result=$this->dataBase->query($query);
+      $result= $this->dataBase->fetchArray($result);
+      $this->setCityId($result['city_id']);
     }
-    
-    
-    public function getQuantity(){
+    public function setCityId($cityid) {
+        $this->cityid= $this->dataBase->escape($cityid);
+    }
+    public function getCity(){
  $query = "select  quantity from goods where goodid=$this->id";
          $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
+         $result= $this->dataBase->fetchArray($result);    
         return $result['quantity'];
-    
-    
     }    
 
     public function getQrcode(){
@@ -291,11 +302,10 @@ $query = "select additiondate from goods where goodid=$this->id";
         return false;
     }
     
-    public function storeGood(){  
-        $query = "INSERT INTO `goods`(`goodname`,`goodtype`, `goodprice`, `userid`, `offers`, `moredetails`, `quantity` ,`deleted`)";
-        $query.="VALUES('$this->name','$this->type',$this->price,'$this->userid',$this->offers,'$this->moreDetls',$this->quantity,'0')";
+    public function storeproperty(){  
+        $query = "INSERT INTO `property`(`property_id`, `property_name`, `owner_id`, `area`, `city_id`, `description`, `price`, `type`, `deleted`)";
+        $query.="VALUES('$this->id','$this->name',$this->ownerid,$this->area,$this->cityid,'$this->description',$this->price,$this->type,'0')";
         $result=  $this->getDataBase()->query($query);
-        $this->getDataBase()->closeConnection();
     }  
     
     
