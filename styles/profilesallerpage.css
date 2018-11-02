@@ -1805,8 +1805,8 @@ img {
     margin-top: 25px;
 }
 #Descripton{
- overflow-x: scroll;
- resize: none;    
+ resize: none;
+ overflow-x: none;
 }
 /*.insert_new_real{
     float: right;

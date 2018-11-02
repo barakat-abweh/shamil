@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
     <link rel="stylesheet" href="../styles/owl.carousel.css">
     <link rel="stylesheet" href="../styles/magnific-popup.css">
+    <link rel="stylesheet" href="../styles/sweetalert.css">
 
 </head>
 
@@ -70,6 +71,8 @@
     <script src="../scripts/sweetalert.min.js"></script>
     <script src="../scripts/profilesallerpage.js"></script>
     <script src="../scripts/signin.js"></script>
+    <script src="../scripts/sweetalert.min.js"></script>
+    <script src="../scripts/addproperty.js"></script>
 </body>
 
 </html>

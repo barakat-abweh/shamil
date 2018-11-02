@@ -5,26 +5,26 @@
                 <div class="col-12 ">
                     <div class="advanced-search-form">                     
                         <!-- Search Form -->
-                        <form action="#" method="post" id="advanceSearch" >
+                        <form action="#" method="post" id="add-property" enctype="multipart/form-data" >
                             <div class="row ">
         <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 ">  
 <!-- ***************************************************************************************************** 1 image -->
                     <div class="input-group ">
-                            <input type="text" class="form-control file-upload-text " disabled placeholder="select a picture 1" />
+                            <input type="text" class="form-control file-upload-text " disabled placeholder="select picture 1" />
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-success file-upload-btn ">
                                     Browse...
-                                    <input type="file" class="file-upload uploud_pic" name="myFile" />
+                                    <input type="file" class="file-upload uploud_pic" name="img1" id="img1" />
                                 </button>
                             </span>
                     </div><br>
 <!-- ***************************************************************************************************** 2 image -->
                     <div class="input-group">
-                            <input type="text" class="form-control file-upload-text" disabled placeholder="select a picture 2" />
+                            <input type="text" class="form-control file-upload-text" disabled placeholder="select picture 2" />
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-success file-upload-btn">
                                     Browse...
-                                    <input type="file" class="file-upload" name="myFile" />
+                                    <input type="file" class="file-upload" name="img2" id="img2" />
                                 </button>
                             </span>
                     </div><br>
@@ -32,11 +32,11 @@
                                     
 <!-- ***************************************************************************************************** 3 image -->
                     <div class="input-group">
-                            <input type="text" class="form-control file-upload-text" disabled placeholder="select a picture 3" />
+                            <input type="text" class="form-control file-upload-text" disabled placeholder="select picture 3" />
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-success file-upload-btn">
                                     Browse...
-                                    <input type="file" class="file-upload" name="myFile" />
+                                    <input type="file" class="file-upload" name="img3" id="img3" />
                                 </button>
                             </span>
                     </div><br>
@@ -45,11 +45,11 @@
                                     
 <!-- ***************************************************************************************************** 4 image -->
                 <div class="input-group">
-                            <input type="text" class="form-control file-upload-text" disabled placeholder="select a picture 4" />
+                            <input type="text" class="form-control file-upload-text" disabled placeholder="select picture 4" />
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-success file-upload-btn">
                                     Browse...
-                                    <input type="file" class="file-upload" name="myFile" />
+                                    <input type="file" class="file-upload" name="img4" id="img4" />
                                 </button>
                             </span>
                     </div>             
@@ -58,6 +58,10 @@
  <!-- ************************************************************************************************** List and Text area(dis) -->
              
                         <div class="col-12 col-md-4 col-lg-3">
+                            <div class="form-group">
+                                    <input placeholder="Name" type="text" class="form-control" name="property_name" id="property_name"/>
+                                </div>
+                            
                                     <div class="form-group">
                                         <select class="form-control" id="cities">
                                            <?php echo $user->getUserCities();?> 
@@ -76,18 +80,19 @@
                                   <div class="input-group-prepend">
                                     <span class="input-group-text">$</span>
                                   </div>
-                                    <input placeholder="Price " type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                    <input placeholder="Price " type="text" id="price" name="price" class="form-control" aria-label="Amount (to the nearest dollar)">
                                     <div class="input-group-append">
                                         <span class="input-group-text">.00</span>
                                     </div>
                                 </div>
-                            <button type="button" class="btn btn-primary col-md-12">Insert New </button>
                                 </div>
                                 
 <!-- ************************************************************************************************ List cat and pice and button -->
 
                         <div class="col-12 col-md-4 col-lg-3">                
-                            <textarea class="" id="Descripton" placeholder="Descripton" rows="9"></textarea>
+                            <textarea class="" id="Descripton" name="description" placeholder="Descripton" rows="7"></textarea>
+                        <button type="button" class="btn btn-primary col-md-11" id="add_new_property">Add New Property</button>
+
                         </div>      
 
                             </div>

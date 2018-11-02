@@ -22,16 +22,16 @@ $(document).ready(function () {
         return /[^.]+$/.exec(filename);
     }
 
-    $("#fileToUpload1").change(function () {
+    $("#img1").change(function () {
         Change(this);
     });
-    $("#fileToUpload2").change(function () {
+    $("#img2").change(function () {
         Change(this);
     });
-    $("#fileToUpload3").change(function () {
+    $("#img3").change(function () {
         Change(this);
     });
-    $("#fileToUpload4").change(function () {
+    $("#img4").change(function () {
         Change(this);
     });
     function Change(element) {
@@ -113,7 +113,7 @@ $(document).ready(function () {
     }
 
 
-    $('#button').click(function (e) {
+    $('#add_new_property').click(function (e) {
         $img1 = false;
         $img2 = false;
         $img3 = false;
@@ -122,43 +122,46 @@ $(document).ready(function () {
         $price = false;
         $type = false;
         $quantity = false;
-        $info = false;
-        $offer = false;
-
-        if ($("#fileToUpload1").val() == "") {
+        $description = false;
+        if ($("#img1").val() == "") {
             //alert("c");
             sweetAlert("Oops...", "Upload image1", "error");
         } else {
             $img1 = true;
         }
-        if (($("#fileToUpload2").val() == "") && $img1) {
+        if (($("#img2").val() == "") && $img1) {
             //alert("c");
             sweetAlert("Oops...", "Upload image2", "error");
         } else {
             $img2 = true;
         }
-        if (($("#fileToUpload3").val() == "") && $img1 && $img2) {
+        if (($("#img3").val() == "") && $img1 && $img2) {
             //alert("c");
             sweetAlert("Oops...", "Upload image3", "error");
         } else {
             $img3 = true;
         }
-        if (($("#fileToUpload4").val() == "") && $img1 && $img2 && $img3) {
+        if (($("#img4").val() == "") && $img1 && $img2 && $img3) {
             //alert("c");
             sweetAlert("Oops...", "Upload image4", "error");
         } else {
             $img4 = true;
         }
-
-
-        if ((!checkNum_Char($("#name").val()) || $("#name").val().length < 3 || $("#name").val().length > 20) && $img1 && $img2 && $img3 && $img4) {
+        if ((!checkNum_Char($("#property_name").val()) || $("#property_name").val().length < 3 || $("#property_name").val().length > 20) && $img1 && $img2 && $img3 && $img4) {
             sweetAlert("Oops...", "Product Name must be at least 4 characters, no special characters allowed", "error");
             // alert("Product Name must be at least 4 characters, no special characters allowed");
         } else {
             $name = true;
 
         }
-        if ((!checkNum_Char($("#type").val()) || $("#type").val().length < 3 || $("#type").val().length > 20) && $name && $img1 && $img2 && $img3 && $img4) {
+        if ((!checkNum_Char($("#cities").val())) && $name && $img1 && $img2 && $img3 && $img4) {
+
+            sweetAlert("Oops...", "Product type must be at least 4 characters, no special characters allowed", "error");
+        } else {
+            $type = true;
+
+        }
+        if ((!checkNum_Char($("#catagories").val())) && $name && $img1 && $img2 && $img3 && $img4) {
 
             sweetAlert("Oops...", "Product type must be at least 4 characters, no special characters allowed", "error");
         } else {
@@ -172,29 +175,16 @@ $(document).ready(function () {
             $price = true;
 
         }
-        if ((!checkNum($("#offer").val()) || $("#offer").val().length <= 0 || $("#offer").val() < 0 || $("#offer").val() > 100) && $name && $type && $price && $img1 && $img2 && $img3 && $img4) {
+        if (($("#Descripton").val().length < 1 || $("#Descripton").val().length > 300) && $name && $type && $price && $img1 && $img2 && $img3 && $img4) {
 
-            sweetAlert("Oops...", "Offer must be between 0 and 100", "error");
-        } else {
-            $offer = true;
-
-        }
-        if ((!checkNum($("#quantity").val()) || $("#quantity").val().length < 1 || $("#quantity").val().length > 10 || $("#quantity").val() <= 0) && $name && $type && $price && $offer && $img1 && $img2 && $img3 && $img4) {
-            sweetAlert("Oops...", "Product quantity must be Numbers, no characters allowed", "error");
-        } else {
-            $quantity = true;
-        }
-        
-        if (($("#info").val().length < 1 || $("#info").val().length > 300) && $name && $type && $price && $offer && $quantity && $img1 && $img2 && $img3 && $img4) {
-
-            sweetAlert("Oops...", "Product info have maximum 300 characters", "error");
+            sweetAlert("Oops...", "Descrtion should me under 300 characters", "error");
 
         } else {
-            $info = true;
+            $description = true;
         }
-        if ($name && $type && $price && $offer && $quantity && $info && $img1 && $img2 && $img3 && $img4) {
-            $('#form-add-product').attr('action', '../includes/validation.php');
-            $('#form-add-product').submit();
+        if ($name && $type && $price && $description && $img1 && $img2 && $img3 && $img4) {
+            $('#add-property').attr('action', '../includes/add-property.php');
+            $('#add-property').submit();
         } else {
             e.preventDefault();
 
