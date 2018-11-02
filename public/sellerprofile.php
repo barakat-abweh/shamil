@@ -2,7 +2,7 @@
         <div class="row">
   		    <div class="col-sm-3"><!--left col-->
                 <div class="text-center">
-                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar  img-thumbnail" alt="avatar">
                         <input type="file" class="text-center center-block file-upload ">
                 </div>
                 <br>
@@ -58,19 +58,26 @@
                       <div class="form-group col-md-6">
                         <br>
                           <div class="col-xs-12  ">
-                             <button type="button" class="btn btn-primary col-xs-6 col-md-12 btn_edit_save">Edit</button>
+                             <button type="button" class="cc btn btn-warning col-xs-6 col-md-4 ">Edit</button>
+                             <button type="button" class="dd btn btn-success col-xs-6 col-md-4 ">Save</button>
                           </div>
                       </div>
                       <div class="form-group col-md-6 ">
                         <br>
                           <div class="col-xs-12 ">
-                             <button type="button" class="btn btn-success col-xs-6 col-md-12 btn_edit_save">Save</button>
                           </div>
                       </div>
-<!-- ******************************************************** End form **********************************************-->             
-          </div><!--/tab-content-->
+                  </div><!--/tab-content-->
+                                              
+         
+<!-- ******************************************************** edit **********************************************-->             
+               
+<!-- ******************************************************** End edit **********************************************-->             
+          
         </div><!--/col-9-->
+            
     </div><!--/row-->
+            
 </div>
     <br><br><br><br><br><br>
 
