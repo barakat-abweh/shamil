@@ -48,7 +48,7 @@
                                             <small id="emailHelp" class="form-text text-muted">You will receive a message to your email, please check it.</small>
                                           </div>
                                         </div>
-                                      <div class="modal-footer"><a href="javascript:;" class="btn btn-primary btn-block">Send to email</a></div>
+                                      <div class="modal-footer"><a href="#" id="resetpass" class="btn btn-primary btn-block">Send to email</a></div>
                                     </div>
                                   </div>
                                 </div>

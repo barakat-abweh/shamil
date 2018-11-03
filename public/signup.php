@@ -32,7 +32,7 @@
         <div class="signup col-md-8 col-md-offset-2">   
 
             <h2 class="border">Sign Up</h2>
-            <b>Do you already have an account?<a href="index.php"> sign in now</a></b>
+            <b>Already have an account?<a href="index.php"> sign in now</a></b>
             <form class="form col-md-offset-2"  action="#" method="POST" id="signup">
                 <fieldset class="form-group col-md-5">
                     <label for="fname" class="control-label">First Name</label>
