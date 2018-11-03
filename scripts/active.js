@@ -50,10 +50,10 @@
     }
 
     // :: Owl Carousel Active Code
-    if ($.fn.owlCarousel) {
+    /*if ($.fn.owlCarousel) {
 
-        var welcomeSlide = $('.hero-slides');
-
+       var welcomeSlide = $('.hero-slides');
+    
         welcomeSlide.owlCarousel({
             items: 1,
             margin: 0,
@@ -64,8 +64,8 @@
             autoplay: true,
             autoplayTimeout: 5000,
             smartSpeed: 1000
-        });
-
+        });*/
+    
        /* welcomeSlide.on('translate.owl.carousel', function () {
             var slideLayer = $("[data-animation]");
             slideLayer.each(function () {
@@ -81,6 +81,7 @@
                 $(this).addClass('animated ' + anim_name).css('opacity', '1');
             });
         });*/
+    
 
         $("[data-delay]").each(function () {
             var anim_del = $(this).data('delay');

@@ -16,8 +16,16 @@
   margin: 0;
   padding: 0; }
 
-body {
+#wrapper {
+  
+      height: 100%;
+    width: 100%;
+    background-image: url(../images/index_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover ;   
   font-family: "Open Sans", sans-serif; }
+
+
 
 h1,
 h2,
@@ -27,6 +35,11 @@ h5,
 h6 {
   color: white;
   font-weight: 600; }
+.modal-backdrop{
+    
+    position:inherit; !important;
+    color: black;
+}
 
 p {
   color: #7d7d7d;

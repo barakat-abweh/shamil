@@ -36,14 +36,14 @@
                                     <button type="button" id="signin" class=" btn btn-primary"> Login</button>
                                     <button type="button" id="signup" class=" btn btn-primary"> Signup</button>
                                 <span  class="btn btn-warning" id="logout" style="color:white;cursor: pointer"  data-toggle="modal" data-target=".bs-example-modal-sm">Forget Password </span>
-                                <div class="modal bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal bs-example-modal-sm"  tabindex="-1" role="dialog" aria-hidden="true">
                                   <div class="modal-dialog modal-sm">
                                     <div class="modal-content">
-                                      <div class="modal-header" style="margin:auto"><center><h4>Change Password</h4></center></div>
-                                      <div class="modal-body"> 
+                                      <div class="modal-header" style="margin:auto;"><h4 style="color:black;">Change Password</h4></div>
+                                      <div class="modal-body" id="forget_pass"> 
                                         
                                           <div class="form-group">
-                                      <div ><h6>Insert your email:</h6></div>
+                                      <div ><h6 style="color:black;">Insert your email:</h6></div>
                                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                             <small id="emailHelp" class="form-text text-muted">You will receive a message to your email, please check it.</small>
                                           </div>

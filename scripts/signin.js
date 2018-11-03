@@ -9,6 +9,10 @@ $(document).ready(function () {
         return a.charCodeAt(0);
     }
 
+    $('#wrapper').css('height', $(window).height());
+
+    
+    
     function checkEmail($param) {
         $status = false;
         if ($param.val().indexOf('@') >= 0 && $param.val().indexOf('.') >= 0)
