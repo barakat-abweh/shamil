@@ -60,26 +60,26 @@ function redirect(){
 					<div class="preview col-md-6">
 						
 						<div class="preview-pic tab-content">
-						  <div class="tab-pane active" ><img src="../images/bg-img/feature1.jpg"id="pic-1"/></div>
+						  <div class="tab-pane active" ><img src="<?php echo "../users/".$property->getOwnerId()."/images/properties/".$property_id."/1.png"; ?>" id="pic-1"/></div>
                         </div>
 						
                       <ul class="preview-thumbnail nav nav-tabs ">
 					
                           	  
                          <li class="active">
-                            <a data-target="#pic-1" data-toggle="tab"  onclick="changepic(0)"><img class="css3_pic" src="../images/bg-img/feature1.jpg" /></a>
+                            <a data-target="#pic-1" data-toggle="tab"  onclick="changepic(0)"><img class="css3_pic" src="<?php echo "../users/".$property->getOwnerId()."/images/properties/".$property_id."/1.png"; ?>" /></a>
                           </li>
                           
                          <li class="active">
-                            <a data-target="#pic-1" data-toggle="tab"  onclick="changepic(1)"><img class="css3_pic" src="../images/bg-img/feature2.jpg" /></a>
+                            <a data-target="#pic-1" data-toggle="tab"  onclick="changepic(1)"><img class="css3_pic" src="<?php echo "../users/".$property->getOwnerId()."/images/properties/".$property_id."/2.png";?>" /></a>
                           </li>
 						 
                          <li class="active">
-                            <a data-target="#pic-2" data-toggle="tab"   onclick="changepic(2)"><img class="css3_pic" src="../images/bg-img/feature3.jpg" /></a>
+                            <a data-target="#pic-2" data-toggle="tab"   onclick="changepic(2)"><img class="css3_pic" src="<?php echo "../users/".$property->getOwnerId()."/images/properties/".$property_id."/3.png";?>" /></a>
                          </li>  
 						  
                          <li class="active  ">
-                            <a data-target="#pic-3" data-toggle="tab"  onclick="changepic(3)"><img class="css3_pic " src="../images/bg-img/feature4.jpg" /></a>
+                            <a data-target="#pic-3" data-toggle="tab"  onclick="changepic(3)"><img class="css3_pic " src="<?php echo "../users/".$property->getOwnerId()."/images/properties/".$property_id."/4.png";?>" /></a>
                          </li>
 						
                         </ul>

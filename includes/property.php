@@ -63,10 +63,10 @@ class property {
     
     
      public function getOwnerId() {
-         $query = "select userid from goods where goodid=$this->id";
+         $query = "select owner_id from property where property_id=$this->id";
          $result= $this->dataBase->query($query);
-         $result=mysqli_fetch_assoc($result);    
-        return $result['userid'];
+         $result= $this->dataBase->fetchArray($result);    
+        return $result['owner_id'];
 
     }
     
