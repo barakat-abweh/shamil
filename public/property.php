@@ -113,9 +113,8 @@ function redirect(){
     <script src="../scripts/classy-nav.min.js"></script>
     <script src="../scripts/jquery-ui.min.js"></script>
     <!-- Active js -->
-    <script src="../scripts/active.js"></script>
     <script src="../scripts/sweetalert.min.js"></script>
-     <script src="js/profilesallerpage.js"></script>
+     <script src="../scripts/profilesallerpage.js"></script>
     <script src="../scripts/signin.js"></script>
     <script src="../scripts/changepicture.js"></script>
     </body>
