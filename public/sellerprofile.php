@@ -84,7 +84,7 @@
         <div class="col-12 col-md-6 col-xl-4">
             <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
                 <div class="property-thumb">
-                    <img src="../images/bg-img/feature1.jpg" alt="">
+                    <img src="../images/bg-img/feature1.jpg"  alt="">
                         <div class="tag">
                             <span>For Sale</span>
                         </div>
@@ -95,7 +95,7 @@
                     <div class="property-content">
                         <h5>Villa in Los Angeles</h5>
                         <p class="location">
-                        <img src="../images/icons/location.png" alt="">Upper Road 3411, no.34 CA</p>
+                        <img src="../images/icons/location.png" class="pic_in_model_pro" alt="">Upper Road 3411, no.34 CA</p>
                         <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.</p>
                         <div class="property-meta-data d-flex align-items-end justify-content-between">    
                             <button type="button" class="btn btn-primary search_btn">More ...</button>                              

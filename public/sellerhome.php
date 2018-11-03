@@ -146,7 +146,7 @@
                     <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Property Thumbnail -->
                         <div class="property-thumb">
-                            <img src="<?php echo "../users/".$result['owner_id']."/images/properties/".$result['property_id']."/1.png"; ?>" alt="">
+                            <img src="<?php echo "../users/".$result['owner_id']."/images/properties/".$result['property_id']."/1.png"; ?>" alt="" class="pic_in_model_pro">
                             <div class="list-price">
                                 <h3><p><?php
                                echo $result['price'];
@@ -158,7 +158,7 @@
                             <h5><?php
                                 echo $result['property_name'];
                                 ?></h5>
-                            <p class="location"><img src="../images/icons/location.png" alt=""><?php echo $property->getCityName($result['city_id']); ?></p>
+                            <p class="location"><img src="../images/icons/location.png"  alt=""><?php echo $property->getCityName($result['city_id']); ?></p>
                             <p><?php echo $result['description'];?></p>
                             <div class="property-meta-data d-flex align-items-end justify-content-between">    
                                 <a class="btn btn-primary search_btn" href="property.php?property_id=<?php echo $result['property_id'];?>">More ...</a>
