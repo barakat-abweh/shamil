@@ -192,7 +192,7 @@ public function setId($id){
         return $result['country_id'];
     }
     public function getOwnedProperties(){
-        $query = "SELECT `property_id`, `property_name`,`city_id`, `description`, `price` FROM `property` where deleted != '1' AND `owner_id`=".$this->id." ORDER BY creation_date DESC ";
+        $query = "SELECT `property_id`,`owner_id`, `property_name`,`city_id`, `description`, `price` FROM `property` where deleted != '1' AND `owner_id`=".$this->id." ORDER BY creation_date DESC ";
         $result=$this->dataBase->query($query);
         return $result;
     }
