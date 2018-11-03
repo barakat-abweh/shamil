@@ -67,6 +67,9 @@
 //        {
 //            redirect();
         }
+        else{
+            redirect();
+        }
         function redirect(){
             header("Location: index.php");
         }
