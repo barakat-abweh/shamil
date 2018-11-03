@@ -14,7 +14,7 @@
 							<ul>
                                 <li class="active" ><a href="home.php" class="c">Home</a></li>
 								<li><a href="profile.php" class="c">Profile</a></li>
-								<li><a href="../public/helpus.php" class="c">About us</a></li>
+                                                                <li><a href="aboutus.php" class="c">About us</a></li>
                                 <li>
                               <span id="logout" style="color:white;cursor: pointer"  data-toggle="modal" data-target=".bs-example-modal-sm">Logout </span>
                                 <div class="modal bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
@@ -22,7 +22,7 @@
                                     <div class="modal-content">
                                       <div class="modal-header"><h4>Logout <i class="fa fa-lock"></i></h4></div>
                                       <div class="modal-body"> Are you sure you want to log-off?</div>
-                                      <div class="modal-footer"><a href="javascript:;" class="btn btn-primary btn-block">Logout</a></div>
+                                      <div class="modal-footer"><a href="logout.php" class="btn btn-primary btn-block">Logout</a></div>
                                     </div>
                                   </div>
                                 </div>

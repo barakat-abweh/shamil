@@ -10,14 +10,26 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="../styles/help%20us.css" />
-        
+                <link rel="stylesheet" href="../styles/aboutus.css" />
+                <link href="../styles/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="../styles/homenavbar.css"/>
+    <link rel="stylesheet" href="../styles/Logo.css"/>
+    <link rel="stylesheet" href="../styles/style_login.css">
+    <link rel="stylesheet" type="text/css" href="../styles/sweetalert.css"/>
 
 
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
 	<body>
-
+  <?php
+      require_once '../includes/session.php';
+        if ($session->isLoggedIn()) {
+            require_once './homenavbar.php';
+        }
+        else{
+            require_once './loginnavbar.php';
+        }
+      ?>
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner split">
@@ -68,16 +80,21 @@
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="copyright">
-					&copy; Untitled. All rights reserved. Images: <a href="http://unsplash.com">Unsplash</a>. Design: <a href="http://templated.co">TEMPLATED</a>.
+					&copy; SHAMIL. All rights reserved.
 				</div>
 			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
+                     <script src="../scripts/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../scripts/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../scripts/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="../scripts/plugins.js"></script>
+    <script src="../scripts/classy-nav.min.js"></script>
+    <script src="../scripts/jquery-ui.min.js"></script>
+    <!-- Active js -->
+    <script src="../scripts/sweetalert.min.js"></script>
+    <script src="../scripts/signin.js"></script>
+     <script src="../scripts/profilesallerpage.js"></script>
 	</body>
 </html>

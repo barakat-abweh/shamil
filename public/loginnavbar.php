@@ -8,13 +8,13 @@
                 <nav class="classy-navbar justify-content-between" id="southNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.html"><img src="../images/office_R_blue.png" id="logo" alt=""></a>
+                    <a class="nav-brand" href="index.php"><img src="../images/office_R_blue.png" id="logo" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
                         <span class="navbarToggler"><span></span><span></span><span></span></span>
                     </div>
-                        <a href=""><h6><span style="color:White">About us</span></h6></a>
+                    <a href="aboutus.php"><h6><span style="color:White">About us</span></h6></a>
                         
                     <!-- Menu -->
 <!-- ********************************************** FORM LOGIN ******************************************************** -->                   
