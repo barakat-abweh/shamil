@@ -15,9 +15,18 @@ if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="POST"){
             $query="SELECT `user_id` FROM `users` WHERE email='$email'";
             $result=$database->query($query);
            $result=$database->fetchArray($result);
-           $result=$result['user_id'];
+           $userid=$result['user_id'];
            if($result>=1){
-               
+            $link="<a href='".$_SERVER['SERVER_NAME']."/baraa/public/resetpassword.php?id=".$userid."&&action=reset'>Reset Password</a>";
+            $to=$email;
+            $subject="SHAMIL Password Reset";
+            $from = 'info@shamil.com';
+            $body='Hi, <br/> <br/>You have requested to reset your shamil\'s password,<br><br>Please, Click here to '.$link;
+            $headers = "From: " . strip_tags($from) . "\r\n";
+            $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            mail($to,$subject,$body,$headers);
            }
         }
     }

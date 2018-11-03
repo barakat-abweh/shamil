@@ -6,6 +6,6 @@
  * and open the template in the editor.
  */
 
-echo $_SERVER['SERVER_NAME']."<br>".$_SERVER['PHP_SELF']."<br>". $_SERVER['DOCUMENT_ROOT']."<br>".$_SERVER["REMOTE_ADDR"] ;
+
 
 ?>
