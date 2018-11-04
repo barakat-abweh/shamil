@@ -10,7 +10,8 @@ if(htmlspecialchars($_GET['token'])){
     if(ValidMd5($token)){
         require_once '../includes/database.php';
         $token=$database->escape($token);
-        $query="SELECT `request_id`, `user_id` FROM `password_reset_request` WHERE `token`='$token' AND (`expiry_date`-`creation_date`)>0";
+        $query="SELECT `request_id` FROM `password_reset_request` WHERE `token`='$token' AND `handled`=0 AND (`expiry_date`-`creation_date`)>0";
+        echo $query;
         $result=$database->query($query);
         if($database->numRows($result)){
             ?>
@@ -18,10 +19,13 @@ if(htmlspecialchars($_GET['token'])){
 <html>
     <head></head>
     <body>
+        <form id="resetpassform" action="#" method="POST">
         <label>password</label>
-        <input type="password" id="pass" placeholder="passowrd"/>
+        <input type="password" name="pass" id="pass" placeholder="passowrd"/>
         <label>password confirmation</label>
-        <input type="password" id="passconf" placeholder="password confirmation"/>
+        <input type="password" name="passconf" id="passconf" placeholder="password confirmation"/>
+        <input type="text" name="token" hidden="hidden" value="<?php echo $token;?>"/>
+        </form>
     </body>
 </html>
 <?php
