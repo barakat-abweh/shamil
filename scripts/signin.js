@@ -23,7 +23,6 @@ $(document).ready(function () {
         email:$email.val()
     },
     function(data, status){
-        alert(data);
         if(data=='0'){
              sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
         }

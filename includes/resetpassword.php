@@ -5,7 +5,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="POST"){
     if(isset($_POST['email'])){
         $email= trim(htmlspecialchars($_POST['email']));
