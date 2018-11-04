@@ -5,7 +5,7 @@
  */
 $(document).ready(function (){
     $('#resetpassbutton').click(function (){
-        alert('1');
+
     });
 });
 
