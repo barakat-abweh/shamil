@@ -16,9 +16,10 @@ if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="POST"){
            $result=$database->fetchArray($result);
            $userid=$result['user_id'];
            if($result>=1){
+            require_once './users.php';
             $token=md5(uniqid(rand(), true));
-            $database->query("INSERT INTO `password_reset_request`(`user_id`, `token`, `creation_date`, `expiry_date`) VALUES (1,'$token',CURRENT_DATE,NOW() + INTERVAL 1 DAY)");
-            $link="<a href='".$_SERVER['SERVER_NAME']."/baraa/public/resetpassword.php?id=".$userid."&&action=reset&&token=".$token."'>Reset Password</a>";
+            $database->query("INSERT INTO `password_reset_request`(`user_id`, `token`, `creation_date`, `expiry_date`) VALUES ($userid,'$token',CURRENT_DATE,NOW() + INTERVAL 1 DAY)");
+            $link="<a href='".$_SERVER['SERVER_NAME']."/baraa/public/resetpassword.php?token=".$token."'>Reset Password</a>";
             $to=$email;
             $subject="SHAMIL Password Reset";
             $from = 'info@shamil.com';
