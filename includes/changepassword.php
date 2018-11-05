@@ -1,32 +1,38 @@
 <?php
-
-$flag=false;
-$newpass = mysql_real_escape_string($_POST['password1']);
-$renewpass = mysql_real_escape_string($_POST['password2']);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $pass = htmlspecialchars($newpass);
-    $confpass = htmlspecialchars($renewpass);
+    echo "1";
+    require_once './database.php';
+$pass = $database->escape(trim(htmlspecialchars($_POST['pass'])));
+$confpass = $database->escape(trim(htmlspecialchars($_POST['passconf'])));
+$token= $database->escape(trim(htmlspecialchars($_POST['token'])));
+$query="SELECT `request_id`,`user_id` FROM `password_reset_request` WHERE `token`='$token'";
+$result=$database->query($query);
+if($database->numRows($result)>0){
+    $result=$database->fetchArray($result);
+    $userid=$result['user_id'];
+    $requestid=$result['request_id'];
     if (!isEmpty($pass)) {
         if (checkPass($pass, $confpass)) {
-            $password = $pass;
-            $flag = true;
-        } else echo "passwords does not match";
-    }
-    
-    if($flag){
-       require_once('session.php');
-        require_once('database.php');
-        global $database;
-         if($session->isLoggedIn()){
-            $id=($session->getUserId());}
-        $password = md5($password);
-        $password = sha1($password);
-     $query="update users set password='".$password."' where userid='".$id."'";   
+        $pass = sha1(md5($pass));
+     $query="update users set password='$pass' where user_id='$userid'";
      $database->query($query);
-        echo "You have successfully changed your password."."<br> <a href='../public/MyProfile.php'>back to my profile</a>";
-        
-    }}
-    
+     $query="UPDATE `password_reset_request` SET `handled`=1 WHERE `request_id`=$requestid";
+     $database->query($query);
+     header("Location:../public/index.php");
+        } 
+        else{redirect ();}
+    }
+    else{
+        redirect();
+    }
+}
+else{
+    redirect();
+}
+     }
+ else {
+         redirect();         
+}   
     
 function isEmpty($value) {
     if ($value == "")
@@ -52,7 +58,7 @@ function checkPass($pass, $confpass) {
     return true;
 }
 function redirect() { #redirect page
-    header("Location: ../public/index.php");
+    header("Location: ../public/resetpassword.php?token=$token");
 }
 
 

@@ -17,17 +17,31 @@ if(htmlspecialchars($_GET['token'])){
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../styles/bootstrap.css" />
-        <link href="../styles/sweetalert.css"/>
+        <link type="text/css" rel="stylesheet" href="../styles/bootstrap.css" />
+        <link type="text/css" rel="stylesheet" href="../styles/sweetalert.css"/>
     </head>
     <body>
-        <form id="resetpassform" action="#" method="POST">
-        <label>password</label>
-        <input type="password" name="pass" id="pass" placeholder="passowrd"/>
-        <label>password confirmation</label>
-        <input type="password" name="passconf" id="passconf" placeholder="password confirmation"/>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form id="resetpassform" action="#" method="POST" class="form-horizontal col-xs-offset-4 col-xs-4">
+            <div class="form-group">
+                <input type="password" class="form-control" name="pass" id="pass" placeholder="passowrd"/>
+            </div>
+            <div class="form-group">
+        <input type="password" class="form-control" name="passconf" id="passconf" placeholder="password confirmation"/>
+            </div>
+            <div class="form-group">
+        <button type="button" class="btn btn-primary" id="resetpassbutton">submit</button>
+            </div>
+            <div class="form-group">
         <input type="text" name="token" hidden="hidden" value="<?php echo $token;?>"/>
-        <button type="button" id="resetpassbutton"></button>
+            </div>
         </form>
         <script src="../scripts/jquery.js"></script>
         <script src="../scripts/bootstrap.js"></script>
