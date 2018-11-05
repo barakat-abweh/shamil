@@ -52,8 +52,8 @@ if(htmlspecialchars($_GET['token'])){
 <?php
         }
         else{
-            echo "The token is either wrong or has expired.<br/>You'll be redirected to the main index file in 5 seconds";
-            ##echo script to redirect in java script
+            echo "The token is either wrong or has expired.<br/>You'll be redirected to the main index file in 5 seconds<br/>ask for another reset";
+            echo "<script>setTimeout(function () {window.location.href='index.php';}, 5000);</script>";
         }
     }
     else{redirect();}
