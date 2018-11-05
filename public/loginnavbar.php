@@ -1,6 +1,5 @@
 <!-- ##### Header Area Start ##### -->
-<div class="cover">   
-    <header class="header-area">
+     <header class="header-area">
         <!-- Main Header Area -->
         <div class="main-header-area" id="stickyHeader">
             <div class="classy-nav-container breakpoint-off">
@@ -64,5 +63,4 @@
             </div>
         </div>
     </header>
-    </div>
 

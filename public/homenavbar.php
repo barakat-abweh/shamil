@@ -1,6 +1,5 @@
 <div class="supe_container">
 	<!-- Header -->
-<div class="cover">	
     <header class="header">
 		<div class="container">
 			<div class="row">

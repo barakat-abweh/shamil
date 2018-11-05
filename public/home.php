@@ -43,6 +43,7 @@
         require_once '../includes/session.php';
         if ($session->isLoggedIn()) {
             require_once './homenavbar.php';
+            require_once './cover.php';
             $id = $session->getUserId();
             $user->setId($id);
             if ($user->getType() == "0") {
@@ -53,6 +54,7 @@
         } else
         {
         require_once './loginnavbar.php';
+        require_once './cover.php';
         require_once 'buyerhome.php';}
             ?>
     
