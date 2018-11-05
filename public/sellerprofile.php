@@ -1,13 +1,16 @@
     <div class="container bootstrap snippet">
         <div class="row">
-  		    <div class="col-sm-3"><!--left col-->
+  		    <!--<div class="col-sm-3">
                 <div class="text-center">
                     <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar  img-thumbnail" alt="avatar">
                         <input type="file" class="text-center center-block file-upload ">
                 </div>
                 <br>
-            </div><!--/col-3-->
-    	<div class="col-sm-9">
+            </div>!-->
+            <?php
+            require_once('profilepicture.php');
+            ?>
+                <div class="col-sm-9">
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home"><h4>Information</h4></a></li>
             </ul>

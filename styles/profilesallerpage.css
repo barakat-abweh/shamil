@@ -138,7 +138,11 @@ img {
 
 .mb-100 {
   margin-bottom: 100px; }
-
+.profilepic{
+    background-image: url(../images/profilepic.png);
+    width: 100px;
+    height: 100px;
+}
 .bg-img {
   background-position: center center;
   background-size: cover;
