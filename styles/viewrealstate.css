@@ -95,7 +95,10 @@ img {
 
 .product-title, .rating, .product-description, .price, .vote, .sizes {
   margin-bottom: 15px; }
-
+.product-description{
+    height: 200px;
+    overflow-y: scroll;
+}
 .product-title {
   margin-top: 0; }
 

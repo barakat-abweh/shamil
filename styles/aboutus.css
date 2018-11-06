@@ -4,7 +4,6 @@
 
 	
 /* Icon */
-
 	.icon {
 		text-decoration: none;
 		border-bottom: none;
@@ -1119,6 +1118,7 @@
 /* Banner */
 
 	#banner {
+            margin-top: -80px;
 		background-image: url("../images/bg-img/feature2.jpg");
         background-repeat: no-repeat;
 		background-size: 100%;

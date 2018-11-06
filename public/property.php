@@ -45,14 +45,19 @@ function redirect(){
       
       <?php
       require_once '../includes/session.php';
-        if ($session->isLoggedIn()) {
+        if ($session->isLoggedIn()) {?>
+      <div class="cover">
+      <?php
             require_once './homenavbar.php';
+            ?>
+          
+      </div>
+            <?php
         }
         else{
             require_once './loginnavbar.php';
         }
       ?>
-	
 	<div class="container">
 		<div class="card">
 			<div class="container-fliud">
@@ -91,11 +96,12 @@ function redirect(){
 						<p class="product-description"><?php echo $property->getDescription();?></p>
 						<h4 class="price  d-inline p-2 bg-light ">Owner: <span><?php echo $property->getOwner();?></span></h4>
 						<h4 class="price  d-inline p-2 bg-light ">Address: <span><?php echo $property->getAddress();?></span></h4>
-						<h4 class="price  d-inline p-2 bg-light ">price: <span><?php echo $property->getPrice();?></span></h4>
-						<h4 class="price  d-inline p-2 bg-light ">type: <span><?php echo $property->getType();?></span></h4>
+                                                <h4 class="price  d-inline p-2 bg-light ">Type: <span><?php echo $property->getType();?></span></h4>
+                                                <h4 class="price  d-inline p-2 bg-light ">Area: <span><?php echo $property->getArea();?></span></h4>
+						<h4 class="price  d-inline p-2 bg-light ">Price: <span><?php echo $property->getPrice();?></span></h4>
 						
 						<div class="action">
-							<button class="add-to-cart btn btn-success" type="button">Reservation</button>
+                                                    <button class="add-to-cart btn btn-success" id="interested" type="button">Interested!</button>
 						</div>
 					</div>
 				</div>
@@ -116,6 +122,6 @@ function redirect(){
     <script src="../scripts/sweetalert.min.js"></script>
     <script src="../scripts/signin.js"></script>
      <script src="../scripts/profilesallerpage.js"></script>
-    <script src="../scripts/changepicture.js"></script>
+    <script src="../scripts/property.js"></script>
     </body>
 </html>

@@ -255,7 +255,12 @@ public function getDescription(){
         $result= $this->dataBase->fetchArray($result);
         return $result['description'];
     }
-    
+    public function getArea(){
+        $query="SELECT `area` FROM `property` WHERE `property_id`=$this->id";
+        $result= $this->dataBase->query($query);
+        $result= $this->dataBase->fetchArray($result);
+        return $result['area'];
+    }
     public function getOwner(){
         $query="SELECT `owner_id` FROM `property` WHERE `property_id`=$this->id";
         $result= $this->dataBase->query($query);
