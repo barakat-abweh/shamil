@@ -42,8 +42,13 @@
         $user->setDataBase($database);
         require_once '../includes/session.php';
         if ($session->isLoggedIn()) {
+            ?>
+    <div class="cover">
+    <?php
             require_once './homenavbar.php';
-            require_once './cover.php';
+            ?>
+    </div>
+        <?php
             $id = $session->getUserId();
             $user->setId($id);
             if ($user->getType() == "0") {
