@@ -62,16 +62,14 @@ function redirect(){
 		<div class="card">
 			<div class="container-fliud">
 				<div class="wrapper row">
-					<div class="preview col-md-6">
+					<div class="col-md-6">
 						
-						<div class="preview-pic tab-content">
+						<div class="tab-content">
 						  <div class="tab-pane active" ><img src="<?php echo "../users/".$property->getOwnerId()."/images/properties/".$property_id."/1.png"; ?>" id="pic-1"/></div>
                         </div>
 						
-                      <ul class="preview-thumbnail nav nav-tabs ">
-					
-                          	  
-                         <li class="active">
+                      <ul class="preview-thumbnail nav nav-tabs">
+			 <li class="active">
                             <a data-target="#pic-1" data-toggle="tab"  onclick="changepic(<?php echo "'../users/".$property->getOwnerId()."/images/properties/".$property_id."/1.png'";?>)"><img class="css3_pic" src="<?php echo "../users/".$property->getOwnerId()."/images/properties/".$property_id."/1.png"; ?>" /></a>
                           </li>
                           
@@ -85,8 +83,7 @@ function redirect(){
 						  
                          <li class="active  ">
                             <a data-target="#pic-3" data-toggle="tab"  onclick="changepic(<?php echo "'../users/".$property->getOwnerId()."/images/properties/".$property_id."/4.png'";?>)"><img class="css3_pic " src="<?php echo "../users/".$property->getOwnerId()."/images/properties/".$property_id."/4.png";?>" /></a>
-                         </li>
-						
+                         </li>			
                         </ul>
 						
 					</div>
@@ -101,7 +98,7 @@ function redirect(){
 						<h4 class="price  d-inline p-2 bg-light ">Price: <span><?php echo $property->getPrice();?></span></h4>
 						
 						<div class="action">
-                                                    <button class="add-to-cart btn btn-success" id="interested" type="button">Interested!</button>
+                                                    <button class="add-to-cart btn btn-success" id="interested" type="button" onclick="interested('<?php echo $property_id?>');">Interested!</button>
 						</div>
 					</div>
 				</div>

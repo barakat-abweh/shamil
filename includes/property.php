@@ -311,28 +311,15 @@ $query = "select additiondate from goods where goodid=$this->id";
         $query = "INSERT INTO `property`(`property_id`, `property_name`, `owner_id`, `area`, `city_id`, `description`, `price`, `type`, `deleted`)";
         $query.="VALUES('$this->id','$this->name',$this->ownerid,$this->area,$this->cityid,'$this->description',$this->price,$this->type,'0')";
         $result=  $this->getDataBase()->query($query);
-    }  
-    
-    
-    public function updateProduct() {
-        $query = "UPDATE `goods` SET `goodname`='$this->name',`goodtype`='$this->type',`goodprice`='$this->price',`offers`='$this->offers',`moredetails`='$this->moreDetls',`quantity`='$this->quantity' WHERE goodid='$this->id'";
-        $this->dataBase->query($query);
     }
-    
-       public function closeConnection(){
-           $this->getDataBase()->closeConnection();
-       }
-       
-        function NOgood() {
-        $sql = "select * from goods where userid='$this->userid' ";
-        $result = $this->dataBase->query($sql);
-        $numgoods = $this->dataBase->numRows($result);
-        return $numgoods;
+    public function setInterested(){
+        $query="INSERT INTO `interested`(`property_owner_id`, `interested_user_id`, `property_id`) VALUES ()";
     }
 
-   
-       
-        }
+    public function closeConnection(){
+           $this->getDataBase()->closeConnection();
+       }
+       }
         
  $property = new property();
         
