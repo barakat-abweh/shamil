@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../styles/Logo.css"/>
     <link rel="stylesheet" href="../styles/style_login.css">
     <link rel="stylesheet" type="text/css" href="../styles/sweetalert.css"/>
-    <link rel="stylesheet" href="../styles/profilesallerpage.css">
+    <link rel="stylesheet" href="../styles/profilesellerpage.css">
     <link rel="stylesheet" href="../styles/animate.css">
     <link rel="stylesheet" href="../styles/themify-icons.css">
     <link rel="stylesheet" href="../styles/classy-nav.min.css">

@@ -62,11 +62,11 @@
                       <div class="form-group col-md-12">
                         <br>
                           <div class="col-xs-12  ">
-                             <button type="button" class="cc btn btn-warning col-xs-6 col-md-2 " onclick="">Edit</button>
-                             <button type="button" class="dd  btn btn-success col-xs-6 col-md-2 " onclick="">Save</button>
+                             <button type="button" class="btn btn-warning col-xs-3" onclick="">Edit</button>
+                             <button type="button" class="btn btn-success col-xs-offset-1 col-xs-3" onclick="">Save</button>
                              <!--<button type="button" style="float:right; margin-right:-15px " class=" btn btn-success col-xs-6 col-md-3 " onclick="">Change Password </button>-->
                                
-                              <button id="change" style="color:white;cursor: pointer" class=" btn btn-warning" 
+                              <button id="change" class="btn btn-danger col-xs-offset-1 col-xs-3" 
                                 data-toggle="modal"   data-target=".bs-example-modal-sm1">Change password </button>
                                 <div class="modal bs-example-modal-sm1" tabindex="-1" role="dialog" aria-hidden="true">
                                   <div class="modal-dialog modal-sm">
@@ -79,7 +79,7 @@
                                             <input type="password" class="form-control" name="pass" id="pass" placeholder="Repassowrd"/>
                                         </div>
                                             
-                                      <div class="modal-footer"><a href="" class="btn btn-primary btn-block">Change Now</a></div>
+                                      <div class="modal-footer"><button class="btn btn-primary btn-block">Change Now</button></div>
                                       </div>
                                     </div>
                                 </div>
@@ -107,6 +107,59 @@
     </div><!--/row-->
             
 </div>
+        <div class="row">
+        <div class="col-xs-4">
+                <span id=""><h4>Notifications</h4></span>
+                <div class="notification">
+                    <table class="table-responsive table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Default</td>
+                            <td>Defaultson</td>
+                          </tr>      
+                          <tr>
+                            <td>Success</td>
+                            <td>Doe</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>    
+                </div>
+
+        <div class="col-xs-8">
+                <span id=""><h4>Messages</h4></span>
+                <div class="notification">
+                    <table class="table-responsive table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Default</td>
+                            <td>Defaultson</td>
+                          </tr>      
+                          <tr>
+                            <td>Success</td>
+                            <td>Doe</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>    
+                </div>
+            
+            
+        </div>
+           
+           
     <br><br><br><br><br><br>
 
         <div class="col-12 col-md-6 col-xl-4">

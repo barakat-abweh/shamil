@@ -78,7 +78,10 @@ ol {
   ul li,
   ol li {
     list-style: none; }
-
+  #profile-pic{
+      background-image: url('../images/profilepic.png');
+      
+  }
 img {
   height: auto;
   max-width: 100%; }
