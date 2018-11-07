@@ -7,6 +7,7 @@
                 </div>
                 <br>
             </div>!-->
+            
             <?php
             require_once('profilepicture.php');
             ?>
@@ -58,16 +59,40 @@
                             <h4><span class="badge badge-warning information1 " id="city"><span  class="information"><?php echo $user->getAddress();?></span></span></h4>
                           </div>
                       </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-12">
                         <br>
                           <div class="col-xs-12  ">
-                             <button type="button" class="cc btn btn-warning col-xs-6 col-md-4 ">Edit</button>
-                             <button type="button" class="dd btn btn-success col-xs-6 col-md-4 ">Save</button>
+                             <button type="button" class="cc btn btn-warning col-xs-6 col-md-2 " onclick="">Edit</button>
+                             <button type="button" class="dd  btn btn-success col-xs-6 col-md-2 " onclick="">Save</button>
+                             <!--<button type="button" style="float:right; margin-right:-15px " class=" btn btn-success col-xs-6 col-md-3 " onclick="">Change Password </button>-->
+                               
+                              <button id="change" style="color:white;cursor: pointer" class=" btn btn-warning" 
+                                data-toggle="modal"   data-target=".bs-example-modal-sm1">Change password </button>
+                                <div class="modal bs-example-modal-sm1" tabindex="-1" role="dialog" aria-hidden="true">
+                                  <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                      <div class="modal-header"><h4>Change Password <i class="fa fa-lock"></i></h4></div>
+                                      <div class="modal-body"> Are you sure you want to Change?<br><br>
+                                        
+                                        <input type="password" class="form-control" name="pass" id="pass" placeholder="Current passowrd"/><br>
+                                            <input type="password" class="form-control" name="pass" id="pass" placeholder="New passowrd"/><br>
+                                            <input type="password" class="form-control" name="pass" id="pass" placeholder="Repassowrd"/>
+                                        </div>
+                                            
+                                      <div class="modal-footer"><a href="" class="btn btn-primary btn-block">Change Now</a></div>
+                                      </div>
+                                    </div>
+                                </div>
+
+                              
                           </div>
+                          
                       </div>
                       <div class="form-group col-md-6 ">
                         <br>
+                          
                           <div class="col-xs-12 ">
+                          
                           </div>
                       </div>
                   </div><!--/tab-content-->
@@ -98,7 +123,7 @@
                     <div class="property-content">
                         <h5>Villa in Los Angeles</h5>
                         <p class="location">
-                        <img src="../images/icons/location.png" class="pic_in_model_pro" alt="">Upper Road 3411, no.34 CA</p>
+                        <img src="../images/icons/location.png" class="" alt="">Upper Road 3411, no.34 CA</p>
                         <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.</p>
                         <div class="property-meta-data d-flex align-items-end justify-content-between">    
                             <button type="button" class="btn btn-primary search_btn">More ...</button>                              

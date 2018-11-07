@@ -171,10 +171,14 @@ img {
 
 /*# sourceMappingURL=style.css.map */
 #pic-1{
-    width: 400px;
-    height: 350px;
+    width: 400%;
+    height: 400px;;
 }
 .css3_pic{
-    width: 100px;
+    width: 125%;
     height: 100px;
+}
+.preview-thumbnail.nav-tabs li{
+    width: 23%; !important;
+    
 }

@@ -7,8 +7,6 @@
   
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.css">
-    <link rel="stylesheet" href="../styles/bootstrap-grid.css.map">
     <link rel="stylesheet" href="../styles/bootstrap.min.css.map">
     <link rel="stylesheet" href="../styles/bootstrap-grid.css">
     <link rel="stylesheet" href="../styles/bootstrap-reboot.min.css">
@@ -16,6 +14,7 @@
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="../styles/profilesellerpage.css">
     <link rel="stylesheet" href="../styles/homenavbar.css"/>
+    
 <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
@@ -81,7 +80,10 @@
         }
         ?>
     
-    <script src="../scripts/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+ 
+    
+     <script src="../scripts/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
     <script src="../scripts/popper.min.js"></script>
     <!-- Bootstrap js -->
@@ -91,8 +93,7 @@
     <script src="../scripts/classy-nav.min.js"></script>
     <script src="../scripts/jquery-ui.min.js"></script>
     <!-- Active js -->
-    <script src="../scripts/active.js"></script>
-    
+
     </body>
     
     

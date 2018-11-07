@@ -23,6 +23,7 @@ body {
     height: 250px;
     
 }
+
 #description_in_model{
     width: 150px;
 }
@@ -344,6 +345,19 @@ ol {
 	font-size: 22px;
 	margin-bottom: 50px;
 }
+.notification{
+    width: 200px;
+    margin-left: 30px;
+    margin-top: 10px;
+    height: 300px;
+    border-radius: 3px;
+    border: 2px solid black;
+    overflow-y: scroll;
+}
+#Notifications_titel{
+    text-align: center; 
+}
+    
 
 /*------------------
   Filter search

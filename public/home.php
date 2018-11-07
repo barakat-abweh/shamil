@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../styles/owl.carousel.css">
     <link rel="stylesheet" href="../styles/magnific-popup.css">
     <link rel="stylesheet" href="../styles/sweetalert.css">
+    
 
 </head>
 
