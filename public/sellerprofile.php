@@ -1,15 +1,12 @@
     <div class="container bootstrap snippet">
         <div class="row">
-  		    <!--<div class="col-sm-3">
-                <div class="text-center">
-                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar  img-thumbnail" alt="avatar">
-                        <input type="file" class="text-center center-block file-upload ">
-                </div>
-                <br>
-            </div>!-->
             
             <?php
-            require_once('profilepicture.php');
+           if($ownprofile){
+            require_once('profilepicture.php');}
+            else{
+    require_once './profilepicturewithoutbutton.php';
+            }
             ?>
                 <div class="col-sm-9">
             <ul class="nav nav-tabs">
@@ -59,11 +56,12 @@
                             <h4><span class="badge badge-warning information1 " id="city"><span  class="information"><?php echo $user->getAddress();?></span></span></h4>
                           </div>
                       </div>
+<?php if($ownprofile){ ?>
                       <div class="form-group col-md-12">
                         <br>
                           <div class="col-xs-12  ">
                              <button type="button" class="btn btn-warning col-xs-3" onclick="">Edit</button>
-                             <button type="button" class="btn btn-success col-xs-offset-1 col-xs-3" onclick="">Save</button>
+                             <button type="button" class="btn btn-success col-xs-offset-1 col-xs-3" onclick="" disabled="">Save</button>
                              <!--<button type="button" style="float:right; margin-right:-15px " class=" btn btn-success col-xs-6 col-md-3 " onclick="">Change Password </button>-->
                                
                               <button id="change" class="btn btn-danger col-xs-offset-1 col-xs-3" 
@@ -88,6 +86,7 @@
                           </div>
                           
                       </div>
+<?php }?>
                       <div class="form-group col-md-6 ">
                         <br>
                           

@@ -196,6 +196,9 @@ public function setId($id){
         $result=$this->dataBase->query($query);
         return $result;
     }
+    public function getProfilePicture(){
+        return "../users/$this->id/images/profile/uploads/medium/profile.png";
+    }
 }
 $user = new user();
 
