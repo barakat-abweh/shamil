@@ -1,10 +1,5 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 if(htmlspecialchars($_GET['token'])){
     $token= trim(htmlspecialchars($_GET['token']));
     if(ValidMd5($token)){
@@ -21,32 +16,44 @@ if(htmlspecialchars($_GET['token'])){
         <link type="text/css" rel="stylesheet" href="../styles/sweetalert.css"/>
     </head>
     <body>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <form id="resetpassform" action="#" method="POST" class="form-horizontal col-xs-offset-4 col-xs-4">
-            <div class="form-group">
-                <input type="password" class="form-control" name="pass" id="pass" placeholder="passowrd"/>
+        <div class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">        <br><br><br><br>
+
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="text-center">                
+                  <h2 class="text-center">Reset Password?</h2>
+                  <p>You can reset your password here.</p>
+                  <div class="panel-body">
+                    <form id="resetpassform" role="form" autocomplete="off" class="form" method="post">
+                      <div class="form-group">
+                            <input type="password" class="form-control" name="pass" id="pass" placeholder="passowrd"/>
+                        
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control" name="passconf" id="passconf" placeholder="password confirmation"/>
+                      </div>
+                        <button type="button" class="btn btn-primary" id="resetpassbutton">Change Password</button>
+                      
+                       <div class="form-group">
+                           <input type="text" name="token" hidden="hidden" value="<?php echo $token;?>"/>
+                    </div>
+                      </form>
+    
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-        <input type="password" class="form-control" name="passconf" id="passconf" placeholder="password confirmation"/>
-            </div>
-            <div class="form-group">
-        <button type="button" class="btn btn-primary" id="resetpassbutton">submit</button>
-            </div>
-            <div class="form-group">
-        <input type="text" name="token" hidden="hidden" value="<?php echo $token;?>"/>
-            </div>
-        </form>
+          </div>
+	</div>
+</div>
+
+     
         <script src="../scripts/jquery.js"></script>
         <script src="../scripts/bootstrap.js"></script>
         <script src="../scripts/sweetalert.min.js"></script>
-        <script src="../scripts/resetpassword.js"></script>
+       <script src="../scripts/resetpassword.js"></script>
     </body>
 </html>
 <?php

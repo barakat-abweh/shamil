@@ -10,10 +10,13 @@
             ?>
                 <div class="col-sm-9">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home"><h4>Information</h4></a></li>
+                <li class="active "><a data-toggle="tab" href="#home"><h4 class="hover_tabe">Information</h4></a></li>
+                <li class="active "><a data-toggle="tab" href="#changepass"><h4 class="hover_tabe">Change password</h4></a></li>
+                <li class="active "><a data-toggle="tab" href="#notification"><h4 class="hover_tabe">Notification</h4></a></li>
+                <li class="active "><a data-toggle="tab" href="#messages"><h4 class="hover_tabe">Messages</h4></a></li>
             </ul>
           <div class="tab-content">
-            <div class="tab-pane active" id="home">                      
+            <div class="tab-pane active " id="home"> 
 <!-- ******************************************************** First Name **********************************************-->             
                       <div class="form-group">
                           <div class="col-xs-6">
@@ -60,10 +63,10 @@
                       <div class="form-group col-md-12">
                         <br>
                           <div class="col-xs-12  ">
-                             <button type="button" class="btn btn-warning col-xs-3" onclick="">Edit</button>
-                             <button type="button" class="btn btn-success col-xs-offset-1 col-xs-3" onclick="" disabled="">Save</button>
+                             <button type="button" class="cc col-md-2 btn btn-warning col-xs-3" onclick="">Edit</button>
+                             <button type="button" class="btn btn-success col-md-2 col-md-offset-2 col-xs-3" onclick="" disabled="">Save</button>
                              <!--<button type="button" style="float:right; margin-right:-15px " class=" btn btn-success col-xs-6 col-md-3 " onclick="">Change Password </button>-->
-                               
+                        <!--    
                               <button id="change" class="btn btn-danger col-xs-offset-1 col-xs-3" 
                                 data-toggle="modal"   data-target=".bs-example-modal-sm1">Change password </button>
                                 <div class="modal bs-example-modal-sm1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -80,7 +83,7 @@
                                       <div class="modal-footer"><button class="btn btn-primary btn-block">Change Now</button></div>
                                       </div>
                                     </div>
-                                </div>
+                                </div>-->
 
                               
                           </div>
@@ -95,19 +98,8 @@
                           </div>
                       </div>
                   </div><!--/tab-content-->
-                                              
-         
-<!-- ******************************************************** edit **********************************************-->             
-               
-<!-- ******************************************************** End edit **********************************************-->             
-          
-        </div><!--/col-9-->
-            
-    </div><!--/row-->
-            
-</div>
-        <div class="row">
-        <div class="col-xs-4">
+            <div class="tab-pane " id="notification">
+        <div class="col-xs-4 notification_tab">
                 <span id=""><h4>Notifications</h4></span>
                 <div class="notification">
                     <table class="table-responsive table-bordered table-striped">
@@ -130,8 +122,9 @@
                       </table>
                 </div>    
                 </div>
-
-        <div class="col-xs-8">
+              </div>                                  
+            <div class="tab-pane " id="messages">
+                <div class="col-xs-8 messages">
                 <span id=""><h4>Messages</h4></span>
                 <div class="notification">
                     <table class="table-responsive table-bordered table-striped">
@@ -156,18 +149,48 @@
                 </div>
             
             
-        </div>
+              </div>                                  
+            <div class="tab-pane " id="changepass">
+              <form>
+                  <div class="form-group">
+                    <label for="currpass">Current Password</label>
+                    <input type="password" class="form-control" id="currentpass" aria-describedby="emailHelp" placeholder="Current Pasword">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="newpass">Password</label>
+                    <input type="password" class="form-control" id="newpass" placeholder="Password">
+                  </div>
+                  <div class="form-check">
+                    <label for="Repass">Repassword</label>
+                    <input type="password" class="form-control" id="Repassword" placeholder="Password">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Change password</button>
+            </form>
+              
+              
+              
+              </div>                                  
+         
+<!-- ******************************************************** edit **********************************************-->             
+               
+<!-- ******************************************************** End edit **********************************************-->             
+          
+        </div><!--/col-9-->
+            
+    </div><!--/row-->
+            
+</div>
+  
            
            
     <br><br><br><br><br><br>
 
         <div class="col-12 col-md-6 col-xl-4">
-            <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
+            <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">    
                 <div class="property-thumb">
                     <img src="../images/bg-img/feature1.jpg"  alt="">
-                        <div class="tag">
-                            <span>For Sale</span>
-                        </div>
+                        
                     <div class="list-price">
                         <p>$945 679</p>
                     </div>

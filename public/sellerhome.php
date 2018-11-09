@@ -94,14 +94,15 @@
                                     <input placeholder="Area" type="text" class="form-control" name="area" id="area"/>
                                 </div>
                             <div class="form-group">
-                            <textarea class="" id="Descripton" name="description" placeholder="Descripton" rows="4"></textarea>
+                            <textarea class="col-md-12" style="resize: none;height:105px;" id="Descripton" name="description" placeholder="Descripton" >          
+                                </textarea>
                             </div>
-                            <div class="form-group">
-                        <button type="button" class="btn btn-primary col-md-11" id="add_new_property">Add New Property</button>
+                             <div class="form-group">
+                            <button type="button" class="btn btn-primary col-md-12"  id="add_new_property" style="margin-top:9px;">Add New Property</button>
+                            </div>
                         </div>
                         </div>      
 
-                            </div>
                            
         
                         </form>
