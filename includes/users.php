@@ -31,7 +31,7 @@ class user {
                 
         }
 public function setId($id){
-    $this->id=$id;
+    $this->id= $this->dataBase->escape($id);
 }
     public function setFname($fname) {
         $this->fname = $this->dataBase->escape($fname);
@@ -198,6 +198,10 @@ public function setId($id){
     }
     public function getProfilePicture(){
         return "../users/$this->id/images/profile/uploads/medium/profile.png";
+    }
+    public function changePassword(){
+        $query="UPDATE `users` SET `password`='$this->password' WHERE `user_id`=$this->id";
+        $this->dataBase->query($query);
     }
 }
 $user = new user();
