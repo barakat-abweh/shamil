@@ -11,10 +11,13 @@
                 <div class="col-sm-9">
             <ul class="nav nav-tabs">
                 <li class="active "><a data-toggle="tab" href="#home"><h4 class="hover_tabe">Information</h4></a></li>
-                <li class="active "><a data-toggle="tab" href="#changepass"><h4 class="hover_tabe">Change password</h4></a></li>
-                <li class="active "><a data-toggle="tab" href="#notification"><h4 class="hover_tabe">Notification</h4></a></li>
-                <li class="active "><a data-toggle="tab" href="#messages"><h4 class="hover_tabe">Messages</h4></a></li>
-            </ul>
+           
+                
+                <!--  put the tabs profile seller requer -->
+            
+                    
+                    
+                    </ul>
           <div class="tab-content">
             <div class="tab-pane active " id="home"> 
 <!-- ******************************************************** First Name **********************************************-->             
@@ -98,80 +101,13 @@
                           </div>
                       </div>
                   </div><!--/tab-content-->
-            <div class="tab-pane " id="notification">
-        <div class="col-xs-4 notification_tab">
-                <span id=""><h4>Notifications</h4></span>
-                <div class="notification">
-                    <table class="table-responsive table-bordered table-striped">
-                        <thead>
-                          <tr>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Default</td>
-                            <td>Defaultson</td>
-                          </tr>      
-                          <tr>
-                            <td>Success</td>
-                            <td>Doe</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                </div>    
-                </div>
-              </div>                                  
-            <div class="tab-pane " id="messages">
-                <div class="col-xs-8 messages">
-                <span id=""><h4>Messages</h4></span>
-                <div class="notification">
-                    <table class="table-responsive table-bordered table-striped">
-                        <thead>
-                          <tr>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Default</td>
-                            <td>Defaultson</td>
-                          </tr>      
-                          <tr>
-                            <td>Success</td>
-                            <td>Doe</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                </div>    
-                </div>
-            
-            
-              </div>                                  
-            <div class="tab-pane " id="changepass">
-              <form>
-                  <div class="form-group">
-                    <label for="currpass">Current Password</label>
-                    <input type="password" class="form-control" id="currentpass" aria-describedby="emailHelp" placeholder="Current Pasword">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
-                  </div>
-                  <div class="form-group">
-                    <label for="newpass">Password</label>
-                    <input type="password" class="form-control" id="newpass" placeholder="Password">
-                  </div>
-                  <div class="form-check">
-                    <label for="Repass">Repassword</label>
-                    <input type="password" class="form-control" id="Repassword" placeholder="Password">
-                  </div>
-                  <button type="submit" class="btn btn-primary">Change password</button>
-            </form>
+                             
+                    <!-- put sub tabs profile sellet requer -->
               
               
               
-              </div>                                  
-         
+              
+              
 <!-- ******************************************************** edit **********************************************-->             
                
 <!-- ******************************************************** End edit **********************************************-->             
