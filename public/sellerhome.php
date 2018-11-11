@@ -9,49 +9,44 @@
                             <div class="row ">
         <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 ">  
 <!-- ***************************************************************************************************** 1 image -->
-                    <div class="input-group ">
-                            <input type="text" class="form-control file-upload-text " disabled placeholder="select picture 1" />
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-success file-upload-btn ">
-                                    Browse...
-                                    <input type="file" class="file-upload uploud_pic" name="img1" id="img1" />
-                                </button>
-                            </span>
-                    </div><br>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <span>Select picture 1</span>
+                                <span class="btn btn-primary btn-file"><span class="fileupload-new"></span>
+                                    <input type="file" class="file-upload" name="img1" id="img1"/></span>
+                                <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+                            </div><br>
+                    
 <!-- ***************************************************************************************************** 2 image -->
                     <div class="input-group">
-                            <input type="text" class="form-control file-upload-text" disabled placeholder="select picture 2" />
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-success file-upload-btn">
-                                    Browse...
-                                    <input type="file" class="file-upload" name="img2" id="img2" />
-                                </button>
-                            </span>
+                              <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <span>Select picture 2</span>
+                                <span class="btn btn-primary btn-file"><span class="fileupload-new"></span>
+                                    <input type="file" class="file-upload" name="img2" id="img2"/></span>
+                                <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+                            </div><br>
                     </div><br>
                                 
                                     
 <!-- ***************************************************************************************************** 3 image -->
                     <div class="input-group">
-                            <input type="text" class="form-control file-upload-text" disabled placeholder="select picture 3" />
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-success file-upload-btn">
-                                    Browse...
-                                    <input type="file" class="file-upload" name="img3" id="img3" />
-                                </button>
-                            </span>
+                              <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <span>Select picture 3</span>
+                                <span class="btn btn-primary btn-file"><span class="fileupload-new"></span>
+                                    <input type="file" class="file-upload" name="img3" id="img3"/></span>
+                                <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+                            </div><br>
                     </div><br>
                                         
                                     
                                     
 <!-- ***************************************************************************************************** 4 image -->
                 <div class="input-group">
-                            <input type="text" class="form-control file-upload-text" disabled placeholder="select picture 4" />
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-success file-upload-btn">
-                                    Browse...
-                                    <input type="file" class="file-upload" name="img4" id="img4" />
-                                </button>
-                            </span>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <span>Select picture 4</span>
+                                <span class="btn btn-primary btn-file"><span class="fileupload-new"></span>
+                                    <input type="file" class="file-upload" name="img4" id="img4"/></span>
+                                <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+                            </div><br>
                     </div>             
                                 </div>     
 

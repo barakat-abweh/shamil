@@ -131,7 +131,7 @@
                         <p>$945 679</p>
                     </div>
                 </div>
-                    <div class="property-content">
+                <div class="property-content">
                         <h5>Villa in Los Angeles</h5>
                         <p class="location">
                         <img src="../images/icons/location.png" class="" alt="">Upper Road 3411, no.34 CA</p>
