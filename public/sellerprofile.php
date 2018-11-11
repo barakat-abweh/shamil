@@ -13,7 +13,10 @@
                 <li class="active "><a data-toggle="tab" href="#home"><h4 class="hover_tabe">Information</h4></a></li>
            
                 
-                <!--  put the tabs profile seller requer -->
+                <?php if($ownprofile){
+     require_once './tabsprofileseller.php';
+                }
+?>
             
                     
                     
@@ -102,7 +105,10 @@
                       </div>
                   </div><!--/tab-content-->
                              
-                    <!-- put sub tabs profile sellet requer -->
+                    <?php if($ownprofile){
+     require_once './subtabsprofileseller.php';
+                    }
+?>
               
               
               

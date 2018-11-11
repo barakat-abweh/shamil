@@ -63,11 +63,6 @@ $ownprofile=true;
     }
 } else{
             require_once 'sellerprofile.php';
-//            if ($user->getType() == "0") {
-                
-//            } else {
-//                require_once './sellerprofile.php';
-//        }
             }
 //        } else
 //        {
@@ -93,6 +88,7 @@ $ownprofile=true;
     <script src="../scripts/plugins.js"></script>
     <script src="../scripts/classy-nav.min.js"></script>
     <script src="../scripts/jquery-ui.min.js"></script>
+    <script src="../scripts/profilesallerpage.js"></script>
     <!-- Active js -->
 
     </body>
