@@ -26,27 +26,8 @@
             <div class="tab-pane " id="messages">
                 <div class="col-xs-8 messages">
                 <span id=""><h4>Messages</h4></span>
-                <div class="notification">
-                    <table class="table-responsive table-bordered table-striped">
-                        <thead>
-                          <tr>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Default</td>
-                            <td>Defaultson</td>
-                          </tr>      
-                          <tr>
-                            <td>Success</td>
-                            <td>Doe</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                </div>    
-                </div>
+                    <!-- get page message in public ( requer ) -->
+     </div>
             
             
               </div>                                  

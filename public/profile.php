@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../styles/profilesellerpage.css">
     <link rel="stylesheet" href="../styles/homenavbar.css"/>
     
+    
 <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
