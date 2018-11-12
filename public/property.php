@@ -96,10 +96,42 @@ function redirect(){
                                                 <h4 class="price  d-inline p-2 bg-light ">Type: <span><?php echo $property->getType();?></span></h4>
                                                 <h4 class="price  d-inline p-2 bg-light ">Area: <span><?php echo $property->getArea();?></span></h4>
 						<h4 class="price  d-inline p-2 bg-light ">Price: <span><?php echo $property->getPrice();?></span></h4>
-						
+						<?php require_once '../includes/session.php';
+                                                 if ($session->isLoggedIn()) {
+                                                     require_once '../includes/users.php';
+                                                     $user->setDataBase($database);
+                                                     $user->setId($session->getUserId());
+                                                     if($user->getType()==0){
+                                                         if($session->getUserId()==$property->getOwnerId()){?>
+                                                <div class="form">
+                                                <div class="action">
+                                                    <button class="add-to-cart btn btn-danger" id="editproduct" type="button" onclick="editproduct('<?php echo $property_id?>');">Edit</button>
+						</div>
+                                                         <div class="action">
+                                                    <button class="add-to-cart btn btn-danger" id="deleteproduct" type="button" onclick="deleteproduct('<?php echo $property_id?>');">Delete</button>
+						</div>
+                                                </div>
+                                                 <?php }
+                                                 else{?>
+                                                <script>window.location ="index.php"</script>
+                                                <?php
+                                                 }
+                                                         }
+                                                     else if($user->getType()==1){
+                                                         ?>
+                                                
 						<div class="action">
                                                     <button class="add-to-cart btn btn-success" id="interested" type="button" onclick="interested('<?php echo $property_id?>');">Interested!</button>
 						</div>
+                                                <?php
+                                                     }
+                                                }
+                                                else{
+                                                    ?>
+                                                <p>You should login in order to purchase</p>
+                                                <?php
+                                                }
+                                                ?>
 					</div>
 				</div>
 			</div>
