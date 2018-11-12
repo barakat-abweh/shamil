@@ -81,6 +81,7 @@ $ownprofile=true;
  
     
      <script src="../scripts/jquery-2.2.4.min.js"></script>
+        <script src="../scripts/jquery.form.js"></script>
     <!-- Popper js -->
     <script src="../scripts/popper.min.js"></script>
     <!-- Bootstrap js -->
@@ -91,7 +92,40 @@ $ownprofile=true;
     <script src="../scripts/jquery-ui.min.js"></script>
     <script src="../scripts/profilesallerpage.js"></script>
     <!-- Active js -->
+        <script>
+            $(document).on('change', '#image_upload_file', function () {
+                var progressBar = $('.progressBar'), bar = $('.progressBar .bar'), percent = $('.progressBar .percent');
 
+                $('#image_upload_form').ajaxForm({
+                    beforeSend: function () {
+                        progressBar.fadeIn();
+                        var percentVal = '0%';
+                        bar.width(percentVal)
+                        percent.html(percentVal);
+                    },
+                    uploadProgress: function (event, position, total, percentComplete) {
+                        var percentVal = percentComplete + '%';
+                        bar.width(percentVal);
+                        percent.html(percentVal);
+                    },
+                    success: function (html, statusText, xhr, $form) {
+                        obj = $.parseJSON(html);
+                        if (obj.status) {
+                            var percentVal = '100%';
+                            bar.width(percentVal)
+                            percent.html(percentVal);
+                            $("#imgArea>img").prop('src', obj.image_medium);
+                        } else {
+                            alert(obj.error);
+                        }
+                    },
+                    complete: function (xhr) {
+                        progressBar.fadeOut();
+                    }
+                }).submit();
+
+            });
+        </script>
     </body>
     
     

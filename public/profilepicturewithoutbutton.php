@@ -1,6 +1,6 @@
-<div class="col-sm-3"><!--left col-->
-                <div class="text-center">
-                    <img src="<?php echo $user->getProfilePicture(); ?>" class="avatar  img-thumbnail" alt="avatar">
+<div class="col-md-3" id="profile">
+                <div id="imgContainer">
+                        <div id="imgArea"><img class="avatar img-thumbnail" src="<?php echo $user->getProfilePicture();?>">
+                        </div>
                 </div>
-                <br>
-            </div><!--/col-3-->
+            </div>

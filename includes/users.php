@@ -197,7 +197,7 @@ public function setId($id){
         return $result;
     }
     public function getProfilePicture(){
-        return "../users/$this->id/images/profile/uploads/medium/profile.png";
+        return "../users/$this->id/images/profile/uploads/medium/profile.jpg";
     }
     public function changePassword(){
         $query="UPDATE `users` SET `password`='$this->password' WHERE `user_id`=$this->id";
