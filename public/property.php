@@ -150,7 +150,6 @@ function redirect(){
     <!-- Active js -->
     <script src="../scripts/sweetalert.min.js"></script>
     <script src="../scripts/signin.js"></script>
-     <script src="../scripts/profilesallerpage.js"></script>
     <script src="../scripts/property.js"></script>
     </body>
 </html>
