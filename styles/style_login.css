@@ -26,7 +26,15 @@
   font-family: "Open Sans", sans-serif; }
 
 
+.main-header-area .classy-navbar {
+    height: 60px;
+    color: #ffffff;
+    padding: .5em 90px;
+}
 
+.main-header-area{
+    height:inherit; !important;
+}
 h1,
 h2,
 h3,
@@ -456,11 +464,6 @@ img {
       height: 50px; } }
   .main-header-area .classy-nav-container {
     background-color: transparent; }
-  .main-header-area .classy-navbar {
-    height: 80px;
-      color:  #ffffff;
-    padding: .5em 90px;
-}
 
 #logo{
     background-size: 100%;
@@ -579,7 +582,6 @@ img {
 .is-sticky .main-header-area {
   width: 100%;
   z-index: 10000 !important;
-  height: 90px;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
   background-color: #000000; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {

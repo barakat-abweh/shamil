@@ -103,14 +103,10 @@ function redirect(){
                                                      $user->setId($session->getUserId());
                                                      if($user->getType()==0){
                                                          if($session->getUserId()==$property->getOwnerId()){?>
-                                                <div class="form">
-                                                <div class="action">
-                                                    <button class="add-to-cart btn btn-danger" id="editproduct" type="button" onclick="editproduct('<?php echo $property_id?>');">Edit</button>
+                                                <div class="action col-xs-12">
+                                                    <button class="col-md-3  btn btn-warning" id="editproduct" type="button" onclick="editproduct('<?php echo $property_id?>');">Edit</button>
+                                                    <button class="col-md-3 btn btn-danger" id="deleteproduct" type="button" onclick="deleteproduct('<?php echo $property_id?>');">Delete</button>
 						</div>
-                                                         <div class="action">
-                                                    <button class="add-to-cart btn btn-danger" id="deleteproduct" type="button" onclick="deleteproduct('<?php echo $property_id?>');">Delete</button>
-						</div>
-                                                </div>
                                                  <?php }
                                                  else{?>
                                                 <script>window.location ="index.php"</script>
@@ -128,7 +124,7 @@ function redirect(){
                                                 }
                                                 else{
                                                     ?>
-                                                <p>You should login in order to purchase</p>
+                        <h4 class="d-inline p-2 bg-danger">You should login in order to purchase</h4>
                                                 <?php
                                                 }
                                                 ?>
