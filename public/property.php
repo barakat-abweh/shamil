@@ -7,6 +7,7 @@ if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="GET"){
             require_once '../includes/property.php';
             $property->setDataBase($database);
             $property->setId($property_id);
+            if($property->isDeleted()){redirect();}
             if(gettype($property->getId())=="NULL"){
                 redirect();
             }
@@ -104,8 +105,8 @@ function redirect(){
                                                      if($user->getType()==0){
                                                          if($session->getUserId()==$property->getOwnerId()){?>
                                                 <div class="action col-xs-12">
-                                                    <button class="col-md-3  btn btn-warning" id="editproduct" type="button" onclick="editproduct('<?php echo $property_id?>');">Edit</button>
-                                                    <button class="col-md-3 btn btn-danger" id="deleteproduct" type="button" onclick="deleteproduct('<?php echo $property_id?>');">Delete</button>
+                                                    <button class="col-md-3  btn btn-warning" id="editproperty" type="button" onclick="editProperty('<?php echo $property_id?>');">Edit</button>
+                                                    <button class="col-md-3 btn btn-danger" id="deleteproperty" type="button" onclick="deleteProperty('<?php echo $property_id?>');">Delete</button>
 						</div>
                                                  <?php }
                                                  else{?>

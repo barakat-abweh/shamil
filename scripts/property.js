@@ -15,4 +15,20 @@ function interested(e){
         }
 });
 }
-
+function editProperty(e){
+    alert(e);
+}
+function deleteProperty(e){
+      $.post("../includes/deleteProperty.php",
+    {
+        property_id:e
+    },
+    function(data, status){
+        if(data=='0'){
+             sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
+        }
+        else{
+           alert(data);
+        }
+    });
+}
