@@ -157,7 +157,7 @@ class property {
     }
     
     public function getRandomProperties(){
-        $query = "SELECT `property_id`, `property_name`,`city_id`, `description`, `price` FROM `property` where deleted != '1' ORDER BY RAND()"; # 
+        $query = "SELECT `property_id`,owner_id, `property_name`,`city_id`, `description`, `price` FROM `property` where deleted != '1' ORDER BY RAND()"; # 
         $result=$this->dataBase->query($query);
         return $result;
     }
