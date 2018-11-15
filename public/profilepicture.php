@@ -1,4 +1,4 @@
-<div class="col-md-3" id="profile">
+<div class="" id="profile">
                 <div id="imgContainer text-center">
                     <form enctype="multipart/form-data" action="image_upload_demo_submit.php" method="post" name="image_upload_form" id="image_upload_form">
                         <div id="imgArea"><img class="avatar img-thumbnail" src="<?php echo $user->getProfilePicture();?>">

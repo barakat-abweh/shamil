@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="../styles/profilesellerpage.css">
     <link rel="stylesheet" href="../styles/homenavbar.css"/>
+        <link rel="stylesheet" href="../styles/styleImageUpload.css">
+
     
     
 <!------ Include the above in your HEAD tag ---------->
