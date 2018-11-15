@@ -39,7 +39,7 @@
 					<section>
 						<p style="color: white">A site specializing in selling homes and land, will be moved for review or for booking</p>
 						<ul class="actions">
-							<li><a href="#" class="button special btn btn-success">Get started</a></li>
+							<li><a href="index.php" class="button special btn btn-success">Get started</a></li>
 						</ul>
 					</section>
 				</div>
@@ -53,7 +53,7 @@
 						<p>An integrated site to display real estate in terms of houses and land, this site includes the seller who publishes what he has for sale, and the buyer reviews what the sellers published.
                         The buyer can recieve what he wants, and the seller will receive notice of the reservation, so we have included in this site what was mentioned above.</p>
 						<ul class="actions">
-							<li><a href="#" class="button alt btn btn-success">Get started ?</a></li>
+							<li><a href="index.php" class="button alt btn btn-success">Get started ?</a></li>
 						</ul>
 					</section>
 					<section>
