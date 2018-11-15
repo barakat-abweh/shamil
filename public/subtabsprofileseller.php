@@ -26,7 +26,7 @@
             <div class="tab-pane " id="messages">
                 <div class="col-xs-8 messages">
                 <span id=""><h4>Messages</h4></span>
-                    <!-- get page message in public ( requer ) -->
+                    <?php require_once './messages.php';?>
      </div>
             
             
