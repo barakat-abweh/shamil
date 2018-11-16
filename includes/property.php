@@ -237,12 +237,22 @@ public function getDescription(){
         $query.="VALUES('$this->id','$this->name',$this->ownerid,$this->area,$this->cityid,'$this->description',$this->price,$this->type,'0')";
         $result=  $this->getDataBase()->query($query);
     }
+    public function getInterestId() {
+        $query="SELECT `interest_id` FROM `interested` WHERE `property_id`=$this->id AND `interested_user_id`=$this->interesteduserid AND `canceled` = 0 AND `accepted` = 0";
+       $result=$this->dataBase->query($query);
+       $result= $this->dataBase->fetchArray($result);
+       return $result['interest_id'];
+    }
     public function setInterested(){
         $ownerId= $this->getOwnerId();
         $query="INSERT INTO `interested`(`property_owner_id`, `interested_user_id`, `property_id`) VALUES ($ownerId,$this->interesteduserid,$this->id)";
         $this->dataBase->query($query);
     }
-
+        public function removeInterested(){
+        $intereste_id= $this->getInterestId();
+        $query="UPDATE `interested` SET `canceled`=1 WHERE `interest_id`= $intereste_id";
+        $this->dataBase->query($query);
+    }
     public function closeConnection(){
            $this->getDataBase()->closeConnection();
        }
