@@ -45,7 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { #check type request
     }
      $field=htmlspecialchars($_POST['description']);
      if(!isEmtpy($field)){
-    if(checkNum_Char($field)){ $description=$field;$flag5=true;}
+    if(checkMoreinfo($field)){ $description=$field;$flag5=true;}
+    else{
+    redirect();
+    }
     }
     for($i=1;$i<=4;$i++){   
         $flag7=false;
