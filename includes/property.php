@@ -1,6 +1,7 @@
 <?php
 class property {
     private $dataBase;
+    private $interesteduserid;
     private $id;
     private $name;
     private $ownerid;
@@ -43,6 +44,9 @@ class property {
     public function setId($id) {
        $this->id = $this->dataBase->escape($id);
        
+    }
+    public function setInteresteduserId($id) {
+       $this->interesteduserid = $this->dataBase->escape($id);
     }
     public function setDescription($description)
     {
@@ -180,6 +184,16 @@ public function getDescription(){
         $result= $this->dataBase->fetchArray($result);
         return $result['area'];
     }
+    public function checkExist(){
+        $query="SELECT `property_id` FROM `property` WHERE `property_id`= $this->id";
+        $result= $this->dataBase->query($query);
+        $result= $this->dataBase->fetchArray($result);
+        $property_id=$result['property_id'];
+        if($property_id>0){
+            return true;
+        }
+        return false;
+    }
     public function getOwner(){
         $query="SELECT `owner_id` FROM `property` WHERE `property_id`=$this->id AND `deleted` != 1";
         $result= $this->dataBase->query($query);
@@ -224,7 +238,9 @@ public function getDescription(){
         $result=  $this->getDataBase()->query($query);
     }
     public function setInterested(){
-        $query="INSERT INTO `interested`(`property_owner_id`, `interested_user_id`, `property_id`) VALUES ()";
+        $ownerId= $this->getOwnerId();
+        $query="INSERT INTO `interested`(`property_owner_id`, `interested_user_id`, `property_id`) VALUES ($ownerId,$this->interesteduserid,$this->id)";
+        $this->dataBase->query($query);
     }
 
     public function closeConnection(){

@@ -11,7 +11,7 @@ function interested(e){
              sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
         }
         else{
-             alert(data);
+            location.href=window.location.href;
         }
 });
 }
@@ -28,7 +28,7 @@ function deleteProperty(e){
              sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
         }
         else{
-           alert(data);
+           location.href=window.location.href;
         }
     });
 }

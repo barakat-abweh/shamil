@@ -9,7 +9,18 @@ if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="POST"){
     if(isset($_POST['property_id'])){
     $propertyid= trim(htmlspecialchars($_POST['property_id']));
     if(checkNum($propertyid)){
+        require_once './database.php';
         require_once './property.php';
+        $property->setDataBase($database);
+        $property->setId($propertyid);
+        if($property->checkExist()){
+            require_once './session.php';
+            $property->setInteresteduserId($session->getUserId());
+            $property->setInterested();
+        }
+        else{
+            echo "0";
+        }
     }
     else{
         echo "0";

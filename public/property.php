@@ -118,8 +118,15 @@ function redirect(){
                                                          ?>
                                                 
 						<div class="action">
+                                                    <?php
+                                                    if(!$user->isInterested($property_id)){?>
                                                     <button class="add-to-cart btn btn-success" id="interested" type="button" onclick="interested('<?php echo $property_id?>');">Interested!</button>
-						</div>
+                                                   <?php }
+                                                    else {?>
+                                                    <button class="add-to-cart btn btn-success" id="unInterested" type="button" onclick="unInterested('<?php echo $property_id?>');">Not Interested!</button>
+                                                        <?php }
+                                                            ?>
+                                                </div>
                                                 <?php
                                                      }
                                                 }

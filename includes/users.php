@@ -203,6 +203,14 @@ public function setId($id){
         $query="UPDATE `users` SET `password`='$this->password' WHERE `user_id`=$this->id";
         $this->dataBase->query($query);
     }
+    public function isInterested($property_id) {
+        $query="SELECT `interest_id` FROM `interested` WHERE `property_id`=$property_id AND `interested_user_id`=$this->id AND `canceled` = 0";
+        $result= $this->dataBase->query($query);
+       if($this->dataBase->numRows($result)>0){
+           return true;
+       }
+       return false;
+    }
 }
 $user = new user();
 
