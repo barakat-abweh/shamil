@@ -25,7 +25,7 @@
                     <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Property Thumbnail -->
                         <div class="property-thumb">
-                            <img src="<?php echo "../users/".$result['owner_id']."/images/properties/".$result['property_id']."/1.png"; ?>" alt="">
+                            <img class="imges_random" src="<?php echo "../users/".$result['owner_id']."/images/properties/".$result['property_id']."/1.png"; ?>" alt="">
                             <div class="list-price">
                                 <h3><p><?php
                                echo $result['price'];

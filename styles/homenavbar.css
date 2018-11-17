@@ -90,6 +90,10 @@ p {
 img {
 	max-width: 100%;
 }
+.imges_random{
+    width: 100%; !important;
+    height: 300px;!important;
+}
 
 input:focus,
 select:focus,
