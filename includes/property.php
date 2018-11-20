@@ -167,7 +167,7 @@ class property {
     }
     public function getCityName($city_id){
         $city_id= $this->dataBase->escape($city_id);
-        $query="SELECT `city_name` FROM `city` WHERE `city_id`=$city_id AND `deleted` != 1";
+        $query="SELECT `city_name` FROM `city` WHERE `city_id`=$city_id";
         $result= $this->dataBase->query($query);
         $result= $this->dataBase->fetchArray($result);
         return $result['city_name'];
