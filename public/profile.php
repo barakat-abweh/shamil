@@ -92,6 +92,7 @@ $ownprofile=true;
     <script src="../scripts/plugins.js"></script>
     <script src="../scripts/classy-nav.min.js"></script>
     <script src="../scripts/jquery-ui.min.js"></script>
+    <script src="../scripts/profile.js"></script>
     <!-- Active js -->
         <script>
             $(document).on('change', '#image_upload_file', function () {
