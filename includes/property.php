@@ -251,6 +251,10 @@ public function getDescription(){
     public function closeConnection(){
            $this->getDataBase()->closeConnection();
        }
+       public function editProperty(){
+           $query="UPDATE `property` SET `property_name`='$this->name',`area`=$this->area,`city_id`='$this->cityid',`description`='$this->description',`price`=$this->price,`type`='$this->type' WHERE `property_id`=$this->id";
+           $this->dataBase->query($query);
+       }
        }
         
  $property = new property();

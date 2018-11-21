@@ -33,14 +33,12 @@ function editProperty(){
     $('#editproperty').attr('disabled','');
     $name = $('#propname');
     $desc = $('#desc');
-    $own = $('#own');
     $addr = $('#addr');
     $type = $('#type');
     $area = $('#area');
     $price = $('#price');
     $name.replaceWith("<input type='text' class='form-control' id='propname' value='" + $name.text() +"' name='propname'>");
     $desc.replaceWith("<textarea id='desc' name='desc'>"+$desc.text()+"</textarea>");
-    $own.replaceWith("<input type='text' class='form-control' id='own' value='" + $own.text() +"'>");
     $area.replaceWith("<input type='text' class='form-control' id='area' value='" + $area.text() +"'>");
     $price.replaceWith("<input type='text' class='form-control' id='price' value='" + $price.text() +"'>");
     $('#propinfo').append("<button class='col-md-3  btn btn-warning' id='save' type='button' onclick='save();'>Save</button><button class='col-md-3 btn btn-danger' id='cancel' type='button' onclick='cancel()'>Cancel</button>");
@@ -76,24 +74,22 @@ function save(){
     $propertyid=location.href.split('=')[1];
     $name = $('#propname').val();
     $desc = $('#desc').val();
-    $own = $('#own').val();
     $addr = $('#addr').val();
     $type = $('#type').val();
     $area = $('#area').val();
     $price = $('#price').val();
     $.post("../includes/editproperty.php",
     {
-        property_id:$propertyid,description:$desc,owner:$own,address:$addr,type:$type,area:$area,price:$price
+        property_id:$propertyid,name:$name,description:$desc,address:$addr,type:$type,area:$area,price:$price
     },
     function(data, status){
         if(data=='0'){
              sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
         }
         else{
-           alert(data);
+           location.href=window.location.href;
         }
     });
-    //location.href=window.location.href;
 }
 function deleteProperty(e){
       $.post("../includes/deleteProperty.php",
