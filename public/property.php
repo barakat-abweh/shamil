@@ -88,15 +88,15 @@ function redirect(){
                         </ul>
 						
 					</div>
-					<div class="details col-md-6">
-						<h3 class="product-title d-inline p-2 bg-success text-white"><?php echo $property->getName();?></h3>
+                                    <div class="details col-md-6" id="propinfo">
+                                            <h3 class="product-title d-inline p-2 bg-success text-white">Name: <span id="propname"><?php echo $property->getName();?></span></h3>
 					
-						<p class="product-description"><?php echo $property->getDescription();?></p>
+                                            <h4 class="product-description">Description:<span id="desc"><?php echo $property->getDescription();?></span></h4>
 						<h4 class="price  d-inline p-2 bg-light ">Owner: <span><?php echo $property->getOwner();?></span></h4>
-						<h4 class="price  d-inline p-2 bg-light ">Address: <span><?php echo $property->getAddress();?></span></h4>
-                                                <h4 class="price  d-inline p-2 bg-light ">Type: <span><?php echo $property->getType();?></span></h4>
-                                                <h4 class="price  d-inline p-2 bg-light ">Area: <span><?php echo $property->getArea();?></span></h4>
-						<h4 class="price  d-inline p-2 bg-light ">Price: <span><?php echo $property->getPrice();?></span></h4>
+                                                <h4 class="price  d-inline p-2 bg-light ">Address: <span id="addr"><?php echo $property->getAddress();?></span></h4>
+                                                <h4 class="price  d-inline p-2 bg-light ">Type: <span id="type"><?php echo $property->getType();?></span></h4>
+                                                <h4 class="price  d-inline p-2 bg-light ">Area: <span id="area"><?php echo $property->getArea();?></span></h4>
+                                                <h4 class="price  d-inline p-2 bg-light ">Price: <span id="price"><?php echo $property->getPrice();?></span></h4>
 						<?php require_once '../includes/session.php';
                                                  if ($session->isLoggedIn()) {
                                                      require_once '../includes/users.php';
@@ -105,7 +105,7 @@ function redirect(){
                                                      if($user->getType()==0){
                                                          if($session->getUserId()==$property->getOwnerId()){?>
                                                 <div class="action col-xs-12">
-                                                    <button class="col-md-3  btn btn-warning" id="editproperty" type="button" onclick="editProperty('<?php echo $property_id?>');">Edit</button>
+                                                    <button class="col-md-3  btn btn-warning" id="editproperty" type="button" onclick="editProperty();">Edit</button>
                                                     <button class="col-md-3 btn btn-danger" id="deleteproperty" type="button" onclick="deleteProperty('<?php echo $property_id?>');">Delete</button>
 						</div>
                                                  <?php }

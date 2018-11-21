@@ -202,7 +202,7 @@ public function getDescription(){
         $query="SELECT `user_id`,`fname`, `lname` FROM `users` WHERE `user_id`=$this->ownerid";
         $result= $this->dataBase->query($query);
         $result= $this->dataBase->fetchArray($result);
-        return "<a href='profile.php?user_id=".$result['user_id']."'>".$result['fname']." ".$result['lname']."</a>";
+        return "<a id=\"own\" href='profile.php?user_id=".$result['user_id']."'>".$result['fname']." ".$result['lname']."</a>";
     }
     public function getAddress(){
         $query="SELECT `city_id` FROM `property` WHERE `property_id`=$this->id AND `deleted` != 1";
