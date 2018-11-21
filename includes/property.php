@@ -209,16 +209,11 @@ public function getDescription(){
         $result= $this->dataBase->query($query);
         $result= $this->dataBase->fetchArray($result);
         $city_id=$result['city_id'];
-        $query="SELECT `country_id`, `city_name` FROM `city` WHERE `city_id`=$city_id";
+        $query="SELECT `city_name` FROM `city` WHERE `city_id`=$city_id";
         $result= $this->dataBase->query($query);
         $result= $this->dataBase->fetchArray($result);
-        $country_id=$result['country_id'];
         $city_name=$result['city_name'];
-        $query="SELECT `country_name` FROM `country` WHERE `country_id`=$country_id";
-        $result= $this->dataBase->query($query);
-        $result= $this->dataBase->fetchArray($result);
-        $country_name=$result['country_name'];
-        return $country_name." - ".$city_name;
+        return $city_name;
     }
      public function getDataBase() {
         return $this->dataBase;
