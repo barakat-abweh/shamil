@@ -28,7 +28,6 @@ class user {
     
         function setDataBase($dataBase){
             $this->dataBase=$dataBase;
-                
         }
 public function setId($id){
     $this->id= $this->dataBase->escape($id);
@@ -66,6 +65,10 @@ public function setId($id){
         $query="SELECT `country_id` FROM `country` WHERE country_name='$country'";
         $res= $this->dataBase->query($query);
         $this->country= $this->dataBase->fetchArray($res)['country_id'];
+    }
+    public function setCountryId($country) {
+        $this->country=$this->dataBase->escape($country);
+        
     }
     public function setCity($city) {
         $city = $this->dataBase->escape($city);
@@ -115,20 +118,15 @@ public function setId($id){
     }
 
     public function getAddress() {
-        $query = "select country_id,city_id from users where user_id=$this->id";
+        $query = "select city_id from users where user_id=$this->id";
        $result= $this->dataBase->query($query);
-         $result=$this->dataBase->fetchArray($result);   
-         $country_id=$result['country_id'];
-         $city_id=$result['city_id'];
-         $query="SELECT  `country_name` FROM `country` WHERE country_id=$country_id";
-         $result= $this->dataBase->query($query);
          $result=$this->dataBase->fetchArray($result);
-         $country_name=$result['country_name'];
+         $city_id=$result['city_id'];
          $query="SELECT  `city_name` FROM `city` WHERE city_id=$city_id";
          $result= $this->dataBase->query($query);
          $result=$this->dataBase->fetchArray($result);
          $city_name=$result['city_name'];
-         return $country_name."-".$city_name;
+         return $city_name;
          
     }
 
@@ -210,6 +208,11 @@ public function setId($id){
            return true;
        }
        return false;
+    }
+    public function editUser(){
+        $query="UPDATE `users` SET `fname`='$this->fname',`lname`='$this->lname',`uname`='$this->uname',`email`='$this->email',`phone1`='$this->phone1',`phone2`='$this->phone2',`city_id`='$this->city' WHERE `user_id`=$this->id";
+        echo $query;
+        $this->dataBase->query($query);
     }
 }
 $user = new user();

@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="../styles/profilesellerpage.css">
     <link rel="stylesheet" href="../styles/homenavbar.css"/>
-        <link rel="stylesheet" href="../styles/styleImageUpload.css">
+    <link rel="stylesheet" href="../styles/styleImageUpload.css">
+    <link rel="stylesheet" href="../styles/sweetalert.css">
 
     
     
@@ -93,6 +94,7 @@ $ownprofile=true;
     <script src="../scripts/classy-nav.min.js"></script>
     <script src="../scripts/jquery-ui.min.js"></script>
     <script src="../scripts/profile.js"></script>
+    <script src="../scripts/sweetalert.min.js"></script>
     <!-- Active js -->
         <script>
             $(document).on('change', '#image_upload_file', function () {

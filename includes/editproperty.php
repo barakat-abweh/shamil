@@ -1,19 +1,4 @@
-<?php 
-$property_id;
-$name;
-$type;
-$price;
-$city;
-$description;
-$area;
-$flag1 = FALSE;
-$flag2 = FALSE;
-$flag3 = FALSE;
-$flag4 = FALSE;
-$flag5 = FALSE;
-$flag6 = FALSE;
-$flag7 = FALSE;
-$flag8 = FALSE;
+<?php
 
 require_once './session.php';
 $userid;
@@ -23,9 +8,8 @@ if($session->isLoggedIn()){
 }
 else{
     redirect ();
-    
 }
-//type,area,price
+
 if(htmlspecialchars($_SERVER['REQUEST_METHOD']=="POST")){
     require_once './database.php';
     require_once './property.php';
