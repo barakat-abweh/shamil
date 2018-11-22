@@ -1,6 +1,6 @@
 function editProfile(){
     $('#editprofile').attr('disabled','');
-    $('#editdiv').append("<button type=\"button\" class=\"col-md-3 col-md-offset-1 btn btn-warning col-xs-offset-1 col-xs-3\" id=\"cancel\" onclick=\"cancel();\">Cancel</button><button type=\"button\" class=\"col-md-3 col-md-offset-1 btn btn-warning col-xs-offset-1 col-xs-3\" id=\"save\" onclick=\"save();\">Save</button>");
+    $('#editdiv').append("<button type=\"button\" class=\"col-md-3 col-md-offset-1 btn btn-danger col-xs-offset-1 col-xs-3\" id=\"cancel\" onclick=\"cancel();\">Cancel</button><button type=\"button\" class=\"col-md-3 col-md-offset-1 btn btn-success col-xs-offset-1 col-xs-3\" id=\"save\" onclick=\"save();\">Save</button>");
    $fname = $('#fname');
    $lname = $('#lname');
    $uname = $('#uname');
