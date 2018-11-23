@@ -46,8 +46,21 @@ window.location.href=location.href;
 }
 
 function save(){
-$password=swal( {title: 'Enter your password', input: 'password'});
-    $fname = $('#fname').val();
+(async function getPassword () {
+const {value: password} = await swal({
+  title: 'Enter your password',
+  input: 'password',
+  inputPlaceholder: 'Enter your password',
+  inputAttributes: {
+    minlength: 10,
+    maxlength:40,
+    autocapitalize: 'off',
+    autocorrect: 'off'
+  }
+})
+
+if (password) {
+  $fname = $('#fname').val();
     $lname = $('#lname').val();
     $uname = $('#uname').val();
     $phones = $('#phone').val();
@@ -58,7 +71,7 @@ $password=swal( {title: 'Enter your password', input: 'password'});
 
     $.post("../includes/edituser.php",
     {
-        fname:$fname,lname:$lname,uname:$uname,phone1:$phone1,phone2:$phone2,email:$email,address:$address,password:$password
+        fname:$fname,lname:$lname,uname:$uname,phone1:$phone1,phone2:$phone2,email:$email,address:$address,password:password
     },
            
     function(data, status){
@@ -71,6 +84,8 @@ $password=swal( {title: 'Enter your password', input: 'password'});
       
         }
     });
+}
+})()
 }
 
 
