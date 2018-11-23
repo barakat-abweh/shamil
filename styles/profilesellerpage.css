@@ -53,7 +53,28 @@
   margin: 0;
   padding: 0; }
 
+.edit_info{
+    margin-top: -15px;
+    
+}
 
+.form-control-edit {
+    background-color: transparent;
+    width: 100%;!important;
+    height: 38px;!important;
+    border-radius: 0;!important;
+    font-size: 14px;!important;
+    color: white;!important;
+    margin-bottom: 30px;!important;
+    font-weight: 500;!important;
+    padding: 0 15px;!important;
+    border: 1px solid #e1dddd;!important;
+    
+}
+.edit_select{
+    background-color: #4682b4;
+    color: white;
+}
 .container{max-width:1170px; margin:auto;}
 img{ max-width:100%;}
 .inbox_people {

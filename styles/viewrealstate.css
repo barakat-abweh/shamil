@@ -9,6 +9,9 @@ body {
 img {
   max-width: 100%; }
 
+.edit_property{
+    margin-left: 10px;
+}
 .preview {
   display: -webkit-box;
   display: -webkit-flex;

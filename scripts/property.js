@@ -41,7 +41,9 @@ function editProperty(){
     $desc.replaceWith("<textarea id='desc' name='desc'>"+$desc.text()+"</textarea>");
     $area.replaceWith("<input type='text' class='form-control' id='area' value='" + $area.text() +"'>");
     $price.replaceWith("<input type='text' class='form-control' id='price' value='" + $price.text() +"'>");
-    $('#propinfo').append("<button class='col-md-3 btn btn-danger' id='cancel' type='button' onclick='cancel()'>Cancel</button><button class='col-md-3  btn btn-success' id='save' type='button' onclick='save();'>Save</button>");
+    $('#propinfo').append("<div class='class='action col-xs-12'><button class='col-md-3 btn btn-danger' id='cancel' type='button' onclick='cancel()'>Cancel</button><button class='col-md-3 edit_property btn btn-success' id='save' type='button' onclick='save();'>Save</button></div>");
+    document.getElementById('editproperty').style.visibility='hidden';
+    document.getElementById('deleteproperty').style.visibility='hidden';
     $.post("../includes/getcitiess.php",
     {
         x:"0"
