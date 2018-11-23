@@ -2,8 +2,14 @@
         <div class="col-xs-4 notification_tab">
                 <span id=""><h4>Notifications</h4></span>
                 <div class="notification">
-                    <table class="table-responsive table-bordered table-striped" id="notificationtable">
-                      </table>
+                    <?php
+                    if($user->getType()=="0"){
+                        require_once 'sellernotifications.php';                        
+                    }
+                    else{
+                        require_once 'buyernotifications.php';
+                    }
+                    ?>
                 </div>    
                 </div>
               </div>                                  
