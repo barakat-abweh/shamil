@@ -1,3 +1,18 @@
+$(document).ready(function (){
+    setInterval(function(){$.post("../includes/notification.php",
+    {
+        lastinterestid:"0"
+    },
+    function(data, status){
+        if(data=='0'){
+             sweetAlert("Oops...", "It looks like something wrong happend, We can't get your notifications", "error");
+        }
+        else{
+    alert(data);
+        }
+    });},5000);
+    
+});
 function editProfile(){
     $('#editprofile').attr('disabled','');
     $('#editdiv').append("<button type=\"button\" class=\"col-md-3 col-md-offset-1 btn btn-danger col-xs-offset-1 col-xs-3\" id=\"cancel\" onclick=\"cancel();\">Cancel</button><button type=\"button\" class=\"col-md-3 col-md-offset-1 btn btn-success col-xs-offset-1 col-xs-3\" id=\"save\" onclick=\"save();\">Save</button>");

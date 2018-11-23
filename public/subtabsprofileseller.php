@@ -2,23 +2,7 @@
         <div class="col-xs-4 notification_tab">
                 <span id=""><h4>Notifications</h4></span>
                 <div class="notification">
-                    <table class="table-responsive table-bordered table-striped">
-                        <thead>
-                          <tr>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Default</td>
-                            <td>Defaultson</td>
-                          </tr>      
-                          <tr>
-                            <td>Success</td>
-                            <td>Doe</td>
-                          </tr>
-                        </tbody>
+                    <table class="table-responsive table-bordered table-striped" id="notificationtable">
                       </table>
                 </div>    
                 </div>
