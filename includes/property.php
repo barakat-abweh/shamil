@@ -233,7 +233,7 @@ public function getDescription(){
         $result=  $this->getDataBase()->query($query);
     }
     public function getInterestId() {
-        $query="SELECT `interest_id` FROM `interested` WHERE `property_id`=$this->id AND `interested_user_id`=$this->interesteduserid AND `canceled` = 0 AND `accepted` = 0";
+        $query="SELECT `interest_id` FROM `interested` WHERE `property_id`=$this->id AND `interested_user_id`=$this->interesteduserid AND `canceled` = 0";
        $result=$this->dataBase->query($query);
        $result= $this->dataBase->fetchArray($result);
        return $result['interest_id'];
@@ -244,8 +244,8 @@ public function getDescription(){
         $this->dataBase->query($query);
     }
         public function removeInterested(){
-        $intereste_id= $this->getInterestId();
-        $query="UPDATE `interested` SET `canceled`=1 WHERE `interest_id`= $intereste_id";
+        $interest_id= $this->getInterestId();
+        $query="UPDATE `interested` SET `canceled`=1 WHERE `interest_id`= $interest_id";
         $this->dataBase->query($query);
     }
     public function closeConnection(){

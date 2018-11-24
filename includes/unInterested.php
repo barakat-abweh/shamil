@@ -27,7 +27,6 @@ if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="POST"){
     }
     }
 }
-
 function checkNum($value) {
    $arr = str_split($value);
    for ($i = 0; $i < count($arr); $i++) {
