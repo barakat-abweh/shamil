@@ -25,7 +25,7 @@ if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="POST"){
                 }
         }
     else if($id=="1"){
-         $query="SELECT `interest_id`, `interested_user_id`,`Date`, `property_id` FROM `interested` WHERE `property_owner_id`='$userid' AND interest_id >= $id `canceled` = 0 AND `seen` = 0 ORDER BY `Date` DESC";     
+         $query="SELECT `interest_id`, `interested_user_id`,`Date`, `property_id` FROM `interested` WHERE `property_owner_id`='$userid' AND interest_id >= $id AND `canceled` = 0 AND `seen` = 0 ORDER BY `Date` DESC";
         $Result=$database->query($query);
                 while($res=$database->fetchArray($Result)){
                $user->setId($res['interested_user_id']);
