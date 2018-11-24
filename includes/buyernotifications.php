@@ -17,7 +17,7 @@ if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="POST"){
          $query="SELECT `property_owner_id`,`Date`, `property_id`, `accepted`, `canceled` FROM `interested` WHERE `interested_user_id`='$userid' AND interest_id >= $id ORDER BY `Date` DESC";
                 $Result=$database->query($query);
                 while($res=$database->fetchArray($Result)){
-               $user->setId($res['interested_user_id']);
+               $user->setId($res['property_owner_id']);
                $property->setId($res['property_id']);
                $canceled="Not Defined";
                $accorrej="Not Defined";
@@ -40,7 +40,7 @@ if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="POST"){
                  $query="SELECT `property_owner_id`,`Date`, `property_id`, `accepted`, `canceled` FROM `interested` WHERE `interested_user_id`='$userid' AND interest_id >= $id AND `seen1` = 0 ORDER BY `Date` DESC";
               $Result=$database->query($query);
 while($res=$database->fetchArray($Result)){
-               $user->setId($res['interested_user_id']);
+               $user->setId($res['property_owner_id']);
                $property->setId($res['property_id']);
                $canceled="Not Defined";
                $accorrej="Not Defined";

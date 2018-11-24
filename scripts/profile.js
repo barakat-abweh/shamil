@@ -73,4 +73,42 @@ if (password) {
 })()
 }
 
+function accept(e){
+    $.post("../includes/accept.php",
+    {
+        interestid:e
+    },
+           
+    function(data, status){
 
+        if(data=='0'){
+             sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
+        }
+    });
+}
+function reject(e){
+    $.post("../includes/reject.php",
+    {
+        interestid:e
+    },
+           
+    function(data, status){
+
+        if(data=='0'){
+             sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
+        }
+    });
+}
+function initmessage(e){
+    $.post("../includes/initmessage.php",
+    {
+        interestid:e
+    },
+           
+    function(data, status){
+
+        if(data=='0'){
+             sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
+        }
+    });
+}
