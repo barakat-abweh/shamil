@@ -5,11 +5,26 @@
             <div class="recent_heading">
               <h4>Recent</h4>
             </div>
-           
-          </div>        
-          <div class="inbox_chat">
-             
           </div>
+            <div class="inbox_chat" id="conv">
+          </div>
+            <script>
+            setTimeout(function (){
+                $.post("../includes/conversations.php",
+    {
+        init:0
+    },
+    function(data, status){
+        if(data=='0'|| status!="success"){
+             sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
+        }
+        else{
+            $('#conv').html(data+$('#conv').html());
+        }
+});
+            },1000);
+            </script>
+
         </div>
         <div class="mesgs">
           <div class="msg_history">

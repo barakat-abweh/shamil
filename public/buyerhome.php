@@ -1,11 +1,11 @@
     <!-- ##### Featured Properties Area Start ##### -->
 <div class="container">
-<form  class="filter-form" id="buyer_searches_w_l">
+    <form  class="filter-form" id="buyer_searches_w_l" method="POST" action="search.php">
     	    <div id="custom-search-input">
                 <div class="input-group searches">
-                    <input type="text" class="search-query form-control" placeholder="Search" />
+                    <input type="text" class="search-query form-control" placeholder="Search" name="in"/>
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-light search_btn">Search</button>
+                        <button type="submit" class="btn btn-light search_btn">Search</button>
                     </span>
                 </div>
                 </div>
@@ -34,7 +34,7 @@
                         </div>
                         <!-- Property Content -->
                         <div class="property-content">
-                            <h5><?php
+                            <h5 style="color: black;"><?php
                                 echo $result['property_name'];
                                 ?></h5>
                             <p class="location"><img src="../images/icons/location.png" alt=""><?php echo $property->getCityName($result['city_id']); ?></p>
