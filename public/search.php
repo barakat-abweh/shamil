@@ -1,15 +1,19 @@
 <?php
+$in;
+$result;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once '../includes/database.php';
     require_once('../includes/search.php');
     require_once('../includes/functions.php');
+    require_once '../includes/property.php';
     $search->setDatabase($database);
+    $property->setDataBase($database);
     if (isset($search)) {
           if (isset($_POST['in'])&&!isEmpty($_POST['in'])) {
             $in = $_POST['in'];
             $in = htmlspecialchars($in);
             $in = $search->set_in($in);
-            $result = $search->search();
+            $result = $search->property_search();
         } else {
             header("LOCATION:index.php");
         }
@@ -20,50 +24,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("LOCATION:index.php");
 }
 ?>
-<html> 
-    <head>
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="description" content="Web2 porject:XHTML1.0 Strict with HTML-Kit" />
-        <meta name="keywords" content="project,Easy,Trade,Easy Trade"/>
-        <meta name="author" content="Barakat Abwe,Rabei Daraghmeh,Firas Qzaih,Anas Salahat,Mohammed Hmeidat" />
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Search</title>
-        <!-- Bootstrap -->
-        <link href="../styles/bootstrap.css" rel="stylesheet" /><link href="../styles/navbar.css" rel="stylesheet" />
-        <link href="../styles/search.css" type="text/css" rel="stylesheet">
-      
+<html>
+
+    <head>
+        <link rel="stylesheet" href="../styles/serachResult.css" type="text/css">
+        <link rel="stylesheet" href="../styles/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+    
     </head>
     <body>
-        <?php require_once './navbar.php'; ?>
-        <div class="row "><div class="col-md-6 col-md-offset-1"> <h1><i><?php print ($search->getDatabase()->numRows($result)); ?> users are found</i></h1></div></div
-        <div class='result'>
-            <?php while ($result_set = $search->getDatabase()->fetchArray($result)) { ?> 
-                <div class="row" >
-                    <div class="col-md-4 bor col-md-offset-1">
+    
+        <div class="container">
 
-                        <div class="row" >
-                            <div class="col-md-4"> 
-                                <img class= "profile pic" src= '<?php echo $search->getImgProfile($result_set['userid']); ?>'/>
-                            </div>
+    <hgroup class="mb20">
+		<h1>Search Results</h1>
+		<h2 class="lead"><strong class="text-danger"><?php echo $search->getDataBase()->numRows($result); ?></strong> results were found for the search for <strong class="text-danger"><?php echo $in;?></strong></h2>								
+	</hgroup>
 
-                            <div class="col-md-7 "style="margin-top: -10px;"><h3> 
-                                    <a href="../public/Profile.php?id=<?php echo $result_set['userid']; ?>" class="btn btn-success"> <?php print($result_set['fname'] . " " . $result_set['lname']); ?></a>
-                                </h3>
-                                <br/>
-                                <span class="btn btn-primary">  Address : <?php print($result_set['Address']); ?></span>
-                                <br/>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            <?php } ?>
-        </div>
-        <script src="../scripts/jquery.js"></script>
-        <script src="../scripts/bootstrap.js"></script>
-        <script src="../scripts/navbar.js"></script>
+    <section class="col-xs-12 col-sm-6 col-md-12">
+        <?php while($result=$database->fetchArray($result)){
+            ?>
+		<article class="search-result row">
+			<div class="col-xs-12 col-sm-12 col-md-3">
+				<a href="#" title="Lorem ipsum" class="thumbnail"><img src="<?php echo "../users/".$result['owner_id']."/images/properties/".$result['property_id']."/1.png"; ?>" class="imagereslut" alt="<?php echo $result['property_name']; ?>" /></a>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-2">
+				<ul class="meta-search">
+                                    <li><i class="glyphicon glyphicon-calendar"></i> <span><?php $c_date= explode(" ", $result['creation_date']); 
+                                    echo $c_date[0];
+                                    ?></span></li>
+					<li><i class="glyphicon glyphicon-time"></i> <span><?php echo $c_date[1];?></span></li>
+                                        <li><i class="glyphicon glyphicon-tags"></i> <span><?php $property->setId($result['property_id']); 
+                                        echo $property->getType();
+                                        ?></span></li>
+				</ul>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+				<h3><a href="<?php echo "property.php?property_id=".$result['property_id']; ?>" title=""><?php echo $result['property_name']; ?></a></h3>
+				<p><?php echo $result['description']; ?></p>									</div>
+			<span class="clearfix borda"></span>
+		</article>		
+        <?php
+        
+        }?>
+	</section>
+</div>
+   
+        <script src="../scripts/jquery-3.2.1.min.js"></script>
+        <script src="../scripts/bootstrap.min.js"></script>
     </body>
 </html>
