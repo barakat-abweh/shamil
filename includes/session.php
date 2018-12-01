@@ -43,9 +43,10 @@ class session {
     public function login($user) {
         if (isset($user) && !self::$loggedin) {
             $userEmail = $user->getEmail();
+            $userUname=$user->getUname();
             global $email;
             global $password;
-            if ($userEmail === $email) {
+            if ($userEmail === $email || $email===$userUname) {
                 $userpass = $user->getPassword();
                 if ($userpass === $password) {
                     $this->cookie->setCookie("userid",md5($user->getID()),time() + (86400 * 30),"/",null,false,true);

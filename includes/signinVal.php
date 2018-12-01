@@ -1,18 +1,15 @@
 <?php
 $email = NULL;
 $password = NULL;
-$userid=NULL;
+$userid = NULL;
 $flag1 = false;
 $flag2 = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $field = htmlspecialchars($_POST['email']);
     if (!isEmtpy($field)) {
-       $field=trim($field);
-        if (checkEmail($field)) {    
+       $field=trim($field); 
             $email= strtolower($field);
             $flag1 = true;
-        } else
-            redirect();
     }
 
     $field = htmlspecialchars($_POST['password']);
@@ -35,11 +32,10 @@ function checkIDS($email,$password) {
     $user->connectDatabase();
      global $userid;
      $user->setEmail($email);
-     $userid=$user->getId();
+     $userid=$user->getID();
      if(!isset($userid))redirect();
      $user->setId($userid);
      require_once 'session.php';
-     //if user logged in again redirect to his page (home or MyProgile) 
      if($session->isLoggedIn()){redirectTo("../public/home.php");}
      $session->login($user);
 }

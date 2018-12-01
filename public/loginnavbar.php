@@ -18,7 +18,7 @@
                     <!-- Menu -->
 <!-- ********************************************** FORM LOGIN ******************************************************** -->                   
                     <div class="classy-menu">
-                        <form id="signinform" class="" action="#" method="post" >
+                        <form id="signinform" class="" action="../includes/signinVal.php" method="post" >
                         <div class="classynav">
                             <ul>                               
                               
@@ -32,7 +32,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <button type="button" id="signin" class=" btn btn-primary"> Login</button>
+                                    <button type="submit" id="signin" class=" btn btn-primary"> Login</button>
                                     <button type="button" id="signup" class=" btn btn-primary"> Signup</button>
                                 <span  class="btn btn-warning" id="logout" style="color:white;cursor: pointer"  data-toggle="modal" data-target=".bs-example-modal-sm">Forget Password </span>
                                 <div class="modal bs-example-modal-sm"  tabindex="-1" role="dialog" aria-hidden="true">

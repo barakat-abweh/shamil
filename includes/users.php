@@ -163,7 +163,7 @@ public function setId($id){
     }
 
     public function getID(){
-        $query = "select `user_id` from users where `email`='$this->email'";
+        $query = "select `user_id` from users where `email`='$this->email' OR `uname`='$this->email'";
         $result=$this->dataBase->query($query);
         $result=$this->dataBase->fetchArray($result);
         return $result['user_id'];
