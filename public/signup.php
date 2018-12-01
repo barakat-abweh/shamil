@@ -72,7 +72,7 @@
                 
                 <fieldset class="form-group col-md-5">
                     <select name="type" id="type" class="button btn btn-primary form-control">
-                        <option>choose type</option>
+                        <option>account type</option>
                         <option>Seller</option>
                         <option>Buyer</option>
                     </select>
