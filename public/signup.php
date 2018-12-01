@@ -35,24 +35,24 @@
             <b>Already have an account?<a href="index.php"> sign in now</a></b>
             <form class="form col-md-offset-2"  action="#" method="POST" id="signup">
                 <fieldset class="form-group col-md-5">
-                    <label for="fname" class="control-label">First Name</label>
+                    <label for="fname" class="control-label">First Name<span class="glyphicon glyphicon-asterisk"></span></label>
                     <input  id="fname" name="fname" class="form-control " type="text"  maxlength="20" placeholder="first name" autofocus />
                 </fieldset>
                 <fieldset class="form-group col-md-5">
-                    <label for="lname" class="control-label">Last Name</label>
+                    <label for="lname" class="control-label">Last Name<span class="glyphicon glyphicon-asterisk"></span></label>
                     <input id="lname" name="lname" class="form-control " maxlength="20" type="text" placeholder="last name"/>
                 </fieldset>
                 <fieldset class="form-group col-md-5">
-                    <label for="uname" class="control-label">User Name</label>
+                    <label for="uname" class="control-label">User Name<span class="glyphicon glyphicon-asterisk"></span></label>
                     <input id="uname" name="uname" class="form-control " maxlength="20" type="text" placeholder="User name"/>
                 </fieldset>
 
                 <fieldset class="form-group col-md-5">
-                    <label for="email"  class="control-label">Email</label>
+                    <label for="email"  class="control-label">Email<span class="glyphicon glyphicon-asterisk"></span></label>
                     <input id="email" maxlength="32" name="email"  class="form-control" type="text"  placeholder="Email" />
                 </fieldset>
                 <fieldset class="form-group col-md-5">
-                    <label for="phone1" class="control-label">Phone number</label>
+                    <label for="phone1" class="control-label">Phone number<span class="glyphicon glyphicon-asterisk"></span></label>
                     <input class="form-control "  name="phone1" id="phone1"  minlength="10" maxlength="10" type="text" placeholder="Phone number" />
                 </fieldset>
                 
@@ -62,11 +62,11 @@
                 </fieldset>
     
                 <fieldset class="form-group col-md-5">
-                    <label for="password" class="control-label">Password</label>
+                    <label for="password" class="control-label">Password<span class="glyphicon glyphicon-asterisk"></span></label>
                     <input class="form-control"  maxlength="64" id="password" type="password" name="password" placeholder="password"/>
                 </fieldset>
                 <fieldset class="form-group col-md-5">
-                    <label for="confpassword" class="control-label">Confirm</label>
+                    <label for="confpassword" class="control-label">Confirm password<span class="glyphicon glyphicon-asterisk"></span></label>
                     <input class="form-control" maxlength="64" id="confpassword" type="password" name="confpassword" placeholder="Confirm Password"/>
                 </fieldset>
                 
