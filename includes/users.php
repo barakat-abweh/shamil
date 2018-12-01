@@ -214,6 +214,15 @@ public function setId($id){
         echo $query;
         $this->dataBase->query($query);
     }
+    public function getCountryCities(){
+        $ceties=array();
+        $query="SELECT `city_id` FROM `city` WHERE `country_id`='".$this->getCountryId()."'";
+        $result= $this->dataBase->query($query);
+        while($r= $this->dataBase->fetchArray($result)){
+            array_push($ceties, $r['city_id']);
+        }
+        return $ceties;
+    }
     public function getConversations(){
         $query="SELECT DISTINCT `sender_id`,`receiver_id`,`message_date` FROM `messages` WHERE `sender_id`=$this->id OR `receiver_id`=$this->id ORDER BY `message_date` DESC";
         $result=$this->dataBase->query($query);

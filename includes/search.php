@@ -18,10 +18,13 @@ public function setDatabase($database){
         return $this->in;
     }
     public function property_search(){
-        $query="SELECT `property_id`, `property_name`, `area`, `city_id`, `description`, `price`, `type`, `creation_date` FROM `property` WHERE `deleted`=0 AND (`property_name` LIKE '%$this->in%' OR `description` LIKE '%$this->in%')";
+        $q="SELECT `user_id` FROM `users` WHERE `fname`='$this->in' OR `lname`='$this->in' OR `uname`='$this->in'";
+        $r= $this->Database->query($q);
+        $r= $this->Database->fetchArray($r);
+        $r=$r['user_id'];
+        $query="SELECT `property_id`, `property_name`, `area`, `city_id`, `description`, `price`, `type`, `creation_date` FROM `property` WHERE `deleted`=0 AND (`property_name` LIKE '%$this->in%' OR `description` LIKE '%$this->in%' OR `area`>='$this->in' OR `price`<='$this->in'  OR `owner_id`='$r' )";
         $this->res=$this->Database->query($query);
           return $this->get_res();  
-        
         }
     
     public function get_res(){
