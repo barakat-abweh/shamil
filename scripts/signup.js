@@ -49,7 +49,7 @@ function checkChar($value) {
             $status = true;
         if ($status) {
             $split = $param.val().split('.');
-            if ($split[$split.length - 1] === 'com')
+            if ($split[$split.length - 1] === 'com'||$split[$split.length - 1] === 'edu'||$split[$split.length - 1] === 'org'||$split[$split.length - 1] === 'ps'||$split[$split.length - 1] === 'jo'||$split[$split.length - 1] === 'net')
                 return $status;
         }
         return false;
@@ -62,7 +62,6 @@ function checkChar($value) {
         $uname = false;
         $email = false;
         $phone1 = false;
-        $phone2 = false;
         $type = false;
         $country = false;
         $city = false;
@@ -94,37 +93,32 @@ function checkChar($value) {
         } else{
             $phone1=true;
         }
-        if((!checkNum($('#phone2').val()) || $('#phone2').val().length!=10) && $fname && $lname && $uname && $email && $phone1){
-            sweetAlert("Oops...", "Phone number2 must be 10 digits,only digits allowed", "error");
-        } else{
-            $phone2=true;
-        }
-        if (($('#password').val().length < 8 || $('#password').val().length > 40) &&$fname&&$lname&&$uname&&$email&&$phone1&&$phone2) {
+        if (($('#password').val().length < 8 || $('#password').val().length > 40) &&$fname&&$lname&&$uname&&$email&&$phone1) {
             sweetAlert("Oops...", "Password must be at least 8 characters.", "error");
         } else {
             $pass = true;
         }
-        if ($('#confpassword').val() != $('#password').val() &&$fname&&$lname&&$uname&&$email&&$phone1&&$phone2&&$pass) {
+        if ($('#confpassword').val() != $('#password').val() &&$fname&&$lname&&$uname&&$email&&$phone1&&$pass) {
             sweetAlert("Oops...", "Password confirmation doesn't match the password.", "error");
         } else {
             $conpass = true;
         }
-        if ($("#type").val() == "choose type" &&$fname&&$lname&&$uname&&$email&&$phone1&&$phone2&&$pass&&$conpass) {
+        if ($("#type").val() == "choose type" &&$fname&&$lname&&$uname&&$email&&$phone1&&$pass&&$conpass) {
             swal("Define your type!", "seller or buyer");
         } else {
             $type = true;
         }
-        if ($("#country").val() == "choose country" &&$fname&&$lname&&$uname&&$email&&$phone1&&$phone2&&$pass&&$conpass&&$type) {
+        if ($("#country").val() == "choose country" &&$fname&&$lname&&$uname&&$email&&$phone1&&$pass&&$conpass&&$type) {
             swal("Choose your country!", "");
         } else {
             $country = true;
         }
-        if ($("#city").val() == "choose city" &&$fname&&$lname&&$uname&&$email&&$phone1&&$phone2&&$pass&&$conpass&&$type&&$country) {
+        if ($("#city").val() == "choose city" &&$fname&&$lname&&$uname&&$email&&$phone1&&$pass&&$conpass&&$type&&$country) {
             swal("Choose your city!", "");
         } else {
             $city = true;
         }
-        if ($fname && $lname && $uname && $email && $phone1 && $phone2 && $type && $country && $city && $pass && $conpass) {
+        if ($fname && $lname && $uname && $email && $phone1 && $type && $country && $city && $pass && $conpass) {
 
             swal("You signed sp successfuly!", "We hope you well be happy with us!", "success");
 

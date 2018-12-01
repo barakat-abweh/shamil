@@ -104,10 +104,10 @@ if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type reques
      }
      $field = htmlspecialchars($_POST['phone1']);
     $field1= htmlspecialchars($_POST['phone2']);
-     if(!isEmpty($field)&&!isEmpty($field1)){
+     if(!isEmpty($field)){
     $field=trim($field);
     $field1= trim($field1);
-    if (checkPhone($field)&& checkPhone($field1)) {
+    if (checkPhone($field)&&(strlen($field1)==0||checkPhone($field1))) {
         $phone1 = $field;
         $phone2=$field1;
         $flag7 = true;
