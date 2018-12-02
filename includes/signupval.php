@@ -34,7 +34,7 @@ if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type reques
     if (!isEmpty($field)) {
         $field=trim($field);
         if (checkName($field)) {
-            $fname = $field;
+            $uname = strtolower($field);
             $flag = true;
         } else
             redirectValues();
@@ -43,7 +43,7 @@ if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type reques
     if (!isEmpty($field)) {
         $field=trim($field);
         if (checkName($field)) {
-            $lname = $field;
+            $uname = strtolower($field);
             $flag1 = true;
         } else
            redirectValues();
@@ -52,7 +52,7 @@ if (htmlspecialchars($_SERVER["REQUEST_METHOD"]) == "POST") { #check type reques
     if (!isEmpty($field)) {
         $field=trim($field);
         if (checkName($field)) {
-            $uname = $field;
+            $uname = strtolower($field);
             $flag2 = true;
         } else
             redirectValues();

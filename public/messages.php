@@ -9,7 +9,7 @@
             <div class="inbox_chat" id="conv">
           </div>
             <script>
-            setTimeout(function (){
+            setInterval(function (){
                 $.post("../includes/conversations.php",
     {
         init:0
@@ -19,7 +19,7 @@
              sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
         }
         else{
-            $('#conv').html(data+$('#conv').html());
+            $('#conv').html(data);
         }
 });
             },1000);
