@@ -73,7 +73,7 @@
              sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
         }
         else{
-           alert(data);
+             $('#table').html(data);
         }
     });
     }
