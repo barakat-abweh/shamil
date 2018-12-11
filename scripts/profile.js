@@ -122,7 +122,7 @@ setInterval(function (){
     {
         id:x
     },
-           
+   //        
     function(data, status){
         if(data=='0'){
              sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
@@ -131,11 +131,11 @@ setInterval(function (){
         $messagesbody.html(data);
     });},1000);
 }
-function sendMessage(e){
-alert(e);
+function sendMessage(){
+    $mes=$('#writem').val();
 $.post("../includes/sendmessage.php",
     {
-        id:e,message:m
+        id:x,mes:$mes
     },
            
     function(data, status){
