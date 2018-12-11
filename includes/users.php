@@ -224,29 +224,46 @@ public function setId($id){
         return $ceties;
     }
     public function getConversations(){
-        $query="SELECT DISTINCT `sender_id`,`receiver_id`,`message_date` FROM `messages` WHERE `sender_id`=$this->id OR `receiver_id`=$this->id ORDER BY `message_date` DESC";
-        $result=$this->dataBase->query($query);
         $res="";
+        if($this->getType()=='0'){
+        $query="SELECT DISTINCT `receiver_id` FROM `messages` WHERE `sender_id`=$this->id ORDER BY `message_date` DESC";
+        $result=$this->dataBase->query($query);
         while($Result= $this->dataBase->fetchArray($result)){
             $uid;
-            if($Result['sender_id']== $this->id){
                 $uid=$Result['receiver_id'];
-            }
-            else{
-              $uid=$Result['sender_id'];  
-            }
             $query="SELECT `fname`, `lname` FROM `users` WHERE `user_id` =$uid";
             $Result1=$this->dataBase->query($query);
             $Result1= $this->dataBase->fetchArray($Result1);
             $res.="
-            <div class=\"chat_list\">
+            <div class=\"chat_list\" onclick=\"getMessages(".$Result['receiver_id'].")\");>
               <div class=\"chat_people\">
-                <div class=\"chat_img\"> <img src=\"../users/$uid/images/profile/uploads/medium/profile.jpg\" alt=\"sunil\"> </div>
+                <div class=\"chat_img\"> <img src=\"../users/$uid/images/profile/uploads/medium/profile.jpg\"> </div>
                 <div class=\"chat_ib\">
                   <h5>".$Result1['fname']." ".$Result1['lname']."<span class=\"chat_date\">".$Result['message_date']."</span></h5>
                 </div>
               </div>
           </div>";
+        }
+        }
+        else{
+            $query="SELECT DISTINCT `sender_id` FROM `messages` WHERE `receiver_id`=$this->id ORDER BY `message_date` DESC";
+        $result=$this->dataBase->query($query);
+        while($Result= $this->dataBase->fetchArray($result)){
+            $uid;
+                $uid=$Result['sender_id'];
+            $query="SELECT `fname`, `lname` FROM `users` WHERE `user_id` =$uid";
+            $Result1=$this->dataBase->query($query);
+            $Result1= $this->dataBase->fetchArray($Result1);
+            $res.="
+            <div class=\"chat_list\" onclick=\"getMessages(".$Result['sender_id'].")\");>
+              <div class=\"chat_people\">
+                <div class=\"chat_img\"> <img src=\"../users/$uid/images/profile/uploads/medium/profile.jpg\"> </div>
+                <div class=\"chat_ib\">
+                  <h5>".$Result1['fname']." ".$Result1['lname']."<span class=\"chat_date\">".$Result['message_date']."</span></h5>
+                </div>
+              </div>
+          </div>";
+        }
         }
         return $res;
     }

@@ -112,3 +112,33 @@ function initmessage(e){
         }
     });
 }
+
+
+function getMessages(e){
+setInterval(function (){
+    $.post("../includes/getmessages.php",
+    {
+        id:e
+    },
+           
+    function(data, status){
+        if(data=='0'){
+             sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
+        }
+        $messagesbody=$('#messagesbody');
+        $messagesbody.html(data);
+    });},1000);
+}
+function sendMessage(e){
+alert(e);
+$.post("../includes/sendmessage.php",
+    {
+        id:e,message:m
+    },
+           
+    function(data, status){
+        if(data=='0'){
+             sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
+        }
+    });
+}
