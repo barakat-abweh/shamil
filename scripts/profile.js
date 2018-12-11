@@ -132,15 +132,18 @@ setInterval(function (){
     });},1000);
 }
 function sendMessage(){
-    $mes=$('#writem').val();
-$.post("../includes/sendmessage.php",
+    $mes=$('#writem');
+$.post("../includes/sendmessages.php",
     {
-        id:x,mes:$mes
+        id:x,mes:$mes.val()
     },
            
     function(data, status){
         if(data=='0'){
              sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
+        }
+        else{
+            $mes.val("");
         }
     });
 }
