@@ -1,3 +1,4 @@
+var x=0;
 function editProfile(){
     $('#editprofile').attr('disabled','');
     $('#editdiv').append("<button type=\"button\" class=\"col-md-3 col-md-offset-1 btn btn-danger col-xs-offset-1 col-xs-3\" id=\"cancel\" onclick=\"cancel();\">Cancel</button><button type=\"button\" class=\"col-md-3 col-md-offset-1 btn btn-success col-xs-offset-1 col-xs-3\" id=\"save\" onclick=\"save();\">Save</button>");
@@ -115,10 +116,11 @@ function initmessage(e){
 
 
 function getMessages(e){
+    x=e;
 setInterval(function (){
     $.post("../includes/getmessages.php",
     {
-        id:e
+        id:x
     },
            
     function(data, status){
