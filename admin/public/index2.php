@@ -35,56 +35,506 @@
             </div>
         </nav>
 
-        <aside class="hit_sidebar open_sidbar sidebar-slide-push">
+       <aside class="hit_sidebar open_sidbar sidebar-slide-push">
             <ul>
-                <li><a href="#">
-            <span class="nav-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
-            <span class="remove_text">Seller</span></a></li>
-                <li><a href="#" class="activ">
-                    
+                <li><a href="#" class="activ" onclick="getUsers()">
             <span class="nav-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>            
-            <span class="remove_text">Buyer</span></a></li>
+            <span class="remove_text">Users</span></a></li>
+            <li><a href="#" class="activ" onclick="getProperties()">
+            <span class="nav-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>            
+            <span class="remove_text">Properties</span></a></li>
             <li><a href="../includes/logout.php" class="activ">
-           
             <span class="nav-icon"><i class="fa fa-power-off" aria-hidden="true"></i></span>
             <span class="remove_text">Logout</span> </a></li>
             </ul>
         </aside>
         <section id="content_body">
         <div class="container">
-        <div class="row col-md-11  custyle">
+        <div class="row col-md-11  custyle" >
                <table class="table table-striped custab">
     <thead>
-   
         <tr>
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>User Name</th>
-            <th>phome Number1</th>
-            <th>Password</th>
-            <th>City</th>
-            
-            
-            <th class="text-center">Action</th>
+            <th colspan="4">Action</th>
         </tr>
     </thead>
+    <tbody>
             <tr>
                 <td>1</td>
-                <td>News Cate</td>
-                <td>News Cate</td>
-                <td>News Cate</td>
-                <td>News Cate</td>
-                <td>News Cate</td>
-                <td>News Cate</td>
-                <td class="text-center">
-                    <a class='btn btn-info btn-xs' href="#"> Vire profile</a> 
-                    <a href="#" class="btn btn-danger btn-xs"> Stop Acoount</a>
-                    <a href="#" class="btn btn-danger btn-xs"> Deacive</a>
-                    <a href="#" class="btn btn-danger btn-xs">Delete account</a></td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' target="_blank">View Profile</a>
+                <td class="text-center"><a class='btn btn-warning btn-xs' target="_blank">Send Alert</a>
+                <td class="text-center"><a class='btn btn-danger btn-xs' target="_blank">Deactivate/Activate Account</a>
+                <td class="text-center"><a class='btn btn-danger btn-xs' target="_blank">Delete Account</a>
             </tr>
-        
-            
+            <tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr><tr>
+                <td>1</td>
+                <td>baraa</td>
+                <td>hakawati</td>
+                <td>barraa</td>
+                <td class="text-center"><button class='btn btn-info btn-xs'>View Profile</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Send Alert</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Deactivate/Activate Account</a></button>
+                <td class="text-center"><button class='btn btn-info btn-xs'>Delete Account</a></button>
+            </tr>
+    </tbody>
     </table>
             </div>
         </div>
@@ -94,15 +544,13 @@
 
     </div>
 
-
-
-
-
-
-
-
-
-
+    <script>
+    function getUsers(){
+        
+    }
+    function getProperties(){
+        
+    }
+    </script>
 </body>
-
 </html>
