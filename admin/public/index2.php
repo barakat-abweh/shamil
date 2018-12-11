@@ -44,7 +44,7 @@
                     
             <span class="nav-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>            
             <span class="remove_text">Buyer</span></a></li>
-                <li><a href="#" class="activ">
+            <li><a href="../includes/logout.php" class="activ">
            
             <span class="nav-icon"><i class="fa fa-power-off" aria-hidden="true"></i></span>
             <span class="remove_text">Logout</span> </a></li>
