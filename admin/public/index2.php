@@ -40,6 +40,12 @@
             <li><a href="#" class="activ" onclick="getUP(1)">
             <span class="nav-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>            
             <span class="remove_text">Users</span></a></li>
+            <li><a href="#" class="activ" onclick="getUP(4)">
+            <span class="nav-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>            
+            <span class="remove_text">Deactivated Users Accounts</span></a></li>
+            <li><a href="#" class="activ" onclick="getUP(5)">
+            <span class="nav-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>            
+            <span class="remove_text">Deleted Users Accounts</span></a></li>
             <li><a href="#" class="activ" onclick="getUP(2)">
             <span class="nav-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>            
             <span class="remove_text">Properties</span></a></li>
@@ -59,11 +65,7 @@
             </div>
         </div>
        </section>
-
-
-
     </div>
-
     <script src="../js/admin.js" type="text/javascript"></script>
 </body>
 </html>

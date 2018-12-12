@@ -94,7 +94,7 @@ $ownprofile=true;
         redirect();
     }
 } else{
-            require_once 'sellerprofile.php';
+    require_once 'sellerprofile.php';
             }
             }
             else{redirect();}
