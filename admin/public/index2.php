@@ -59,6 +59,7 @@
         </aside>
         <section id="content_body">
         <div class="container">
+            <p>Welcome Mr. Admin</p>
         <div class="row col-md-11  custyle">
             <table class="table table-striped custab" id="table">
     </table>
