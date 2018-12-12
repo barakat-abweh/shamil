@@ -1,10 +1,9 @@
 <html>
 <head>
     
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <title>Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="../styles/bootstrap.min.css.map">
@@ -16,8 +15,6 @@
     <link rel="stylesheet" href="../styles/homenavbar.css"/>
     <link rel="stylesheet" href="../styles/styleImageUpload.css">
     <link rel="stylesheet" href="../styles/sweetalert.css">
-
-    
     
 <!------ Include the above in your HEAD tag ---------->
 </head>
@@ -73,7 +70,34 @@ $ownprofile=true;
 //            redirect();
         }
         else{
-            redirect();
+            require_once '../admin/includes/sessions.php';
+            if($adminSession->isLoggedIn()){
+               if(isset($_GET['user_id'])){
+        $user_id=htmlspecialchars($_GET['user_id']);
+        if(is_numeric($user_id)&&strlen($user_id)>=1&&strlen($user_id)<=11){
+            if($user_id==$session->getUserId())
+            {
+                redirect();
+                
+            }
+            require_once '../includes/database.php';
+            require_once '../includes/users.php';
+            $user->setDataBase($database);
+            $user->setId($user_id);
+            if(gettype($user->getUserId())=="NULL"){
+                redirect();
+            }
+            $ownprofile=false;
+            require_once './sellerprofile.php';
+        }
+        else{
+        redirect();
+    }
+} else{
+            require_once 'sellerprofile.php';
+            }
+            }
+            else{redirect();}
         }
         function redirect(){
             header("Location: index.php");

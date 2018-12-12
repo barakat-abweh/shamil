@@ -7,7 +7,6 @@ class sessions {
     private $startedSession = false;
 
     function __construct() {
-
         $this->startSession();
         if ($this->startedSession) {
             $this->checkLogIn();
