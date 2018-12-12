@@ -7,10 +7,11 @@
  */
 
 if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="POST"){
-    if(isset($_POST['id'])){
+    if(isset($_POST['id'])&&isset($_POST['action'])){
         require_once '../../includes/database.php';
         $id=$database->escape(trim(htmlspecialchars($_POST['id'])));
-        if($id=="1"){
+        $action=$database->escape(trim(htmlspecialchars($_POST['action'])));
+        if($action=="1"){
             $query="SELECT `user_id`,`uname` FROM `users` WHERE `deleted` = 0";
             $result=$database->query($query);
             $finRes="<thead><tr>
@@ -29,7 +30,7 @@ if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="POST"){
             </tr>";
             }
         }
-        else if($id=="2"){
+        else if($action=="2"){
            $query="SELECT `property_id`,`property_name` FROM `property` WHERE `deleted` = 0";
            $result=$database->query($query);
            $finRes="<thead><tr>
@@ -46,7 +47,7 @@ if(htmlspecialchars($_SERVER['REQUEST_METHOD'])=="POST"){
             </tr>";   
             }
         }
-        else if($id=="3"){
+        else if($action=="3"){
            $query="SELECT `property_id`,`property_name` FROM `property` WHERE `deleted` = 1";
            $result=$database->query($query);
            $finRes="<thead><tr>

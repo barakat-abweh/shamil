@@ -50,3 +50,18 @@
         }
     });
     }
+    function accountDDAD(action,id){
+        $.post("../includes/accountDDAD.php",
+    {
+        id:id,action:action
+    },
+           
+    function(data, status){
+        if(data=='0'){
+             sweetAlert("Oops...", "It looks like something wrong happend, try again", "error");
+        }
+        else{
+          location.reload();
+        }
+    });
+    }
