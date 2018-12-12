@@ -49,10 +49,13 @@ class session {
             if ($userEmail === $email || $email===$userUname) {
                 $userpass = $user->getPassword();
                 if ($userpass === $password) {
+                    if($user->getDeletedOrDeactivated()=="1"){
+                        header("Location:../public/DODA.php");
+                    }else{
                     $this->cookie->setCookie("userid",md5($user->getID()),time() + (86400 * 30),"/",null,false,true);
                     self::$loggedin = true;
                     $this->userid = $_SESSION['userid'] = $user->getID();
-                   header("LOCATION:../public/home.php");
+                    header("LOCATION:../public/home.php");}
                 } else
                     redirect();
             } else

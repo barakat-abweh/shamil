@@ -267,6 +267,15 @@ public function setId($id){
         }
         return $res;
     }
+    public function getDeletedOrDeactivated(){
+        $result= $this->dataBase->query("SELECT `active`, `deleted` FROM `users` WHERE `user_id` =$this->id");
+        $result= $this->dataBase->fetchArray($result);
+        if($result['active']=="1"||$result['deleted']=="1"){
+            return "1";
+        }
+        return "0";
+    }
+    
 }
 $user = new user();
 
